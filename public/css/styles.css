@@ -1,0 +1,14 @@
+.navbar-custom{
+    background-color: rgba(38, 69, 112, 0.25);
+    
+}
+.footer {
+    /* opsional, padding dan warna */
+    padding: 40px 0;
+    background-color: #264570;
+    color: white;
+}
+.footer-bottom{
+    background-color: #1e2e49;
+    color: white;
+}
