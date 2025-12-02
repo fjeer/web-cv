@@ -12,3 +12,103 @@
     background-color: #1e2e49;
     color: white;
 }
+.card {
+height: 100%; /* Make cards take full height of their container */
+background-color: rgba(38, 69, 112, 0.25); /* Grey background */
+    
+}
+.me-2{
+height: 50%; /* Fixed height for images */
+object-fit: cover; /* Crop image to fit without distortion */
+display: block; /* Ensure it's a block element for centering */
+margin:  auto; /* Center the image horizontally */
+}
+.section-title {
+display: inline-block;
+background-color: rgba(38, 69, 112, 0.25); /* Grey background */
+color: black;
+padding: 10px 20px;
+border-radius: 5px;
+}
+.custom-card {
+    border: 3px solid #ddd;                     /* Border tebal */
+    border-radius: 20px;                        /* Lebih bulat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow di bawah */
+    transition: box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow lebih tebal saat hover */
+}
+.icon-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ff7a00; /* sesuaikan warna oranye */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff7a00;
+    font-size: 14px;
+}
+.custom-left-btn {
+    background-color: #264570;
+    color: #ffffff;
+    border: 2px solid #264570;
+    font-weight: 700;
+    padding: 8px 20px;
+    font-size: 30px;                     /* Border tebal */
+    border-radius: 20px;                        /* Lebih bulat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.custom-right-btn {
+    background-color: #ffffff;
+    color: #264570;
+    font-weight: 700;
+    padding: 8px 20px;
+    font-size: 30px;                     /* Border tebal */
+    border-radius: 20px;                        /* Lebih bulat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.placeholder-img {
+    width: 280px;
+    height: 280px;
+    background: #DDDDDD;
+    object-fit: cover;
+}
+
+/* Custom Carousel Buttons */
+.custom-arrow {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #264570 !important;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.custom-arrow:hover {
+    background: #CFCFCF !important;
+    opacity: 1;
+    transform: scale(1.1);
+}
+.carousel-control-prev{
+    left: -60px;
+
+}
+.carousel-control-next{
+    right: -60px;
+
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0) brightness(0) contrast(100%); /* membuat icon jadi hitam */
+}
