@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('home');
+    return redirect()->route('home.index');
 });
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+// route ke resource MahasiswaController
+Route::resource('home', HomeController::class);

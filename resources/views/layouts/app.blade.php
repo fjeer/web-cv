@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Blade and Bootstrap</title>
+    <title>@yield('title') - SigmaTech.id</title>
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -19,7 +19,7 @@
         {{-- Menu Kiri --}}
         <a class="navbar-brand d-flex align-items-center me-3" href="#">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" width="40" height="40" class="me-2">
-            <span>Sigma Tech</span>
+            <span class="fw-bold">SigmaTech</span>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
@@ -30,7 +30,7 @@
 
             {{-- Menu Kiri --}}
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{{ route('home.index') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Kursus</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Event</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Kelas Industri</a></li>
@@ -68,8 +68,8 @@
 
                 {{-- Tombol Login --}}
                 <li>
-                    <a href="{{ route('login') }}" 
-                       class="btn"
+                    <a href="#" 
+                       class="btn rounded-4xl"
                        style="background-color: orange; color: white; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
                         Login
                     </a>

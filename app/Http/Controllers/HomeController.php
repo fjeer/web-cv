@@ -4,24 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-Route::get('/', [LoginController::class, 'index']);
-Route::post('/', [LoginController::class, 'login']);
-class loginController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('home');
+        return view('pages.home.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function login()
+    public function create()
     {
-        return view('login');
+        //
     }
 
     /**
