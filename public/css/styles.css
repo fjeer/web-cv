@@ -1,7 +1,13 @@
-.navbar-custom{
-    background-color: rgba(38, 69, 112, 0.25);
-    
+.bg-gray-500 {
+    background-color: rgb(249 250 251) !important; /* warna Tailwind gray-500 */
 }
+
+.navbar-brand h1,
+.navbar-brand p {
+    margin: 0;            /* Hilangkan margin default */
+    line-height: 1.2;     /* Supaya teks lebih rapat */
+}
+
 .footer {
     /* opsional, padding dan warna */
     padding: 40px 0;

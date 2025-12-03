@@ -130,8 +130,7 @@
         <section class=" d-flex align-items-center">
             <!-- Garis tebal -->
             <div class="container my-5">
-                <!-- <div class="border-top border-5 border-secondary mb-5"></div> -->
-                <hr class="mb-5">
+                <div class="border-top border-2 border-secondary mb-5"></div>
                 <div class="row align-items-start">
 
                     <!-- Kolom 1: Logo -->
@@ -436,7 +435,7 @@
             </div>
 
         </section>
-        <div class="border-top border-5 border-secondary mb-5"></div>
+        <div class="border-top border-2 border-secondary mb-5"></div>
 
 
 

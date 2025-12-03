@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="bg-gray-500">
 
     <!-- Navbar -->
-<nav class="navbar navbar-custom navbar-expand-lg navbar-light">
+<nav class="navbar bg-white fixed-top navbar-expand-lg shadow-sm navbar-light">
     <div class="container"> {{-- Membuat navbar lebih terpusat --}}
 
         {{-- Menu Kiri --}}
         <a class="navbar-brand d-flex align-items-center me-3" href="#">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="40" height="40" class="me-2">
-            <span class="fw-bold">SigmaTech</span>
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="45" class="me-2">
+            <div>
+                <h1 class="fs-5 fw-medium">SigmaTech</h1>
+                <p class="fs-6">Digital Solution</p>
+            </div>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
@@ -58,7 +61,7 @@
                 <li class="me-3">
                     <form class="d-flex">
                         <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                            <input class="form-control" type="search" placeholder="Cari kursus..." aria-label="Search">
                             <button class="btn btn-outline-light" type="submit">
                                 <i class="bi bi-search" style="color: white;"></i>
                             </button>
@@ -148,11 +151,11 @@
          style="max-width: 1200px; margin: 0 auto;">
         
         <div>
-            &copy; {{ date('Y') }} Nama Brand. All Rights Reserved.
+            &copy; 2025 SigmaTech
         </div>
 
         <div>
-            Creator: Nama Creator Anda
+            Berjaya, Berinovasi, dan Bertumbuh bersama.
         </div>
 
     </div>
