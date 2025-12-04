@@ -37,9 +37,9 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('home.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('home.index') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('kursus.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('kursus.index') }}">Kursus</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Event</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('event.index') }}">Event</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Kelas Industri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('berita.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('berita.index') }}">Berita</a></li>
                 </ul>
 
                 {{-- Menu Kanan --}}
@@ -66,8 +66,8 @@
                             <div class="input-group">
                                 <input class="form-control" type="search" placeholder="Cari kursus..."
                                     aria-label="Search">
-                                <button class="btn btn-outline-light" type="submit">
-                                    <i class="bi bi-search" style="color: white;"></i>
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <i class="bi bi-search"></i>
                                 </button>
                             </div>
                         </form>
@@ -75,8 +75,7 @@
 
                     {{-- Tombol Login --}}
                     <li>
-                        <a href="#" class="btn rounded-4xl"
-                            style="background-color: orange; color: white; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+                        <a href="#" class=" tombolkuning btn rounded-4xl">
                             Login
                         </a>
                     </li>

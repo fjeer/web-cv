@@ -23,6 +23,12 @@ height: 100%; /* Make cards take full height of their container */
 background-color: rgba(38, 69, 112, 0.25); /* Grey background */
     
 }
+.cardcur {
+height: 100%; /* Make cards take full height of their container */
+background-color: #1e2e49; 
+border-radius: 20px;
+color: white;/* Grey background */  
+}
 .me-2{
 height: 50%; /* Fixed height for images */
 object-fit: cover; /* Crop image to fit without distortion */
@@ -138,4 +144,14 @@ border-radius: 5px;
 .hero-bg .container {
     position: relative;
     z-index: 2; /* supaya teks muncul di atas overlay */
+}
+.tombolkuning{
+    background-color: orange; 
+    color: white; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.tombolevent{
+    color: #264570; 
+    border-color: #264570;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
