@@ -118,3 +118,24 @@ border-radius: 5px;
 .carousel-control-next-icon {
     filter: invert(0) brightness(0) contrast(100%); /* membuat icon jadi hitam */
 }
+.hero-bg {
+    width: 100%;
+    min-height: 350px; /* ganti sesuai nama file */
+    background-size: cover;      /* biar full menutup layar */
+    background-position: center; /* posisi tengah */
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* optional: overlay abu² seperti Figma */
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3); /* gelap transparan, bisa diubah */
+}
+
+.hero-bg .container {
+    position: relative;
+    z-index: 2; /* supaya teks muncul di atas overlay */
+}
