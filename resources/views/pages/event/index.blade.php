@@ -24,9 +24,6 @@
 </div>
 <h4 class="fw-bold mt-5 mb-3">Daftar Events</h4>
 <section class="d-flex flex-column align-item-center mt-5">
-    
-
-
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">

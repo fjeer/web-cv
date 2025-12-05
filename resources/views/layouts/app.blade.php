@@ -8,6 +8,11 @@
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 </head>
@@ -15,7 +20,7 @@
 <body class="bg-gray-500">
 
     <!-- Navbar -->
-    <nav class="navbar bg-white fixed-top navbar-expand-lg shadow-sm navbar-light">
+    <nav class="navbar bg-white sticky-top navbar-expand-lg shadow-sm navbar-light">
         <div class="container"> {{-- Membuat navbar lebih terpusat --}}
 
             {{-- Menu Kiri --}}
@@ -35,11 +40,19 @@
 
                 {{-- Menu Kiri --}}
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('home.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('home.index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('kursus.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('kursus.index') }}">Kursus</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('event.index') }}">Event</a></li>
+                    <li class="nav-item"><a
+                            class="nav-link {{ request()->routeIs('home.index') ? 'active fw-bold text-primary' : '' }}"
+                            href="{{ route('home.index') }}">Home</a></li>
+                    <li class="nav-item"><a
+                            class="nav-link {{ request()->routeIs('kursus.index') ? 'active fw-bold text-primary' : '' }}"
+                            href="{{ route('kursus.index') }}">Kursus</a></li>
+                    <li class="nav-item"><a
+                            class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}"
+                            href="{{ route('event.index') }}">Event</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Kelas Industri</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('berita.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('berita.index') }}">Berita</a></li>
+                    <li class="nav-item"><a
+                            class="nav-link {{ request()->routeIs('berita.index') ? 'active fw-bold text-primary' : '' }}"
+                            href="{{ route('berita.index') }}">Berita</a></li>
                 </ul>
 
                 {{-- Menu Kanan --}}
@@ -98,16 +111,16 @@
             <div class="row">
 
                 {{-- Grid 1: Logo dan Detail --}}
-                <div class="col-md-4 mb-4">
+                <div class="col-md-5 mb-4">
                     <a class="d-flex align-items-center mb-3" href="#">
                         <img src="{{ asset('images/footer.png') }}" alt="Logo" width="100%" class="me-2">
                     </a>
                     <p>SigmaTech adalah perusahaan yang bergerak di bidang teknologi informasi dan pendidikan digital.
                         Kami menyediakan layanan IT profesional serta program kelas industri untuk mencetak talenta siap
                         kerja di era digital.</p>
-                    <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Probolinggo - Jawa Timur</p>
-                    <p><i class="bi bi-telephone-fill me-2"></i>+62 821-4435-6926</p>
-                    <p><i class="bi bi-telephone-fill me-2"></i>+62 852-3333-5481</p>
+                    <p class="mb-1"><i class="bi bi-geo-alt-fill me-2 d-inline"></i>Probolinggo - Jawa Timur</p>
+                    <p><i class="bi bi-telephone-fill me-2 d-inline"></i>+62 821-4435-6926</p>
+                    <p><i class="bi bi-telephone-fill me-2 d-inline"></i>+62 852-3333-5481</p>
                     sigmatechdigitalsolution@gmail.com
                 </div>
 
@@ -115,22 +128,22 @@
                 <div class="col-md-4 ms-mb-4 ps-5">
                     <h4 class="mb-4">Navbar</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Home</a></li>
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Kursus</a></li>
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Event</a>
+                            <li class="mb-3"><a href="{{ route('home.index') }}" class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-3"><a href="{{ route('kursus.index') }}" class="text-white text-decoration-none">Kursus</a>
+                            </li>
+                            <li class="mb-3"><a href="{{ route('event.index') }}" class="text-white text-decoration-none">Event</a>
                             </li>
                             <li class="mb-3"><a href="#" class="text-white text-decoration-none">Kelas
                                     Industri</a></li>
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Berita</a>
+                            <li class="mb-3"><a href="{{ route('berita.index') }}" class="text-white text-decoration-none">Berita</a>
                             </li>
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Pilih
-                                    Kategori</a></li>
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Hubungi Kami</a></li>
                         </ul>
                 </div>
 
 
                 {{-- Grid 3: Sosial Media --}}
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
 
                     <h4 class="mb-5">Sosial Media</h5>
 
@@ -155,16 +168,16 @@
         </div>
     </footer>
     <div class="footer-bottom">
-            <div class="d-flex justify-content-between align-items-center px-4 py-4"
-                style="max-width: 1200px; margin: 0 auto;">
-                <div>
-                    &copy; 2025 SigmaTech
-                </div>
-                <div>
-                    Berjaya, Berinovasi, dan Bertumbuh bersama.
-                </div>
+        <div class="d-flex justify-content-between align-items-center px-4 py-4"
+            style="max-width: 1200px; margin: 0 auto;">
+            <div>
+                &copy; 2025 SigmaTech
+            </div>
+            <div>
+                Berjaya, Berinovasi, dan Bertumbuh bersama.
             </div>
         </div>
+    </div>
 
     <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
