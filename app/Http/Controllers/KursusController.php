@@ -35,7 +35,7 @@ class KursusController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('pages.kursus.show');
     }
 
     /**

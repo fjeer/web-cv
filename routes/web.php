@@ -20,7 +20,7 @@ Route::get('/berita', function () {
     return redirect()->route('berita.index');
 });
 
-// route ke resource MahasiswaController
+
 Route::resource('home', HomeController::class);
 Route::resource('kursus', KursusController::class);
 Route::resource('event', EventController::class);

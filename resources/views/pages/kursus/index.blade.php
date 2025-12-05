@@ -42,7 +42,7 @@
                                         <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none text-black mb-1">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -61,7 +61,7 @@
                                         <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title mb-1 text-decoration-none text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -80,7 +80,7 @@
                                         <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title mb-1 text-decoration-none text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -105,7 +105,7 @@
                                         <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title mb-1 text-decoration-none text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -124,7 +124,7 @@
                                         <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title mb-1 text-decoration-none text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -143,7 +143,7 @@
                                         <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title mb-1 text-decoration-none text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -206,7 +206,7 @@
                                         <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -225,7 +225,7 @@
                                         <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -244,7 +244,7 @@
                                         <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -269,7 +269,7 @@
                                         <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -288,7 +288,7 @@
                                         <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
@@ -307,7 +307,7 @@
                                         <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Kelas Pemrograman</h5>
+                                                <a href="{{ route('kursus.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Kelas Pemrograman</a>
                                                 <span class="text-warning">
                                                     <i class="bi bi-star-fill"></i> 4.5
                                                 </span>
