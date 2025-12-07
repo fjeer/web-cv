@@ -49,7 +49,9 @@
                     <li class="nav-item"><a
                             class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}"
                             href="{{ route('event.index') }}">Event</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Kelas Industri</a></li>
+                    <li class="nav-item"><a 
+                            class="nav-link {{ request()->routeIs('industri.index') ? 'active fw-bold text-primary' : '' }}"
+                            href="{{ route('industri.index') }}">Kelas Industri</a></li>
                     <li class="nav-item"><a
                             class="nav-link {{ request()->routeIs('berita.index') ? 'active fw-bold text-primary' : '' }}"
                             href="{{ route('berita.index') }}">Berita</a></li>
@@ -100,7 +102,9 @@
     </nav>
 
 
-
+    <div class="hero">
+        @yield('hero')
+    </div>
     <!-- Main content -->
     <div class="container mt-5">
         @yield('content')

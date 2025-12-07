@@ -2,26 +2,29 @@
 
 @section('title','courses')
 
-@section('content')
+@section('hero')
+<div class="hero-section" style="background-image: url('{{ asset('images/banner3.png') }}');">
+    
 <div class="container py-5">
-
-    {{-- HERO SECTION FULL WIDTH BACKGROUND --}}
-<div class="hero-bg d-flex align-items-center">
     
     <div class="container py-5">
         <div class="col-lg-6 col-md-8">
-            <h2 class="fw-bold mb-3 text-white">Belajar Langsung, Bangun Koneksi, dan Rasakan Pengalaman Nyata Industri!</h2>
+            <h2 class="fw-bold mb-3">Belajar Langsung, Bangun Koneksi, dan Rasakan Pengalaman Nyata Industri!</h2>
 
-            <p class="mb-4 text-white">
+            <p class="mb-4">
                 Ikuti berbagai event dan training luring yang interaktif dan aplikatif untuk meningkatkan skill, membangun koneksi, dan merasakan pengalaman nyata di dunia industri.
 
             </p>
 
-            <h4 class="fw-bold mb-3 text-white">Event.</h4>
+            <h4 class="fw-bold mb-3">Event.</h4>
 
         </div>
     </div>
 </div>
+@endsection
+
+@section('content')
+
 <h4 class="fw-bold mt-5 mb-3">Daftar Events</h4>
 <section class="d-flex flex-column align-item-center mt-5">
                     <div class="carousel-inner">
@@ -31,11 +34,9 @@
                                 <!-- Card 1 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
-                                            <a href="#" class=" tombolevent btn rounded-4xl my-3">
-                                                Seminar
-                                            </a>
+                                            <a href="{{ route('event.show', 'parameter id') }}" class="tombolevent btn rounded-4xl my-3">Seminar</a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Siap Kerja di Era Digital Bangun Karier IT dari Sekarang</h5>
                                             </div>
@@ -55,7 +56,7 @@
                                 <!-- Card 2 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <a href="#" class=" tombolevent btn rounded-4xl my-3">
                                                 Seminar
@@ -79,7 +80,7 @@
                                 <!-- Card 3 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <a href="#" class=" tombolevent btn rounded-4xl my-3">
                                                 Seminar
@@ -109,7 +110,7 @@
                                 <!-- Card 1 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>
@@ -128,7 +129,7 @@
                                 <!-- Card 2 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>
@@ -147,7 +148,7 @@
                                 <!-- Card 3 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>
@@ -178,7 +179,7 @@
                                 <!-- Card 1 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <a href="#" class=" tombolevent btn rounded-4xl my-3">
                                                 Seminar
@@ -202,7 +203,7 @@
                                 <!-- Card 2 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <a href="#" class=" tombolevent btn rounded-4xl my-3">
                                                 Seminar
@@ -226,7 +227,7 @@
                                 <!-- Card 3 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <a href="#" class=" tombolevent btn rounded-4xl my-3">
                                                 Seminar
@@ -256,7 +257,7 @@
                                 <!-- Card 1 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>
@@ -275,7 +276,7 @@
                                 <!-- Card 2 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 10.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>
@@ -294,7 +295,7 @@
                                 <!-- Card 3 -->
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card h-100 p-2 custom-card">
-                                        <img src="{{ asset('images/image 9.png') }}" class="card-img-top" alt="Produk 1">
+                                        <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h5 class="card-title mb-1">Kelas Pemrograman</h5>

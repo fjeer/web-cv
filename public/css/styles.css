@@ -26,66 +26,98 @@ body {
     background-color: #1e2e49;
     color: white;
 }
-.card {
-height: 100%; /* Make cards take full height of their container */
-background-color: rgba(38, 69, 112, 0.25); /* Grey background */
-    
-}
-.cardcur {
-height: 100%; /* Make cards take full height of their container */
-background-color: #1e2e49; 
-border-radius: 20px;
-color: white;/* Grey background */  
-}
-.me-2{
-height: 50%; /* Fixed height for images */
-object-fit: cover; /* Crop image to fit without distortion */
-display: block; /* Ensure it's a block element for centering */
-margin:  auto; /* Center the image horizontally */
-}
 .section-title {
-display: inline-block;
-font-size: 20px;
-background-color: #D9D9D9; /* Grey background */
-color: black;
-padding: 10px 20px;
-border-radius: 5px;
-}
-.custom-card {
-    background-color: #D9D9D9;               
-    border-radius: 20px;                    
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow di bawah */
-    transition: box-shadow 0.3s ease;
-}
-
-.custom-card:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow lebih tebal saat hover */
-}
-
-.card-title {
+    display: inline-block;      /* Agar bisa diberi padding tanpa memenuhi lebar penuh */
     font-size: 20px;
+    background-color: #d9f0ff;  /* Grey background */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto 40px auto;   /* Horizontal center + bottom margin */
+}
+/* tempat card berada */
+.card {
+    height: 100%; /* Make cards take full height of their container */
+    background-color: white;
+    border-color: black; /* Grey background */
+    border-radius: 20px;  
+}
+/* Hover animate card */
+.custom-card {
+    background-color: #d9f0ff; /* warna card */
+    border-radius: 20px;
+    
+    /* Shadow lebih gelap, serasi dengan warna card */
+    box-shadow: 0px 10px 20px rgba(156, 200, 230, 0.8);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.custom-card:hover {
+    transform: translateY(-10px);
+
+    /* Shadow lebih kuat saat hover */
+    box-shadow: 0px 18px 35px rgba(120, 165, 200, 0.95);
 }
 
-.card-text {
-    color: #444444;
-    font-size: 14px;
+/* SHINE EFFECT UNTUK GAMBAR */
+.img-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-.icon-circle {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ff7a00; /* sesuaikan warna oranye */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ff7a00;
-    font-size: 14px;
+.img-wrapper img {
+    width: 70px;
+    transition: transform 0.3s ease;
+}
+
+/* Shine effect */
+.img-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+/* Hover: gambar zoom + shine bergerak */
+.custom-card:hover .img-wrapper img {
+    transform: scale(1.1);
+}
+
+.custom-card:hover .img-wrapper::after {
+    left: 120%;
+}
+
+/* sampai sini card berada */
+/* button section  */
+.button-biru{
+    color: white;
+    background-color: #3399CC;
+    box-shadow: 0 4px 6px #264570;
+    border-radius:20px;
+}
+.button-biru:hover {
+    transform: translateY(-5px);
+    color: #3399CC;
+    box-shadow: 0px 18px 35px rgba(120, 165, 200, 0.95);
+    background-color: #ffffff;
+    border-color: #1e2e49;
+    border-width: 2px;
 }
 .custom-left-btn {
-    /* background-color: #264570; */
-    /* color: #ffffff; */
-    /* border: 2px solid #264570; */
+    background-color: #3399CC;
+    color: #ffffff;
     font-weight: 700;
     padding: 8px 10px;
     font-size: 24px;                     /* Border tebal */
@@ -97,7 +129,6 @@ border-radius: 5px;
     background-color: #ffff;
     color: #3399CC;
 }
-
 .custom-right-btn {
     /* background-color: #ffffff; */
     color: #3399CC;
@@ -105,22 +136,36 @@ border-radius: 5px;
     padding: 8px 10px;
     font-size: 24px;                     /* Border tebal */
     border-radius: 20px;                        /* Lebih bulat */
-    box-shadow: 0 4px 6px #264570; 
+    box-shadow: 0 4px 6px #264570;
 }
-
-.placeholder-img {
-    width: 280px;
-    height: 280px;
-    background: #DDDDDD;
-    object-fit: cover;
+.custom-right-btn:hover {
+    background-color: #3399CC;
+    color: #ffffff;
 }
-
+.tombolkuning{
+    background-color: #FF741F; 
+    color: white; 
+    border-width: 2px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.tombolkuning:hover {
+    background-color: white; 
+    color: #FF741F; 
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 5px rgba(134, 72, 6, 0.3);
+    border-color: rgba(134, 72, 6, 0.3);
+}
+.tombolevent{
+    color: #3399CC; 
+    border-color: #264570;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
 /* Custom Carousel Buttons */
 .custom-arrow {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #264570 !important;
+    background: #3399CC !important;
     opacity: 0.9;
     display: flex;
     justify-content: center;
@@ -132,7 +177,7 @@ border-radius: 5px;
 }
 
 .custom-arrow:hover {
-    background: #CFCFCF !important;
+    background: #ffffff !important;
     opacity: 1;
     transform: scale(1.1);
 }
@@ -148,6 +193,73 @@ border-radius: 5px;
 .carousel-control-next-icon {
     filter: invert(0) brightness(0) contrast(100%); /* membuat icon jadi hitam */
 }
+/* button section end */
+.img-industri{
+    width: 100px; 
+    height: 100px; 
+    margin-right: 15px;
+}
+.cardcur {
+    height: 100%; /* Make cards take full height of their container */
+    background-color: #10284A; 
+    border-radius: 20px;
+    color: white;/* Grey background */  
+}
+
+.me-2{
+    height: 50%; /* Fixed height for images */
+    object-fit: cover; /* Crop image to fit without distortion */
+    display: block; /* Ensure it's a block element for centering */
+    margin:  auto; /* Center the image horizontally */
+}
+
+
+.card-body-detail-kursus {
+    background-color: #3399CC;
+    color: white;
+    padding: 20px;
+    border-radius:10px;
+    width: 300px;
+}
+
+.icon-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ff7a00; /* sesuaikan warna oranye */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff7a00;
+    font-size: 14px;
+}
+
+.kuning-round {
+    background-color: Orange;
+    color: #ffffff;
+    border: 2px solid #d09900;
+    font-weight: 700;
+    padding: 8px 10px;
+    font-size: 24px;                     /* Border tebal */
+    border-radius: 20px;                        /* Lebih bulat */
+    box-shadow: 0 4px 6px #264570; 
+}
+
+.kuning-round:hover {
+    background-color: #ffff;
+    color: orange;
+}
+
+
+
+.placeholder-img {
+    width: 280px;
+    height: 280px;
+    background: #DDDDDD;
+    object-fit: cover;
+}
+
+
 .hero-bg {
     width: 100%;
     min-height: 350px; /* ganti sesuai nama file */
@@ -169,13 +281,11 @@ border-radius: 5px;
     position: relative;
     z-index: 2; /* supaya teks muncul di atas overlay */
 }
-.tombolkuning{
-    background-color: orange; 
-    color: white; 
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-.tombolevent{
-    color: #264570; 
-    border-color: #264570;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+
+
+.hero-section{
+    width: 100vw; /* penuh ke kiri-kanan */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

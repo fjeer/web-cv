@@ -35,7 +35,7 @@ class BeritaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('pages.berita.show');
     }
 
     /**

@@ -32,7 +32,7 @@
                                         <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Produk 1">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-1">Cloudflare Alami Gangguan, X Juga Mengalami Pemadaman</h5>
+                                                <a href="{{ route('berita.show', 'parameter id') }}" class="card-title text-decoration-none mb-1 text-black">Cloudflare Alami Gangguan, X Juga Mengalami Pemadaman</a>
                                             </div>
                                              <hr>
                                             <div class="d-flex justify-content-between align-items-center">
@@ -261,7 +261,7 @@
     </div>
 
     <div class="d-flex justify-content-center gap-3">
-        <a href="#" class="btn btn-primary my-5 " style="font-size=30px;">
+        <a href="#" class="btn button-biru my-5 ">
             Load More
         </a>
     </div>

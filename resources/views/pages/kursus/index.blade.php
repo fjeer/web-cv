@@ -2,11 +2,8 @@
 
 @section('title','courses')
 
-@section('content')
-<div class="container py-5">
-
-    {{-- HERO SECTION FULL WIDTH BACKGROUND --}}
-<div class="hero-bg d-flex align-items-center">
+@section('hero')
+<div class="hero-section" style="background-image: url('{{ asset('images/banner2.png') }}');">
     
     <div class="container py-5">
         <div class="col-lg-6 col-md-8">
@@ -19,11 +16,18 @@
             <h4 class="fw-bold mb-3">Kursus (Program / Kelas).</h4>
 
 
-            <a href="#" class="btn btn-primary btn-lg"> <i class="bi bi-person-fill"></i>
+            <a href="#" class="btn button-biru btn-lg"> <i class="bi bi-person-fill text-dark"></i>
  Daftar Kursus</a>
         </div>
     </div>
 </div>
+@endsection
+
+@section('content')
+<div class="container py-5">
+
+    {{-- HERO SECTION FULL WIDTH BACKGROUND --}}
+
 
 
     {{-- ====== KELAS JARINGAN ====== --}}
@@ -374,8 +378,8 @@
                             <div class="d-flex justify-content-center gap-3">
                                 <!-- Button Kiri -->
                                  
-                                <a href="#" class="tombolkuning btn btn-outline-primary mt-5" style="font-size=30px;">
-                                    <i class="bi bi-person-fill" ></i>
+                                <a href="#" class="tombolkuning btn mt-5" style="font-size=30px;">
+                                    <i class="bi bi-person-fill text-dark" ></i>
                                     Daftar Sekarang
                                 </a>
                             </div>

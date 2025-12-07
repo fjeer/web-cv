@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class IndustriController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.event.index');
+        return view('pages.industri.index');
     }
 
     /**
@@ -35,7 +35,7 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        return view('pages.event.show');
+        return view('pages.kursus.show');
     }
 
     /**
