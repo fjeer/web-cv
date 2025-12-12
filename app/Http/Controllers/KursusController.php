@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kursus;
 use Illuminate\Http\Request;
 
 class KursusController extends Controller
@@ -11,7 +12,8 @@ class KursusController extends Controller
      */
     public function index()
     {
-        return view('pages.kursus.index');
+        $kursus = Kursus::all();
+        return view('pages.kursus.index', compact('kursus'));
     }
 
     /**
@@ -33,9 +35,10 @@ class KursusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        return view('pages.kursus.show');
+        $kursus = Kursus::where('slug',$slug)->firstOrFail();
+        return view('pages.kursus.show', compact('kursus'));
     }
 
     /**

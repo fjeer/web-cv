@@ -6,11 +6,11 @@
 @section('content')
     <div class="container">
         <div class="mb-5">
-            <h2 class="fw-bold mb-3">Detail Kursus > MikroTik Administration Advanced</h2>
+            <h2 class="fw-bold mb-3">Detail Kursus > {{ $kursus->nama_kursus }}</h2>
         </div>
     <div class="row d-flex">
         <div class="col-md-8 h-100">
-            <h3>MikroTik Administration Advanced</h3>
+            <h3>{{ $kursus->deskripsi_kursus }}</h3>
             <div class="d-flex justify-content align-items-center gap-3">
                 <a href="#" class="text-secondary">Kelas Jaringan</a>
                 <span class="text-warning">

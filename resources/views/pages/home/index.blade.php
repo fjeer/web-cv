@@ -196,12 +196,12 @@
                 <img src="{{ asset('images/image 11.png') }}" class="" alt="Produk 1">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1">Kelas Pemrograman</a>
+                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
                         <span class="text-warning">
                             <i class="bi bi-star-fill"></i> 4.5
                         </span>
                     </div>
-                    <p class="mb-1 text-start text-muted">Belajar Coding untuk Balita menggunakan Python</p>
+                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
 
                     <!-- Harga di kanan -->
                     <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
@@ -215,12 +215,12 @@
                 <img src="{{ asset('images/image 10.png') }}" class="" alt="Produk 1">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1">Kelas Pemrograman</a>
+                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
                         <span class="text-warning">
                             <i class="bi bi-star-fill"></i> 4.5
                         </span>
                     </div>
-                    <p class="mb-1 text-start text-muted">Belajar Coding untuk Balita menggunakan Python</p>
+                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
 
                     <!-- Harga di kanan -->
                     <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
@@ -233,13 +233,13 @@
             <div class="card h-100 py-2 custom-card">
                 <img src="{{ asset('images/image 9.png') }}" class="" alt="Produk 1">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1">Kelas Pemrograman</a>
+                    <div class="d-flex justify-between-content align-items-center">
+                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
                         <span class="text-warning">
                             <i class="bi bi-star-fill"></i> 4.5
                         </span>
                     </div>
-                    <p class="mb-1 text-start text-muted">Belajar Coding untuk Balita menggunakan Python</p>
+                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
 
                     <!-- Harga di kanan -->
                     <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
@@ -253,12 +253,12 @@
                 <img src="{{ asset('images/image 8.png') }}" class="" alt="Produk 1">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1">Kelas Pemrograman</a>
+                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
                         <span class="text-warning">
                             <i class="bi bi-star-fill"></i> 4.5
                         </span>
                     </div>
-                    <p class="mb-1 text-start text-muted">Belajar Coding untuk Balita menggunakan Python</p>
+                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
 
                     <!-- Harga di kanan -->
                     <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
