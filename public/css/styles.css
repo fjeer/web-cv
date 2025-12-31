@@ -8,8 +8,8 @@ body {
 
 .navbar-brand h1,
 .navbar-brand p {
-    margin: 0;  
-    line-height: 1.2;   
+    margin: 0;
+    line-height: 1.2;
 }
 
 .navbar-brand p {
@@ -22,38 +22,49 @@ body {
     background-color: #264570;
     color: white;
 }
-.footer-bottom{
+
+.footer-bottom {
     background-color: #1e2e49;
     color: white;
 }
+
 .section-title {
-    display: inline-block;      /* Agar bisa diberi padding tanpa memenuhi lebar penuh */
+    display: inline-block;
+    /* Agar bisa diberi padding tanpa memenuhi lebar penuh */
     font-size: 20px;
-    background-color: #d9f0ff;  /* Grey background */
+    background-color: #d9f0ff;
+    /* Grey background */
     color: black;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
-    margin: 0 auto 40px auto;   /* Horizontal center + bottom margin */
+    margin: 0 auto 40px auto;
+    /* Horizontal center + bottom margin */
 }
+
 /* tempat card berada */
 .card {
-    height: 100%; /* Make cards take full height of their container */
+    height: 100%;
+    /* Make cards take full height of their container */
     background-color: white;
-    border-color: black; /* Grey background */
-    border-radius: 20px;  
+    border-color: black;
+    /* Grey background */
+    border-radius: 20px;
 }
+
 /* Hover animate card */
 .custom-card {
-    background-color: #d9f0ff; /* warna card */
+    background-color: #d9f0ff;
+    /* warna card */
     border-radius: 20px;
-    
+
     /* Shadow lebih gelap, serasi dengan warna card */
     box-shadow: 0px 10px 20px rgba(156, 200, 230, 0.8);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
+
 .custom-card:hover {
     transform: translateY(-10px);
 
@@ -81,10 +92,9 @@ body {
     width: 50%;
     height: 100%;
     background: linear-gradient(120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.6) 50%,
-        rgba(255,255,255,0) 100%
-    );
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: skewX(-25deg);
     transition: all 0.6s ease;
     pointer-events: none;
@@ -101,12 +111,13 @@ body {
 
 /* sampai sini card berada */
 /* button section  */
-.button-biru{
+.button-biru {
     color: white;
     background-color: #3399CC;
     box-shadow: 0 4px 6px #264570;
-    border-radius:20px;
+    border-radius: 20px;
 }
+
 .button-biru:hover {
     transform: translateY(-5px);
     color: #3399CC;
@@ -115,51 +126,62 @@ body {
     border-color: #1e2e49;
     border-width: 2px;
 }
+
 .custom-left-btn {
     background-color: #3399CC;
     color: #ffffff;
     font-weight: 700;
     padding: 8px 10px;
-    font-size: 24px;                     /* Border tebal */
-    border-radius: 20px;                        /* Lebih bulat */
-    box-shadow: 0 4px 6px #264570; 
+    font-size: 24px;
+    /* Border tebal */
+    border-radius: 20px;
+    /* Lebih bulat */
+    box-shadow: 0 4px 6px #264570;
 }
 
 .custom-left-btn:hover {
     background-color: #ffff;
     color: #3399CC;
 }
+
 .custom-right-btn {
     /* background-color: #ffffff; */
     color: #3399CC;
     font-weight: 700;
     padding: 8px 10px;
-    font-size: 24px;                     /* Border tebal */
-    border-radius: 20px;                        /* Lebih bulat */
+    font-size: 24px;
+    /* Border tebal */
+    border-radius: 20px;
+    /* Lebih bulat */
     box-shadow: 0 4px 6px #264570;
 }
+
 .custom-right-btn:hover {
     background-color: #3399CC;
     color: #ffffff;
 }
-.tombolkuning{
-    background-color: #FF741F; 
-    color: white; 
+
+.tombolkuning {
+    background-color: #FF741F;
+    color: white;
     border-width: 2px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .tombolkuning:hover {
-    background-color: white; 
-    color: #FF741F; 
+    background-color: white;
+    color: #FF741F;
     transform: translateY(-5px);
     box-shadow: 2px 2px 5px rgba(134, 72, 6, 0.3);
     border-color: rgba(134, 72, 6, 0.3);
 }
-.tombolevent{
-    color: #3399CC; 
+
+.tombolevent {
+    color: #3399CC;
     border-color: #264570;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 /* Custom Carousel Buttons */
 .custom-arrow {
     width: 45px;
@@ -181,36 +203,48 @@ body {
     opacity: 1;
     transform: scale(1.1);
 }
-.carousel-control-prev{
+
+.carousel-control-prev {
     left: -60px;
 
 }
-.carousel-control-next{
+
+.carousel-control-next {
     right: -60px;
 
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(0) brightness(0) contrast(100%); /* membuat icon jadi hitam */
-}
-/* button section end */
-.img-industri{
-    width: 100px; 
-    height: 100px; 
-    margin-right: 15px;
-}
-.cardcur {
-    height: 100%; /* Make cards take full height of their container */
-    background-color: #10284A; 
-    border-radius: 20px;
-    color: white;/* Grey background */  
+    filter: invert(0) brightness(0) contrast(100%);
+    /* membuat icon jadi hitam */
 }
 
-.me-2{
-    height: 50%; /* Fixed height for images */
-    object-fit: cover; /* Crop image to fit without distortion */
-    display: block; /* Ensure it's a block element for centering */
-    margin:  auto; /* Center the image horizontally */
+/* button section end */
+.img-industri {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+}
+
+.cardcur {
+    height: 100%;
+    /* Make cards take full height of their container */
+    background-color: #10284A;
+    border-radius: 20px;
+    color: white;
+    /* Grey background */
+}
+
+.me-2 {
+    height: 50%;
+    /* Fixed height for images */
+    object-fit: cover;
+    /* Crop image to fit without distortion */
+    display: block;
+    /* Ensure it's a block element for centering */
+    margin: auto;
+    /* Center the image horizontally */
 }
 
 
@@ -218,14 +252,15 @@ body {
     background-color: #3399CC;
     color: white;
     padding: 20px;
-    border-radius:10px;
+    border-radius: 10px;
     width: 300px;
 }
 
 .icon-circle {
     width: 30px;
     height: 30px;
-    border: 2px solid #ff7a00; /* sesuaikan warna oranye */
+    border: 2px solid #ff7a00;
+    /* sesuaikan warna oranye */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -240,9 +275,11 @@ body {
     border: 2px solid #d09900;
     font-weight: 700;
     padding: 8px 10px;
-    font-size: 24px;                     /* Border tebal */
-    border-radius: 20px;                        /* Lebih bulat */
-    box-shadow: 0 4px 6px #264570; 
+    font-size: 24px;
+    /* Border tebal */
+    border-radius: 20px;
+    /* Lebih bulat */
+    box-shadow: 0 4px 6px #264570;
 }
 
 .kuning-round:hover {
@@ -262,9 +299,12 @@ body {
 
 .hero-bg {
     width: 100%;
-    min-height: 350px; /* ganti sesuai nama file */
-    background-size: cover;      /* biar full menutup layar */
-    background-position: center; /* posisi tengah */
+    min-height: 350px;
+    /* ganti sesuai nama file */
+    background-size: cover;
+    /* biar full menutup layar */
+    background-position: center;
+    /* posisi tengah */
     background-repeat: no-repeat;
     position: relative;
 }
@@ -274,18 +314,421 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.3); /* gelap transparan, bisa diubah */
+    background: rgba(0, 0, 0, 0.3);
+    /* gelap transparan, bisa diubah */
 }
 
 .hero-bg .container {
     position: relative;
-    z-index: 2; /* supaya teks muncul di atas overlay */
+    z-index: 2;
+    /* supaya teks muncul di atas overlay */
 }
 
 
-.hero-section{
-    width: 100vw; /* penuh ke kiri-kanan */
+.hero-section {
+    width: 100vw;
+    /* penuh ke kiri-kanan */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 991.98px) {
+
+    /* Brand logo & text */
+    .navbar-brand h1 {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .navbar-brand p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    /* Navbar menu center */
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    /* Menu kiri & kanan jadi vertikal */
+    .navbar-nav {
+        align-items: center;
+    }
+
+    /* Dropdown & search full width */
+    .navbar-nav .dropdown,
+    .navbar-nav form {
+        width: 100%;
+    }
+
+    /* Search input */
+    .navbar-nav .input-group {
+        width: 100%;
+    }
+
+    /* Login button */
+    .tombolkuning {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* SECTION 1 */
+    section.d-flex.align-items-center .row {
+        text-align: center;
+    }
+
+    section.d-flex.align-items-center img {
+        margin-top: 20px;
+    }
+
+    /* Heading utama */
+    h1 {
+        font-size: 32px !important;
+    }
+
+    h2 {
+        font-size: 28px !important;
+    }
+
+    /* SECTION 4 & 6 CARD */
+    .custom-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Button center */
+    .custom-left-btn,
+    .custom-right-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    /* Navbar spacing */
+    .navbar {
+        padding: 10px 0;
+    }
+
+    /* Logo image */
+    .navbar-brand img {
+        width: 36px;
+    }
+
+    /* Container spacing */
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Main content */
+    .container.mt-5 {
+        margin-top: 30px !important;
+    }
+
+    /* Container navbar collapse */
+    .navbar-collapse {
+        text-align: left !important;
+    }
+
+    /* Semua nav-item */
+    .navbar-collapse .nav-item {
+        width: 100%;
+        text-align: left !important;
+    }
+
+    /* Link di dalam nav-item */
+    .navbar-collapse .nav-item .nav-link {
+        text-align: left !important;
+        justify-content: flex-start !important;
+        padding-left: 0.75rem;
+    }
+
+    /* Dropdown toggle */
+    .navbar-collapse .dropdown-toggle {
+        justify-content: flex-start !important;
+    }
+
+    .navbar-collapse .nav-item.dropdown {
+        padding-left: 10px;
+        margin-bottom: 12px;
+    }
+
+    footer .row {
+        text-align: center;
+    }
+
+    footer img {
+        max-width: 290px;
+        margin: auto;
+        display: block;
+    }
+
+    footer .col-md-4,
+    footer .col-md-5,
+    footer .col-md-3 {
+        padding-left: 0 !important;
+    }
+
+    /* Sosial media center */
+    footer .d-flex {
+        justify-content: center;
+    }
+
+    /* Footer bottom */
+    .footer-bottom .d-flex {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* SECTION 1 */
+    h1 {
+        font-size: 26px !important;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    /* SECTION 3 */
+    section .row {
+        text-align: center;
+    }
+
+    section img {
+        margin-bottom: 20px;
+    }
+
+    /* SECTION 5 IMAGE */
+    section img[style*="width:450px"] {
+        width: 280px !important;
+        height: 280px !important;
+        margin: 0 auto;
+    }
+
+    /* SECTION 6 STATISTIC */
+    .card-title[style*="80px"] {
+        font-size: 48px !important;
+    }
+
+    /* Spacing */
+    .min-vh-100 {
+        min-height: auto !important;
+        padding: 40px 0;
+    }
+
+    .custom-left-btn,
+    .custom-right-btn {
+        padding: 8px 16px !important;
+        font-size: 14px;
+        min-width: auto;
+    }
+
+    /* Jarak antar tombol*/
+    .custom-left-btn+.custom-right-btn {
+        margin-left: 8px;
+    }
+
+    section.min-vh-100 .benefit-list {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    section.min-vh-100 .benefit-list li {
+        align-items: flex-start;
+    }
+
+    section.min-vh-100 .benefit-list .icon-circle {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section.min-vh-100 .benefit-list span.px-2 {
+        padding-left: 10px !important;
+        padding-right: 0 !important;
+        line-height: 1.4;
+    }
+
+    section.d-flex.align-items-center {
+        align-items: flex-start !important;
+    }
+
+    section.d-flex.align-items-center .col-md-6 {
+        text-align: left !important;
+    }
+
+    section.d-flex.align-items-center h1,
+    section.d-flex.align-items-center p {
+        text-align: left !important;
+    }
+
+    section.d-flex.align-items-center .row.align-items-start .col-md-4 img {
+        max-width: 200px !important;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    section.d-flex.align-items-center .col-md-7 ul {
+        text-align: left;
+        padding-left: 1.2rem;
+    }
+
+    section.d-flex.align-items-center .col-md-7 ul li {
+        text-align: left;
+    }
+
+    /* kursus */
+    .cardcur {
+        padding: 2rem 1rem !important;
+    }
+
+    .cardcur h1 {
+        font-size: 28px !important;
+        line-height: 1.3;
+    }
+
+    .cardcur h3 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .cardcur .btn {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    /* event */
+    h4.fw-bold.mt-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Kurangi jarak section ke atas */
+    section.mt-5 {
+        margin-top: 3rem !important;
+    }
+
+    section h4.fw-bold {
+        text-align: center;
+    }
+
+    /* Card jadi 1 kolom */
+    .col-md-4,
+    .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Gambar card */
+    .card-img-top {
+        height: 180px;
+        object-fit: cover;
+    }
+
+    /* Isi card */
+    .card-body h5 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .card-body p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Badge Seminar */
+    .tombolevent {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    /* Info bawah card */
+    .card-body .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Load more button */
+    .btn.my-5 {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .row.mt-5 {
+        margin-top: 0 !important;
+    }
+
+    /* Samakan jarak antar card */
+    .col-md-4.col-sm-6 {
+        margin-bottom: 1.25rem;
+    }
+
+    /* industri */
+    .col-md-4.text-center img {
+        max-width: 200px !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .col-md-8 h4 {
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .col-md-8 p {
+        font-size: 14px;
+    }
+
+    .row.mt-5 {
+        margin-top: 1.5rem !important;
+    }
+
+    .custom-card {
+        margin-bottom: 1rem;
+    }
+
+    .min-vh-100 {
+        min-height: auto !important;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .img-industri {
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+    }
+
+    .col-md-4.text-end img {
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 2rem;
+        border-radius: 20px !important;
+    }
+
+    /* ===== CTA BAWAH ===== */
+    .text-center.my-5.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .text-center.my-5.py-5 h1 {
+        font-size: 22px;
+    }
+
+    .text-center.my-5.py-5 p {
+        font-size: 14px;
+    }
+
+    .kuning-round {
+        padding: 6px 20px;
+        font-size: 15px;
+    }
+
 }

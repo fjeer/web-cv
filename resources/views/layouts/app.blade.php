@@ -49,7 +49,7 @@
                     <li class="nav-item"><a
                             class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}"
                             href="{{ route('event.index') }}">Event</a></li>
-                    <li class="nav-item"><a 
+                    <li class="nav-item"><a
                             class="nav-link {{ request()->routeIs('industri.index') ? 'active fw-bold text-primary' : '' }}"
                             href="{{ route('industri.index') }}">Kelas Industri</a></li>
                     <li class="nav-item"><a
@@ -132,16 +132,21 @@
                 <div class="col-md-4 ms-mb-4 ps-5">
                     <h4 class="mb-4">Navbar</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-3"><a href="{{ route('home.index') }}" class="text-white text-decoration-none">Home</a></li>
-                            <li class="mb-3"><a href="{{ route('kursus.index') }}" class="text-white text-decoration-none">Kursus</a>
+                            <li class="mb-3"><a href="{{ route('home.index') }}"
+                                    class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-3"><a href="{{ route('kursus.index') }}"
+                                    class="text-white text-decoration-none">Kursus</a>
                             </li>
-                            <li class="mb-3"><a href="{{ route('event.index') }}" class="text-white text-decoration-none">Event</a>
+                            <li class="mb-3"><a href="{{ route('event.index') }}"
+                                    class="text-white text-decoration-none">Event</a>
                             </li>
                             <li class="mb-3"><a href="#" class="text-white text-decoration-none">Kelas
                                     Industri</a></li>
-                            <li class="mb-3"><a href="{{ route('berita.index') }}" class="text-white text-decoration-none">Berita</a>
+                            <li class="mb-3"><a href="{{ route('berita.index') }}"
+                                    class="text-white text-decoration-none">Berita</a>
                             </li>
-                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Hubungi Kami</a></li>
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none">Hubungi
+                                    Kami</a></li>
                         </ul>
                 </div>
 
