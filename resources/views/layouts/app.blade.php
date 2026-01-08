@@ -88,12 +88,7 @@
                         </form>
                     </li>
 
-                    {{-- Tombol Login --}}
-                    <li>
-                        <a href="#" class=" tombolkuning btn rounded-4xl">
-                            Login
-                        </a>
-                    </li>
+                    
 
                 </ul>
 
