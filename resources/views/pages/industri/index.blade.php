@@ -4,8 +4,8 @@
 
 @section('hero')
 <div class="hero-section" style="background-image: url('{{ asset('images/banner4.png') }}');">
-    
-<div class="container py-5">        
+
+<div class="container py-5">
     <div class="container py-5">
         <div class="col-lg-6 col-md-8">
             <h2 class="fw-bold mb-3">Kelas Industri SigmaTech</h2>
@@ -13,9 +13,9 @@
             <p class="mb-4">
                 Belajar langsung bersama mentor berpengalaman dan kuasai keterampilan yang dibutuhkan dunia kerja modern.
             </p>
-            
 
-            <div class="d-flex  gap-3">
+
+            <div class="d-flex gap-3">
                 <!-- Button Kiri -->
                 <a href="#" class="btn btn-primary custom-left-btn mt-5">
                     Daftar Sekarang
@@ -60,7 +60,7 @@
                             <div class="card text-center py-1 px-2 custom-card" style="border-radius: 8px;">
 
                                 <div class="d-flex">
-                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo" 
+                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo"
                                         style="width: 28px; height: 28px; margin-right: 5px;">
                                     <h6 class="text-primary mb-0" style="font-size: 14px;">
                                         Kurikulum Industri
@@ -77,7 +77,7 @@
                             <div class="card text-center py-1 px-2 custom-card" style="border-radius: 8px;">
 
                                 <div class="d-flex">
-                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo" 
+                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo"
                                         style="width: 28px; height: 28px; margin-right: 5px;">
                                     <h6 class="text-primary mb-0" style="font-size: 14px;">
                                         Kurikulum Industri
@@ -96,7 +96,7 @@
                             <div class="card text-center py-1 px-2 custom-card" style="border-radius: 8px;">
 
                                 <div class="d-flex">
-                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo" 
+                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo"
                                         style="width: 28px; height: 28px; margin-right: 5px;">
                                     <h6 class="text-primary mb-0" style="font-size: 14px;">
                                         Kurikulum Industri
@@ -113,7 +113,7 @@
                             <div class="card text-center py-1 px-2 custom-card" style="border-radius: 8px;">
 
                                 <div class="d-flex">
-                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo" 
+                                    <img src="{{ asset('images/image 11.png') }}" alt="Logo"
                                         style="width: 28px; height: 28px; margin-right: 5px;">
                                     <h6 class="text-primary mb-0" style="font-size: 14px;">
                                         Kurikulum Industri
@@ -228,7 +228,7 @@
 
                     <p class="mb-4">
                         Tidak perlu lagi bingung menyusun pembelajaran yang sesuai kebutuhan dunia kerja. Program Kelas Industri SigmaTech hadir sebagai mitra strategis untuk membantu sekolah menghadirkan pembelajaran relevan, terarah, dan berbasis praktik nyata sehingga siswa lebih siap untuk Bekerja, Melanjutkan studi, maupun Berwirausaha.</p>
-                    
+
 
                     <div class="d-flex  gap-3">
                         <!-- Button Kiri -->
@@ -237,7 +237,7 @@
                         </a>
 
                         <!-- Button Kanan -->
-                        
+
                         <a href="#" class="btn btn-primary custom-left-btn mt-5">
                             Hubungi Kami
                         </a>
@@ -257,7 +257,7 @@
             <h1>Ayo Bergabung di Kelas Industri SigmaTech!</h1>
             <p>Bangun keterampilan, portofolio, dan masa depan kariermu mulai dari sekarang.</p>
         </div>
-                
+
             </div>
 
 

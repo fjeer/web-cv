@@ -106,7 +106,7 @@
         @yield('hero')
     </div>
     <!-- Main content -->
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         @yield('content')
     </div>
 
@@ -115,7 +115,7 @@
             <div class="row">
 
                 {{-- Grid 1: Logo dan Detail --}}
-                <div class="col-md-5 mb-4">
+                <div class="footer-header col-md-5 mb-4">
                     <a class="d-flex align-items-center mb-3" href="#">
                         <img src="{{ asset('images/footer.png') }}" alt="Logo" width="100%" class="me-2">
                     </a>

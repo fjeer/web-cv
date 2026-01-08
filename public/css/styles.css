@@ -459,6 +459,10 @@ body {
         text-align: center;
     }
 
+    .footer-header{
+        font-size: 15px !important;
+    }
+
     footer img {
         max-width: 290px;
         margin: auto;
@@ -481,6 +485,7 @@ body {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+        width: 100%;
     }
 
     /* SECTION 1 */
