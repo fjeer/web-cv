@@ -7,322 +7,138 @@
 <div class="container-fluid px-4">
 
 {{-- ========================= SECTION 1 ========================= --}}
-<section class=" d-flex align-items-center">
+<section class="d-flex align-items-center py-5">
     <div class="row w-100 align-items-center">
 
-        {{-- GRID 1 — TEXT --}}
         <div class="col-md-6">
-            <h1 class="fw-bold" style="font-size: 40px;">Selamat Datang Kembangkan potensi dan inovasi bersama di
-                SigmaTech.id</h1>
-            <p class="text-secondary" style="font-size: 18px;">
+            <h1 class="fw-bold" style="font-size:40px;">
+                Selamat Datang Kembangkan potensi dan inovasi bersama di SigmaTech.id
+            </h1>
+            <p class="text-secondary fs-5">
                 Berkarya, Berinovasi, dan Bertumbuh bersama.
             </p>
         </div>
 
-        {{-- GRID 2 — KOSONG (RUANG UNTUK JARAK) --}}
         <div class="col-md-2"></div>
 
-        {{-- GRID 3 — IMAGE --}}
         <div class="col-md-4 text-end">
-            <img src="{{ asset('images/image.png') }}" alt="Logo" width="100%" class="me-2">
+            <img src="{{ asset('images/image.png') }}" class="img-fluid" alt="Hero">
         </div>
 
     </div>
 </section>
-
 
 {{-- ========================= SECTION 2 ========================= --}}
-<section class="py-5 my-5 keunggulan-section">
-    <div class="d-flex">
-        <h2 class="section-title">keunggulan SigmaTech</h2>
-    </div>
-    
-    <div class="row g-5">
-        <!-- Card 1 -->
+<section class="py-5 my-5 keunggulan-section text-center">
+    <h2 class="section-title">Keunggulan SigmaTech</h2>
+
+    <div class="row g-4">
+        @php
+        $keunggulan = [
+            ['image 11.png','Kurikulum Berbasis Industri','Kurikulum disusun sesuai kebutuhan dunia kerja IT.'],
+            ['image 10.png','Proyek Nyata & Sertifikasi','Setiap peserta mengerjakan proyek real industri.'],
+            ['image 8.png','Belajar dari Praktisi','Dibimbing langsung oleh praktisi profesional.'],
+            ['image 9.png','Training Event','Pelatihan luring interaktif dan aplikatif.']
+        ];
+        @endphp
+
+        @foreach($keunggulan as $item)
         <div class="col-md-3">
-            <div class="card text-center py-2 custom-card">
-
-                <!-- Center image -->
-                <div class="d-flex justify-content-center mb-3">
-                    <div class="img-wrapper">
-                        <img src="{{ asset('images/image 11.png') }}" alt="Logo" style="width: 70px;">
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">Kurikulum Berbasis Industri</h5>
-                    <p class="card-text">
-                        Kurikulum disusun sesuai kebutuhan dunia kerja IT, bukan hanya teori tapi juga praktik
-                        nyata.
-                    </p>
-                </div>
-
+            <div class="card h-100 text-center py-3 custom-card">
+                <img src="{{ asset('images/'.$item[0]) }}" width="70" class="mx-auto mb-3" alt="">
+                <h5 class="fw-bold">{{ $item[1] }}</h5>
+                <p>{{ $item[2] }}</p>
             </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-3">
-            <div class="card h-100 text-center py-2 custom-card">
-
-                <!-- Image wrapper untuk shine effect -->
-                <div class="d-flex justify-content-center mb-2">
-                    <div class="img-wrapper">
-                        <img src="{{ asset('images/image 10.png') }}" alt="Logo" style="width: 70px;">
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">Proyek Nyata & Sertifikasi</h5>
-                    <p class="card-text">
-                        Setiap peserta berkesempatan mengerjakan proyek real agar siap menghadapi tantangan
-                        dunia industri.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Card 3 -->
-        <div class="col-md-3">
-            <div class="card h-100 text-center py-2 custom-card">
-
-                <!-- Center image -->
-                <div class="d-flex justify-content-center mb-2">
-                    <div class="img-wrapper">
-                        <img src="{{ asset('images/image 8.png') }}" alt="Logo" style="width: 70px;">
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">Belajar dari Praktisi</h5>
-                    <p class="card-text">
-                        Dibimbing langsung oleh praktisi dan profesional di bidang teknologi.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-3">
-            <div class="card h-100 text-center py-2 custom-card">
-
-                <!-- Center image -->
-                <div class="d-flex justify-content-center mb-2">
-                    <div class="img-wrapper">
-                        <img src="{{ asset('images/image 9.png') }}" alt="Logo" style="width: 70px;">
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">Training Event</h5>
-                    <p class="card-text">
-                        Tingkatkan kemampuanmu lewat pelatihan luring belajar langsung, praktik nyata, hasil
-                        maksimal.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
+        @endforeach
     </div>
 </section>
 
-
-
 {{-- ========================= SECTION 3 ========================= --}}
-<section class=" d-flex align-items-center">
-    <!-- Garis tebal -->
-    <div class="my-5">
-        <div class="border-top border-2 border-secondary mb-5"></div>
-        <div class="row align-items-start">
+<section class="py-5">
+    <hr class="border-2">
 
-            <!-- Kolom 1: Logo -->
-            <div class="col-md-4 text-center">
-                <img src="{{ asset('images/image.png') }}" alt="Sigmatech Logo" class="img-fluid"
-                    style="max-width: 300px;">
-            </div>
+    <div class="row align-items-center mt-5">
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/image.png') }}" class="img-fluid" style="max-width:300px;">
+        </div>
 
-            <!-- Kolom 2: Kosong (sesuai permintaan) -->
-            <div class="col-md-1">
-                <!-- Kosong -->
-            </div>
+        <div class="col-md-8">
+            <h4 class="fw-bold text-primary">About Us</h4>
+            <p>SigmaTech bergerak di bidang teknologi informasi dan layanan digital.</p>
 
-            <!-- Kolom 3: About Us + Vision + Mission -->
-            <div class="col-md-7">
+            <h4 class="fw-bold text-primary mt-4">Vision</h4>
+            <p>Menjadi mitra digital terpercaya di Indonesia.</p>
 
-                <h4 class="fw-bold mb-2 text-primary">About Us</h4>
-                <p>
-                    SigmaTech adalah perusahaan yang bergerak di bidang teknologi informasi
-                    dan layanan digital. Kami hadir untuk memberikan solusi inovatif yang
-                    membantu individu maupun perusahaan beradaptasi dengan perkembangan dunia digital.
-                </p>
-
-                <h4 class="fw-bold mt-4 mb-2 text-primary">Vision</h4>
-                <p>
-                    Menjadi mitra digital terpercaya dalam mendukung pertumbuhan bisnis di Indonesia.
-                </p>
-
-                <h4 class="fw-bold mt-4 mb-2 text-primary">Mission</h4>
-                <ul>
-                    <li>Memberikan pelatihan dan konsultasi berbasis teknologi terkini.</li>
-                    <li>Menghadirkan solusi IT yang efisien, aman, dan scalable.</li>
-                    <li>Mengembangkan produk digital yang meningkatkan produktivitas dan konektivitas.</li>
-                </ul>
-
-            </div>
+            <h4 class="fw-bold text-primary mt-4">Mission</h4>
+            <ul>
+                <li>Pelatihan berbasis teknologi terkini</li>
+                <li>Solusi IT efisien dan aman</li>
+                <li>Produk digital produktif</li>
+            </ul>
         </div>
     </div>
-
 </section>
 
 {{-- ========================= SECTION 4 ========================= --}}
-<section class="min-vh-100 d-flex flex-column justify-content-center text-center">
-    <div class="text-center">
-        <h2 class="section-title">Pilih Jalur Belajarmu</h2>
-
-    </div>
-    <p class="mb-0 text-secondary">
-        Mulai perjalanan kariermu di bidang yang kamu minati.
-    <p class="mt-0 text-secondary"> Setiap kelas di SigmaTech dirancang agar kamu bisa
-        belajar sambil praktik langsung.</p>
+<section class="py-5 text-center">
+    <h2 class="section-title">Pilih Jalur Belajarmu</h2>
+    <p class="text-secondary">
+        Setiap kelas dirancang agar belajar sambil praktik.
     </p>
 
     <div class="row mt-4">
-        <!-- Card 1 -->
+        @for($i=0;$i<4;$i++)
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100 py-2 custom-card">
-                <img src="{{ asset('images/image 11.png') }}" class="" alt="Produk 1">
+            <div class="card h-100 custom-card">
+                <img src="{{ asset('images/image 11.png') }}" class="img-fluid">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
+                    <div class="d-flex justify-content-between">
+                        <span>Kelas Pemrograman</span>
                         <span class="text-warning">
                             <i class="bi bi-star-fill"></i> 4.5
                         </span>
                     </div>
-                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
-
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
+                    <p class="text-muted small">
+                        Belajar Coding untuk Balita menggunakan Python
+                    </p>
+                    <p class="fw-bold text-primary">Rp 250.000</p>
                 </div>
             </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100 py-2 custom-card">
-                <img src="{{ asset('images/image 10.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i> 4.5
-                        </span>
-                    </div>
-                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
-
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100 py-2 custom-card">
-                <img src="{{ asset('images/image 9.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-between-content align-items-center">
-                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i> 4.5
-                        </span>
-                    </div>
-                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
-
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100 py-2 custom-card">
-                <img src="{{ asset('images/image 8.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a class="btn text-dark fs-6 mb-1 text-decoration-none p-0 m-0">Kelas Pemrograman</a>
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i> 4.5
-                        </span>
-                    </div>
-                    <p class="mt-1 mb-1 text-start text-muted" style="font-size: 14px;">Belajar Coding untuk Balita menggunakan Python</p>
-
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 fw-bold text-primary text-start">Rp 250.000</p>
-                </div>
-            </div>
-        </div>
+        @endfor
     </div>
 </section>
 
 {{-- ========================= SECTION 5 ========================= --}}
-<section class="min-vh-100 d-flex align-items-center mb-5">
-    <div class="row w-100 align-items-center">
+<section class="py-5">
+    <div class="row align-items-center">
+
         <div class="col-md-6">
-            <h6 class="fs-5 fw-normal">Benefit yang didapat</h6">
-                <h1 class="" style="font-size: 40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu
-                </h1>
-                <p class="text-secondary fs-6">
-                    Di SigmaTech, kamu bukan hanya belajar teknologi, tetapi juga membangun pengalaman nyata yang
-                    siap
-                    dibawa ke dunia kerja.
-                    Kami membekali setiap peserta dengan keahlian praktis, proyek nyata, dan sertifikat kompetensi
-                    yang
-                    diakui industri.Bersama mentor profesional dan dukungan lingkungan belajar kolaboratif, kamu
-                    siap
-                    tumbuh menjadi talenta digital masa depan.
-                </p>
+            <h6 class="fs-5 fw-normal">Benefit yang didapat</h6>
+            <h1 style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
 
-                <ul class="list-unstyled benefit-list">
-                    <li class="d-flex align-items-center mb-2">
-                        <span class="icon-circle">
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-                        <span class="px-2">Akses Materi Berbasis Industri</span>
-                    </li>
+            <p class="text-secondary">
+                Kamu membangun pengalaman nyata siap kerja bersama mentor profesional.
+            </p>
 
-                    <li class="d-flex align-items-center mb-2">
-                        <span class="icon-circle">
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-                        <span class="px-2">Pendampingan dan Pengembangan Kompetensi</span>
-                    </li>
+            <ul class="list-unstyled">
+                <li>✔ Akses Materi Industri</li>
+                <li>✔ Pendampingan Profesional</li>
+                <li>✔ Kesempatan Magang</li>
+            </ul>
 
-                    <li class="d-flex align-items-center mb-2">
-                        <span class="icon-circle">
-                            <i class="bi bi-arrow-right"></i>
-                        </span>
-                        <span class="px-2">Kesempatan Magang</span>
-                    </li>
-                </ul>
-
-                <button class="btn button-biru p-3 mt-2">
-                    Belajar Sekarang →
-                </button>
+            <a href="#" class="btn button-biru mt-3">Belajar Sekarang →</a>
         </div>
-        <div class="col-md-1 text-end">
+
+        <div class="col-md-6 text-end">
+            <img src="{{ asset('images/image1.png') }}" class="rounded-circle"
+                 style="width:400px;height:400px;object-fit:cover;">
         </div>
-        <div class="col-md-4 text-end">
-            <img src="{{ asset('images/image1.png') }}"
-                class="d-flex align-items-center justify-content-center bg-primary rounded-circle"
-                style="width:450px; height:450px;" alt="">
-        </div>
+
     </div>
 </section>
-
+</div>
 {{-- ========================= SECTION 6 ========================= --}}
 <section class="d-flex flex-column justify-content-center text-center mt-5">
 

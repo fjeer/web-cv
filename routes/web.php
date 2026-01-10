@@ -14,6 +14,9 @@ Route::get('/', function () {
 Route::get('/kursus', function () {
     return redirect()->route('kursus.index');
 });
+Route::get('/jadwal', function () {
+    return view('kursus.jadwal'); // memanggil jadwal.blade.php
+});
 Route::get('/event', function () {
     return redirect()->route('event.index');
 });

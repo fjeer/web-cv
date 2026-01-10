@@ -40,6 +40,14 @@ class KursusController extends Controller
         $kursus = Kursus::where('slug',$slug)->firstOrFail();
         return view('pages.kursus.show', compact('kursus'));
     }
+    
+    public function jadwal(string $slug)
+    {
+        $kursus = Kursus::where('slug',$slug)->firstOrFail();
+        return view('pages.kursus.jadwal', compact('kursus'));
+    }
+
+    
 
     /**
      * Show the form for editing the specified resource.
