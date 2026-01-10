@@ -55,6 +55,9 @@
                             href="{{ route('kursus.index') }}">Kursus</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('training.index') ? 'active fw-bold text-primary' : '' }}" href="{{ route('training.index') }}">Jadwal Kursus</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('event.index') ? 'active fw-bold text-primary' : '' }}"
                             href="{{ route('event.index') }}">Event</a>
                     </li>

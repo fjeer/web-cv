@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kelas;
-use App\Models\Kursus;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
-class KursusController extends Controller
+class TrainingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $kelas = Kelas::with('kursus')->get();
-        return view('pages.kursus.index', compact('kelas'));
+        $training = Training::with('kursus')->get();
+
+        return view('pages.kursus.jadwal',compact('training'));
     }
 
     /**
@@ -36,11 +36,10 @@ class KursusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    public function show(string $id)
     {
-        $kursus = Kursus::where('slug',$slug)->firstOrFail();
-        return view('pages.kursus.show', compact('kursus'));
-    }    
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

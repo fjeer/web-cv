@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Event extends Model
 {
+    use SoftDeletes;
     protected $table = 'tb_event';
     protected $primaryKey = 'id';
-    protected $keyType = 'int';
     public $timestamps = true;
-    use SoftDeletes;
     protected $guarded = [];
 
     public function kategori()

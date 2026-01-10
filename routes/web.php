@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrainingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KursusController;
@@ -14,8 +15,8 @@ Route::get('/', function () {
 Route::get('/kursus', function () {
     return redirect()->route('kursus.index');
 });
-Route::get('/jadwal', function () {
-    return view('kursus.jadwal'); // memanggil jadwal.blade.php
+Route::get('/training', function() {
+    return redirect()->route('training.index');
 });
 Route::get('/event', function () {
     return redirect()->route('event.index');
@@ -27,9 +28,9 @@ Route::get('/industri', function () {
     return redirect()->route('industri.index');
 });
 
-
 Route::resource('home', HomeController::class);
 Route::resource('kursus', KursusController::class);
 Route::resource('event', EventController::class);
 Route::resource('berita', BeritaController::class);
 Route::resource('industri', IndustriController::class);
+Route::resource('training',TrainingController::class);

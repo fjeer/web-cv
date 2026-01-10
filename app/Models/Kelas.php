@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
+    use SoftDeletes;
     protected $table = 'tb_kelas';
     protected $primaryKey = 'id';
-    protected $keyType = 'int';
     public $timestamps = true;
-    use SoftDeletes;
-
     protected $guarded = [];
 
     public function kursus()

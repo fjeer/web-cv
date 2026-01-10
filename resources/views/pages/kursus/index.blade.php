@@ -17,7 +17,7 @@
                 <i class="bi bi-person-fill text-dark"></i> Daftar Kursus
             </a>
             <!-- Link ke Jadwal Kursus -->
-            <a href="{{ route('kursus.jadwal') }}" class="btn btn-outline-primary btn-lg ms-3">
+            <a href="{{ route('training.index') }}" class="btn btn-outline-primary btn-lg ms-3">
                 <i class="bi bi-calendar-event"></i> Lihat Jadwal Kursus
             </a>
         </div>
@@ -28,20 +28,14 @@
 @section('content')
 <div class="container py-5">
 
-    @php
-        $kelasList = [
-            1 => 'Kelas Jaringan',
-            2 => 'Kelas Pemrograman'
-        ];
-    @endphp
 
-    @foreach($kelasList as $idKelas => $namaKelas)
-        <h4 class="fw-bold mt-5 mb-3">{{ $namaKelas }}</h4>
+    @foreach($kelas as $i => $kls)
+        <h4 class="fw-bold mt-5 mb-3">{{ $kls->nama_kelas }}</h4>
 
-        <div id="kelas{{ $idKelas }}" class="carousel slide" data-bs-ride="carousel">
+        <div id="kelas{{ $kls->id }}" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach ($kursus->where('id_kelas', $idKelas)->chunk(3) as $index => $chunk)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                @foreach ($kls->kursus->chunk(3) as $j => $chunk)
+                    <div class="carousel-item {{ $j == 0 ? 'active' : '' }}">
                         <div class="row mt-5">
                             @foreach ($chunk as $krs)
                                 <div class="col-md-4 col-sm-6 mb-4">
@@ -69,11 +63,11 @@
                 @endforeach
             </div>
 
-            <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#kelas{{ $idKelas }}" data-bs-slide="prev">
+            <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
 
-            <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#kelas{{ $idKelas }}" data-bs-slide="next">
+            <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
