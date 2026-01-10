@@ -108,6 +108,80 @@ body {
 .custom-card:hover .img-wrapper::after {
     left: 120%;
 }
+/* ================= PREMIUM CUSTOM SELECT ================= */
+
+.custom-select-wrapper {
+    position: relative;
+    width: 180px;
+}
+
+/* SELECT */
+.custom-select {
+    width: 100%;
+    padding: 11px 44px 11px 16px;
+    border-radius: 16px; /* lebih bulat */
+    border: 1.5px solid #e4e7ec;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #344054;
+    cursor: pointer;
+
+    /* remove default arrow */
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* smooth animation */
+    transition: all 0.3s ease;
+
+    /* soft shadow */
+    box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+}
+
+/* Hover */
+.custom-select:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.18);
+}
+
+/* Focus */
+.custom-select:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow:
+        0 0 0 4px rgba(13, 110, 253, 0.18),
+        0 8px 20px rgba(13, 110, 253, 0.25);
+}
+
+/* ICON */
+.select-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #667085;
+    pointer-events: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Rotate arrow on focus */
+.custom-select:focus + .select-icon {
+    transform: translateY(-50%) rotate(180deg);
+    color: #0d6efd;
+}
+
+/* OPTION STYLE (browser dependent) */
+.custom-select option {
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Selected option */
+.custom-select option:checked {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
 
 /* sampai sini card berada */
 /* button section  */

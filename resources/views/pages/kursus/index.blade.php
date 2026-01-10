@@ -13,12 +13,8 @@
             </p>
 
             <h4 class="fw-bold mb-3">Kursus (Program / Kelas).</h4>
-            <a href="#" class="btn button-biru btn-lg">
+            <a href="{{ route('daftar.index') }}" class="btn button-biru btn-lg">
                 <i class="bi bi-person-fill text-dark"></i> Daftar Kursus
-            </a>
-            <!-- Link ke Jadwal Kursus -->
-            <a href="{{ route('training.index') }}" class="btn btn-outline-primary btn-lg ms-3">
-                <i class="bi bi-calendar-event"></i> Lihat Jadwal Kursus
             </a>
         </div>
     </div>
