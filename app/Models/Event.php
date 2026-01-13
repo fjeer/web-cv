@@ -11,6 +11,9 @@ class Event extends Model
     protected $table = 'tb_event';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    protected $casts = [
+        'tanggal_event' => 'date'
+    ];
     protected $guarded = [];
 
     public function kategori()

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -11,7 +13,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('pages.event.index');
+        $event = Event::with('kategori')
+        ->paginate(9);
+        return view('pages.event.index', compact('event'));
     }
 
     /**
@@ -33,9 +37,11 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        return view('pages.event.show');
+        $event = Event::where('slug',$slug)->firstOrFail();
+        $isOpen = $event->tanggal_event->isFuture();
+        return view('pages.event.show', compact('event', 'isOpen'));
     }
 
     /**

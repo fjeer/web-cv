@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_kursus');
             $table->string('slug')->unique();
             $table->text('deskripsi_kursus');
+            $table->text('detail_kursus');
             $table->unsignedBigInteger('id_kelas');
             $table->decimal('harga_kursus', 10, 2);
             $table->decimal('rating_kursus', 3, 2)->default(0);

@@ -70,37 +70,6 @@
                             href="{{ route('berita.index') }}">Berita</a>
                     </li>
                 </ul>
-
-                <!-- Right Menu -->
-                <ul class="navbar-nav ms-auto align-items-center">
-
-                    <!-- Category -->
-                    <li class="nav-item dropdown me-3">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Pilih Kategori
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Teknologi</a></li>
-                            <li><a class="dropdown-item" href="#">Desain</a></li>
-                            <li><a class="dropdown-item" href="#">Pemasaran</a></li>
-                            <li><a class="dropdown-item" href="#">Bisnis</a></li>
-                            <li><a class="dropdown-item" href="#">Lainnya</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Search -->
-                    <li class="nav-item">
-                        <form class="d-flex">
-                            <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Cari kursus...">
-                                <button class="btn btn-outline-secondary">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
-
-                </ul>
             </div>
         </div>
     </nav>

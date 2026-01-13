@@ -22,31 +22,31 @@
     <!-- Event List -->
     <section class="row mt-4">
 
-        @for ($i = 1; $i <= 12; $i++)
-        <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card h-100 p-2 custom-card">
+        @foreach ($berita as $b )
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100 p-2 custom-card">
 
-                <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Event">
+                            <img src="{{ asset('images/image 11.png') }}" class="card-img-top" alt="Event">
 
-                <div class="card-body">
-                    <a href="{{ route('berita.show', $i) }}"
-                       class="text-decoration-none text-black fw-semibold">
-                        Cloudflare Alami Gangguan, X Juga Mengalami Pemadaman
-                    </a>
+                            <div class="card-body">
+                                <a href="{{ route('berita.show', $i) }}" class="text-decoration-none text-black fw-semibold">
+                                    Cloudflare Alami Gangguan, X Juga Mengalami Pemadaman
+                                </a>
 
-                    <hr>
+                                <hr>
 
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0">Sisa Kuota 200</p>
-                        <p class="mb-0">
-                            <i class="bi bi-calendar-event"></i> 12 Jan 2025
-                        </p>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">Sisa Kuota 200</p>
+                                    <p class="mb-0">
+                                        <i class="bi bi-calendar-event"></i> 12 Jan 2025
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+        @endforeach
 
-            </div>
-        </div>
-        @endfor
 
     </section>
 

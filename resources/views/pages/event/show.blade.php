@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'course-detail')
+@section('title', 'event-detail')
 
 {{-- ================= HERO ================= --}}
 @section('hero')
@@ -25,16 +25,16 @@
         </div>
 
         <div class="col-md-5">
-            <a href="#" class="tombolevent btn my-3">
-                Seminar
-            </a>
+            <span class="tombolevent btn my-3">
+                {{ $event->kategori->nama_kategori }}
+            </span>
 
             <h4 class="fw-bold mb-1">
-                Siap Kerja di Era Digital Bangun Karier IT dari Sekarang
+                {{ $event->title }}
             </h4>
 
             <p class="mb-0 text-muted">
-                by <span class="fw-semibold">SigmaTech</span>
+                by <span class="fw-bolder">SigmaTech</span>
             </p>
         </div>
 
@@ -42,10 +42,16 @@
 
         <div class="col-md-4">
             <p class="mb-1">Terbuka Hingga :</p>
-            <h5 class="fw-bold mb-3">25 Desember 2025</h5>
+            @if($isOpen)
+            <h5 class="fw-bold mb-3">
+                {{ $event->tanggal_event->translatedFormat('d F Y') }}
+            </h5>
+            @else
+            <span class="badge bg-danger">Pendaftaran Ditutup</span>
+            @endif
 
             <p class="mb-1">Sisa Kuota :</p>
-            <h5 class="fw-bold">15 Peserta</h5>
+            <h5 class="fw-bold">{{ $event->kuota }}</h5>
         </div>
     </div>
 
@@ -58,39 +64,7 @@
             <hr class="border-2 border-secondary">
 
             <h4 class="fw-bold mt-4 mb-3">Deskripsi Event</h4>
-            <p>
-                Seminar ini dirancang untuk membantu pelajar, mahasiswa, dan pemula
-                di bidang teknologi memahami bagaimana memulai serta membangun karier
-                di industri IT yang terus berkembang.
-            </p>
-
-            <p>
-                Peserta akan mempelajari berbagai jalur karier seperti
-                <strong>Network Engineer</strong>,
-                <strong>Web Developer</strong>,
-                <strong>Cyber Security</strong>,
-                dan <strong>Technical Support</strong>,
-                termasuk skill yang dibutuhkan untuk menembus dunia kerja modern.
-            </p>
-
-            <p>
-                Acara dikemas santai namun informatif, dilengkapi sesi tanya jawab,
-                sharing pengalaman kerja, dan networking antarpeserta.
-            </p>
-
-            <hr class="border-2 border-secondary my-5">
-
-            <h4 class="fw-bold mb-3">Rundown Acara</h4>
-            <ul class="list-unstyled">
-                <li>08:00 | Registrasi Peserta</li>
-                <li>09:00 | Pembukaan</li>
-                <li>09:30 | Materi Utama</li>
-                <li>11:00 | Sharing Session</li>
-                <li>12:00 | Ishoma</li>
-                <li>13:00 | Q&A</li>
-                <li>14:00 | Networking</li>
-                <li>15:00 | Penutupan</li>
-            </ul>
+            {!! $event->detail_event !!}
 
         </div>
 
@@ -104,30 +78,33 @@
                     </h5>
 
                     <h6 class="fw-bold mb-2">Partisipasi</h6>
-                    <p>
-                        Silakan masuk terlebih dahulu ke SigmaTech
-                        untuk dapat mendaftar ke event ini.
-                    </p>
+                    @if($isOpen)
+                        <p>
+                            Silakan mendaftar ke event ini.
+                        </p>
 
+                        <div class="text-center mb-4">
+                            <a href="" class="tombolkuning btn px-4">
+                                Ikuti Event
+                            </a>
+                        </div>
+                    @else
                     <div class="text-center mb-4">
-                        <a href="#" class="tombolkuning btn px-4">
-                            Masuk
-                        </a>
+                        <span class="btn btn-outline-danger">Pendaftaran Ditutup</span>
+
                     </div>
+                       
+                    @endif
+                    
 
                     <h6 class="fw-bold mb-2">Jadwal Pelaksanaan</h6>
-                    <p class="mb-1">Tanggal: 25 Desember 2025</p>
+                    <p class="mb-1">Tanggal: {{ $event->tanggal_event->translatedFormat('d F Y') }}</p>
                     <p>Waktu: 08:00 – Selesai</p>
 
                     <h6 class="fw-bold mb-2">Lokasi</h6>
                     <p class="text-primary mb-1">
-                        Gedung Pelatihan SigmaTech
+                        {{ $event->lokasi }}
                     </p>
-                    <p>
-                        Ruang Seminar Lantai 2<br>
-                        Jl. Teknologi Maju No. 12, Probolinggo
-                    </p>
-
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Training;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,28 @@ class TrainingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $training = Training::with('kursus')->get();
+        $training = Training::with('kursus')
+            ->when($request->search, function ($query) use ($request) {
+                $query->whereHas('kursus', function ($q) use ($request) {
+                    $q->where('nama_kursus', 'like', '%' . $request->search . '%');
+                });
+            })
+            ->when($request->filled('status'), function ($query) use ($request) {
+                $query->where('status', $request->status);
+            })
+            ->when($request->filled('kelas'), function ($query) use ($request) {
+                $query->whereHas('kursus', function ($q) use ($request) {
+                    $q->where('id_kelas', $request->kelas);
+                });
+            })
+            ->paginate(10)
+            ->withQueryString();
 
-        return view('pages.kursus.jadwal',compact('training'));
+        $kelas = Kelas::all();
+
+        return view('pages.kursus.jadwal', compact('training', 'kelas'));
     }
 
     /**
