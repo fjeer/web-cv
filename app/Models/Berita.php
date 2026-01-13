@@ -12,6 +12,9 @@ class Berita extends Model
     protected $table = 'tb_berita';
     protected $primaryKey = 'id';
     public $timestamps = true;
+    protected $casts = [
+        'tanggal_berita' => 'date'
+    ];
     protected $guarded = [];
 
     public function user()

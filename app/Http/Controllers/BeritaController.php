@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -9,9 +10,13 @@ class BeritaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $berita = Berita::all()->paginate();
+        $berita = Berita::with('user')
+        ->when($request->search, function($query) {
+            $query->where('title', 'like', '%' . request('search') . '%');
+        })
+        ->paginate(9);
         return view('pages.berita.index', compact('berita'));
     }
 
@@ -34,9 +39,10 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        return view('pages.berita.show');
+        $berita = Berita::where('slug',$slug)->firstOrFail();
+        return view('pages.berita.show',compact('berita'));
     }
 
     /**

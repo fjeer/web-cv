@@ -31,7 +31,7 @@
 
     <section class="row">
 
-        @foreach ( $event as $e )
+        @forelse ( $event as $e )
 
         <div class="col-md-4 col-sm-6 mb-4">
 
@@ -65,8 +65,13 @@
                 </a>
             </div>
         </div>
-
-        @endforeach
+        @empty
+        <div class="text-center">
+            <i class="bi bi-calendar-x fs-1 text-muted"></i>
+            <h5 class="mt-3">Belum ada Event</h5>
+            <p class="text-muted">Silakan cek kembali nanti.</p>
+        </div>
+        @endforelse
 
     </section>
 

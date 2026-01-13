@@ -6,7 +6,7 @@
 <div class="container">
     <div class="mb-3">
         <a href="{{ route('kursus.index') }}" class="text-secondary text-decoration-none">
-            < kembali</a>
+            ← kembali</a>
         <h2 class="fw-bold mt-3">Detail Kursus > {{ $kursus->nama_kursus }}</h2>
     </div>
 
