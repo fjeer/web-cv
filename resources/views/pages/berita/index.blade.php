@@ -43,6 +43,8 @@
                             {{ $b->tanggal_berita->format('d M Y') }}
                         </p>
                     </div>
+
+                    <a href="{{ route('berita.show', $b->slug) }}" class="stretched-link"></a>
                 </div>
 
             </div>

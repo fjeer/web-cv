@@ -6,7 +6,7 @@
 <div class="container my-5">
 
     <!-- Back Button -->
-    <a href="{{ route('berita.index') }}" class="btn mb-4">
+    <a href="{{ route('berita.index') }}" class="mb-4 text-secondary text-decoration-none d-inline-block">
         ← Kembali
     </a>
 

@@ -18,6 +18,7 @@ class KursusSeeder extends Seeder
             [
                 'nama_kursus' => 'NGODING BASIC',
                 'deskripsi_kursus' => 'Belajar dasar pemrograman menggunakan Python untuk pemula.',
+                'detail_kursus' => 'Kursus ini mencakup variabel, tipe data, kontrol alur, fungsi, dan struktur data dasar.',
                 'id_kelas' => 2,
                 'harga_kursus' => 250000,
                 'rating_kursus' => 4.5,
@@ -26,6 +27,7 @@ class KursusSeeder extends Seeder
             [
                 'nama_kursus' => 'JARINGAN DASAR',
                 'deskripsi_kursus' => 'Belajar membuat website menggunakan HTML, CSS, dan JavaScript.',
+                'detail_kursus' => 'Kursus ini mencakup pembuatan halaman web statis, styling dengan CSS, dan interaktivitas dengan JavaScript.',
                 'id_kelas' => 1,
                 'harga_kursus' => 300000,
                 'rating_kursus' => 4.7,
@@ -34,6 +36,7 @@ class KursusSeeder extends Seeder
             [
                 'nama_kursus' => 'JARINGAN MOBILE',
                 'deskripsi_kursus' => 'Membangun aplikasi mobile menggunakan Flutter.',
+                'detail_kursus' => 'Kursus ini mencakup dasar-dasar Flutter, pembuatan UI, dan integrasi dengan backend.',
                 'id_kelas' => 1,
                 'harga_kursus' => 350000,
                 'rating_kursus' => 4.8,
@@ -42,6 +45,7 @@ class KursusSeeder extends Seeder
             [
                 'nama_kursus' => 'NGODING UI/UX DESIGN',
                 'deskripsi_kursus' => 'Belajar desain antarmuka modern menggunakan Figma.',
+                'detail_kursus' => 'Kursus ini mencakup prinsip desain, pembuatan prototipe, dan kolaborasi tim.',
                 'id_kelas' => 2,
                 'harga_kursus' => 200000,
                 'rating_kursus' => 4.6,
@@ -54,6 +58,7 @@ class KursusSeeder extends Seeder
                 'nama_kursus' => $item['nama_kursus'],
                 'slug' => Str::slug($item['nama_kursus']),
                 'deskripsi_kursus' => $item['deskripsi_kursus'],
+                'detail_kursus' => $item['detail_kursus'],
                 'id_kelas' => $item['id_kelas'],
                 'harga_kursus' => $item['harga_kursus'],
                 'rating_kursus' => $item['rating_kursus'],

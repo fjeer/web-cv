@@ -6,150 +6,153 @@
 
 <div class="container-fluid px-4">
 
-{{-- ========================= SECTION 1 ========================= --}}
-<section class="d-flex align-items-center py-5">
-    <div class="row w-100 align-items-center">
+    {{-- ========================= SECTION 1 ========================= --}}
+    <section class="d-flex align-items-center py-5">
+        <div class="row w-100 align-items-center">
 
-        <div class="col-md-6">
-            <h1 class="fw-bold" style="font-size:40px;">
-                Selamat Datang Kembangkan potensi dan inovasi bersama di SigmaTech.id
-            </h1>
-            <p class="text-secondary fs-5">
-                Berkarya, Berinovasi, dan Bertumbuh bersama.
-            </p>
+            <div class="col-md-6">
+                <h1 class="fw-bold" style="font-size:40px;">
+                    Selamat Datang Kembangkan potensi dan inovasi bersama di SigmaTech.id
+                </h1>
+                <p class="text-secondary fs-5">
+                    Berkarya, Berinovasi, dan Bertumbuh bersama.
+                </p>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4 text-end">
+                <img src="{{ asset('images/image.png') }}" class="img-fluid" alt="Hero">
+            </div>
+
         </div>
+    </section>
 
-        <div class="col-md-2"></div>
+    {{-- ========================= SECTION 2 ========================= --}}
+    <section class="py-5 my-5 keunggulan-section text-center">
+        <h2 class="section-title">Keunggulan SigmaTech</h2>
 
-        <div class="col-md-4 text-end">
-            <img src="{{ asset('images/image.png') }}" class="img-fluid" alt="Hero">
-        </div>
-
-    </div>
-</section>
-
-{{-- ========================= SECTION 2 ========================= --}}
-<section class="py-5 my-5 keunggulan-section text-center">
-    <h2 class="section-title">Keunggulan SigmaTech</h2>
-
-    <div class="row g-4">
-        @php
-        $keunggulan = [
+        <div class="row g-4">
+            @php
+            $keunggulan = [
             ['image 11.png','Kurikulum Berbasis Industri','Kurikulum disusun sesuai kebutuhan dunia kerja IT.'],
             ['image 10.png','Proyek Nyata & Sertifikasi','Setiap peserta mengerjakan proyek real industri.'],
             ['image 8.png','Belajar dari Praktisi','Dibimbing langsung oleh praktisi profesional.'],
             ['image 9.png','Training Event','Pelatihan luring interaktif dan aplikatif.']
-        ];
-        @endphp
+            ];
+            @endphp
 
-        @foreach($keunggulan as $item)
-        <div class="col-md-3">
-            <div class="card h-100 text-center py-3 custom-card">
-                <img src="{{ asset('images/'.$item[0]) }}" width="70" class="mx-auto mb-3" alt="">
-                <h5 class="fw-bold">{{ $item[1] }}</h5>
-                <p>{{ $item[2] }}</p>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</section>
-
-{{-- ========================= SECTION 3 ========================= --}}
-<section class="py-5">
-    <hr class="border-2">
-
-    <div class="row align-items-center mt-5">
-        <div class="col-md-4 text-center">
-            <img src="{{ asset('images/image.png') }}" class="img-fluid" style="max-width:300px;">
-        </div>
-
-        <div class="col-md-8">
-            <h4 class="fw-bold text-primary">About Us</h4>
-            <p>SigmaTech bergerak di bidang teknologi informasi dan layanan digital.</p>
-
-            <h4 class="fw-bold text-primary mt-4">Vision</h4>
-            <p>Menjadi mitra digital terpercaya di Indonesia.</p>
-
-            <h4 class="fw-bold text-primary mt-4">Mission</h4>
-            <ul>
-                <li>Pelatihan berbasis teknologi terkini</li>
-                <li>Solusi IT efisien dan aman</li>
-                <li>Produk digital produktif</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-{{-- ========================= SECTION 4 ========================= --}}
-<section class="py-5 text-center">
-    <h2 class="section-title">Pilih Jalur Belajarmu</h2>
-    <p class="text-secondary">
-        Setiap kelas dirancang agar belajar sambil praktik.
-    </p>
-
-    <div class="row mt-4">
-        @for($i=0;$i<4;$i++)
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100 custom-card">
-                <img src="{{ asset('images/image 11.png') }}" class="img-fluid">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <span>Kelas Pemrograman</span>
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i> 4.5
-                        </span>
-                    </div>
-                    <p class="text-muted small">
-                        Belajar Coding untuk Balita menggunakan Python
-                    </p>
-                    <p class="fw-bold text-primary">Rp 250.000</p>
+            @foreach($keunggulan as $item)
+            <div class="col-md-3">
+                <div class="card h-100 text-center py-3 custom-card">
+                    <img src="{{ asset('images/'.$item[0]) }}" width="70" class="mx-auto mb-3" alt="">
+                    <h5 class="fw-bold">{{ $item[1] }}</h5>
+                    <p>{{ $item[2] }}</p>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endfor
-    </div>
-</section>
+    </section>
 
-{{-- ========================= SECTION 5 ========================= --}}
-<section class="py-5">
-    <div class="row align-items-center">
+    {{-- ========================= SECTION 3 ========================= --}}
+    <section class="py-5">
+        <hr class="border-2">
 
-        <div class="col-md-6">
-            <h6 class="fs-5 fw-normal">Benefit yang didapat</h6>
-            <h1 style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
+        <div class="row align-items-center mt-5">
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('images/image.png') }}" class="img-fluid" style="max-width:300px;">
+            </div>
 
-            <p class="text-secondary">
-                Kamu membangun pengalaman nyata siap kerja bersama mentor profesional.
-            </p>
+            <div class="col-md-8">
+                <h4 class="fw-bold text-primary">About Us</h4>
+                <p>SigmaTech bergerak di bidang teknologi informasi dan layanan digital.</p>
 
-            <ul class="list-unstyled">
-                <li>✔ Akses Materi Industri</li>
-                <li>✔ Pendampingan Profesional</li>
-                <li>✔ Kesempatan Magang</li>
-            </ul>
+                <h4 class="fw-bold text-primary mt-4">Vision</h4>
+                <p>Menjadi mitra digital terpercaya di Indonesia.</p>
 
-            <a href="#" class="btn button-biru mt-3">Belajar Sekarang →</a>
+                <h4 class="fw-bold text-primary mt-4">Mission</h4>
+                <ul>
+                    <li>Pelatihan berbasis teknologi terkini</li>
+                    <li>Solusi IT efisien dan aman</li>
+                    <li>Produk digital produktif</li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-        <div class="col-md-6 text-end">
-            <img src="{{ asset('images/image1.png') }}" class="rounded-circle"
-                 style="width:400px;height:400px;object-fit:cover;">
+    {{-- ========================= SECTION 4 ========================= --}}
+    <section class="py-5 text-center">
+        <h2 class="section-title mb-3">Pilih Jalur Belajarmu</h2>
+        <p class="text-secondary">
+            Setiap kelas dirancang agar belajar sambil praktik.
+        </p>
+
+        <div class="row mt-4">
+
+            @foreach ($kursus as $krs)
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100 custom-card">
+                    <img src="{{ asset('images/image 11.png') }}" class="img-fluid">
+                    <div class="card-body text-start">
+                        <div class="d-flex justify-content-between">
+                            <span>{{ $krs->nama_kursus }}</span>
+                            <span class="text-warning">
+                                <i class="bi bi-star-fill"></i> {{ $krs->rating_kursus }}
+                            </span>
+                        </div>
+                        <p class="text-muted small">
+                            {{ $krs->deskripsi_kursus }}
+                        </p>
+                        <p class="fw-bold text-primary">Rp. {{ number_format($krs->harga_kursus, 0, ',', '.') }}</p>
+
+                        <a href="{{ route('kursus.show', $krs->slug) }}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+
         </div>
+    </section>
 
-    </div>
-</section>
+    {{-- ========================= SECTION 5 ========================= --}}
+    <section class="py-5">
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+                <h6 class="fs-5 fw-normal">Benefit yang didapat</h6>
+                <h1 style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
+
+                <p class="text-secondary">
+                    Kamu membangun pengalaman nyata siap kerja bersama mentor profesional.
+                </p>
+
+                <ul class="list-unstyled">
+                    <li>✔ Akses Materi Industri</li>
+                    <li>✔ Pendampingan Profesional</li>
+                    <li>✔ Kesempatan Magang</li>
+                </ul>
+
+                <a href="#" class="btn button-biru mt-3">Belajar Sekarang →</a>
+            </div>
+
+            <div class="col-md-6 text-end">
+                <img src="{{ asset('images/image1.png') }}" class="rounded-circle" style="width:400px;height:400px;object-fit:cover;">
+            </div>
+
+        </div>
+    </section>
 </div>
 {{-- ========================= SECTION 6 ========================= --}}
 <section class="d-flex flex-column justify-content-center text-center mt-5">
 
-    <div class="text-center mb-2">
-        <h2 class="section-title">Jelajahi Kelas Industri</h2>
-
+    <div class="text-center mb-0">
+        <h2 class="section-title mb-4">Jelajahi Kelas Industri</h2>
     </div>
     <h2 class="mb-2" style="font-size: 45px">Siap Gabung ke Dunia Industri Nyata?</h2>
     <p class="mb-0 text-secondary">
         Daftar sekarang dan rasakan pengalaman belajar berbasis proyek industri bersama SigmaTech.
-    <p class="mt-0 text-secondary">Jadilah bagian dari generasi digital yang siap bersaing di dunia kerja.</p>
+        <p class="mt-0 text-secondary">Jadilah bagian dari generasi digital yang siap bersaing di dunia kerja.</p>
     </p>
     <div class="row g-4 text-center ">
         <div class="col-md-4">
@@ -210,8 +213,8 @@
     <div class="container text-center">
 
         {{-- Title Badge --}}
-        <div class="text-center mb-2">
-            <h2 class="section-title">Mitra Kami</h2>
+        <div class="text-center mb-0">
+            <h2 class="section-title mb-3">Mitra Kami</h2>
 
         </div>
         <p class="mb-5 text-secondary">
@@ -226,31 +229,21 @@
 
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-4">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-4">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img"
-                            alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
+                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
                     </div>
                 </div>
             </div>
@@ -279,15 +272,15 @@
 
 {{-- ========================= SECTION 8 ========================= --}}
 <section class="py-5">
-    <div class="text-center mb-2">
-        <h2 class="section-title">Layanan SigmaTech Digital Solution</h2>
+    <div class="text-center mb-0">
+        <h2 class="section-title mb-3">Layanan SigmaTech Digital Solution</h2>
     </div>
     <h1 class="text-center" style="font-size: 36px; ">Solusi Digital dari Universal SigmaTeknologi</h1>
     <p class="mb-0 text-center text-secondary">
         Kami menyediakan layanan pengembangan teknologi untuk mendukung transformasi digital bisnis dan lembaga
         Anda.
-    <p class="mt-0 text-secondary text-center mb-3">Dikerjakan langsung oleh tim profesional bersama talenta
-        dari kelas industri kami.</p>
+        <p class="mt-0 text-secondary text-center mb-3">Dikerjakan langsung oleh tim profesional bersama talenta
+            dari kelas industri kami.</p>
     </p>
     <div class="row g-4 mt-4">
 
@@ -390,9 +383,9 @@
 
 {{-- ========================= SECTION 9 ========================= --}}
 <section class="min-vh-100 d-flex flex-column justify-content-center text-center">
-    <div class="text-center mb-2">
+    <div class="text-center mb-0">
         <p class="text-secondary">Cerita & Kabar Terbaru dari SigmaTech</p>
-        <h2 class="section-title">Berita Terbaru</h2>
+        <h2 class="section-title mb-3">Berita Terbaru</h2>
 
     </div>
     <p class="mb-0 text-secondary">
@@ -401,65 +394,45 @@
     </p>
 
     <div class="row mt-4">
+
+        @foreach ($berita as $brt )
         <!-- Card 1 -->
         <div class="col-md-4 col-sm-6 mb-4">
             <div class="card h-100 p-2 custom-card">
-                <img src="{{ asset('images/image1.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="text-muted mb-1">
-                            <i class="bi bi-calendar-event"></i> 12 Jan 2025
-                        </p>
-                    </div>
-                    <p class="mb-1 text-start fw-bold">SigmaTech resmi luncurkan inovasi Teknologi Terbaru ...
+
+                <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
+
+                <div class="card-body text-start">
+                    <!-- Paksa rata kiri -->
+
+                    <p class="text-muted mb-1">
+                        <i class="bi bi-calendar-event"></i>
+                        {{ $brt->tanggal_berita->format('d M Y') }}
                     </p>
 
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 text-start text-muted" style="font-size: 14px">Probolinggo, 2 Nov 2025 - CV SigmaTech bersama Pemda Kabupaten Probolinggo meresmikan inovasi teknologi terbaru...</p>
+                    <p class="fw-bold mb-1">
+                        {{ Str::limit($brt->title,50) }}
+
+                    </p>
+
+                    <p class="text-muted" style="font-size: 14px">
+                        {{ Str::limit($brt->detail_berita, 100) }}
+                    </p>
+                    <hr>
+                    <a href="{{ route('berita.show', $brt->slug) }}" class="mb-0 text-decoration-none text-secondary">Baca Selengkapnya</a>
+
+                    <a href="{{ route('berita.show', $brt->slug) }}" class="stretched-link"></a>
+
                 </div>
             </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card h-100 p-2 custom-card">
-                <img src="{{ asset('images/image1.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="text-muted mb-1">
-                            <i class="bi bi-calendar-event"></i> 12 Jan 2025
-                        </p>
-                    </div>
-                    <p class="mb-1 text-start fw-bold">SigmaTech resmi luncurkan inovasi Teknologi Terbaru ...
-                    </p>
+        @endforeach
 
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 text-start text-muted" style="font-size: 14px">Probolinggo, 2 Nov 2025 - CV SigmaTech bersama Pemda Kabupaten Probolinggo meresmikan inovasi teknologi terbaru...</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card h-100 p-2 custom-card">
-                <img src="{{ asset('images/image1.png') }}" class="" alt="Produk 1">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="text-muted mb-1">
-                            <i class="bi bi-calendar-event"></i> 12 Jan 2025
-                        </p>
-                    </div>
-                    <p class="mb-1 text-start fw-bold">SigmaTech resmi luncurkan inovasi Teknologi Terbaru ...
-                    </p>
-
-                    <!-- Harga di kanan -->
-                    <p class="mb-0 text-start text-muted" style="font-size: 14px">Probolinggo, 2 Nov 2025 - CV SigmaTech bersama Pemda Kabupaten Probolinggo meresmikan inovasi teknologi terbaru...</p>
-                </div>
-            </div>
-        </div>
+    </div>
 
 </section>
 
-    </div>
+</div>
 
 @endsection

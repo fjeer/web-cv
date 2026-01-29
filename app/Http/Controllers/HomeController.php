@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
+use App\Models\Kursus;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home.index');
+        $kursus = Kursus::limit(4)->orderBy('created_at', 'DESC')->get();
+        $berita = Berita::limit(3)->orderBy('created_at', 'DESC')->get();
+        return view('pages.home.index', compact('kursus', 'berita'));
     }
 
     /**

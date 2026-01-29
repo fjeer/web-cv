@@ -36,40 +36,40 @@
                     @foreach ($chunk as $krs)
                     <div class="col-md-4 col-sm-6 mb-4">
                         <div class="card h-100 p-2 custom-card">
-                            <a href="{{ route('kursus.show', $krs->slug) }}">
-                                <img src="{{ asset('images/image 11.png') }}" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <a href="{{ route('kursus.show', $krs->slug) }}" class="text-decoration-none text-black fw-bold">
-                                            {{ $krs->nama_kursus }}
-                                        </a>
-                                        <span class="text-warning">
-                                            <i class="bi bi-star-fill"></i> {{ $krs->rating_kursus }}
-                                        </span>
-                                    </div>
-                                    <p class="text-muted">{{ $krs->deskripsi_kursus }}</p>
-                                    <p class="fw-bold text-primary">
-                                        Rp {{ number_format($krs->harga_kursus, 0, ',', '.') }}
-                                    </p>
-                            </a>
+                            <img src="{{ asset('images/image 11.png') }}" class="card-img-top">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ route('kursus.show', $krs->slug) }}" class="text-decoration-none text-black fw-bold">
+                                        {{ $krs->nama_kursus }}
+                                    </a>
+                                    <span class="text-warning">
+                                        <i class="bi bi-star-fill"></i> {{ $krs->rating_kursus }}
+                                    </span>
+                                </div>
+                                <p class="text-muted">{{ $krs->deskripsi_kursus }}</p>
+                                <p class="fw-bold text-primary">
+                                    Rp {{ number_format($krs->harga_kursus, 0, ',', '.') }}
+                                </p>
+
+                                <a href="{{ route('kursus.show', $krs->slug) }}" class="stretched-link"></a>
+                            </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
-        @endforeach
+
+        <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
-
-    <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#kelas{{ $kls->id }}" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-@endforeach
+    @endforeach
 </div>
 
 <!-- Section Call to Action -->
