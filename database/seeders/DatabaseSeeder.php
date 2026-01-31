@@ -27,6 +27,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KelasSeeder::class,
             KursusSeeder::class,
+            UserSeeder::class,
+            BeritaSeeder::class,
+            KategoriSeeder::class,
+            EventSeeder::class,
+            LayananSeeder::class,
         ]);
     }
 }

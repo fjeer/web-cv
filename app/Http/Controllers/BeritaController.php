@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -12,6 +13,7 @@ class BeritaController extends Controller
      */
     public function index(Request $request)
     {
+        Carbon::setLocale('id');
         $berita = Berita::with('user')
         ->when($request->search, function($query) {
             $query->where('title', 'like', '%' . request('search') . '%');
@@ -41,6 +43,7 @@ class BeritaController extends Controller
      */
     public function show(string $slug)
     {
+        Carbon::setLocale('id');
         $berita = Berita::where('slug',$slug)->firstOrFail();
         return view('pages.berita.show',compact('berita'));
     }

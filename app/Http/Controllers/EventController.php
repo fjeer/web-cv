@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Kategori;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -11,11 +12,16 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        Carbon::setLocale('id');
+        $kategori = Kategori::all();
         $event = Event::with('kategori')
+        ->when($request->filled('kategori'), function ($query) use ($request) {
+            $query->where('id_kategori', $request->kategori);
+        })
         ->paginate(9);
-        return view('pages.event.index', compact('event'));
+        return view('pages.event.index', compact('event', 'kategori'));
     }
 
     /**

@@ -27,7 +27,32 @@
 @section('content')
 <div class="container my-5">
 
-    <h4 class="fw-bold mb-4">Daftar Events</h4>
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+
+        <h4 class="fw-bold mb-4">Daftar Events</h4>
+
+        <form action="{{ route('event.index') }}" method="GET" class="d-flex gap-3">
+            <div class="custom-select-wrapper">
+                <select name="kategori" class="custom-select">
+                    <option value="">Semua Kategori</option>
+                    @foreach ($kategori as $k)
+                    <option value="{{ $k->id }}" {{ request('kategori') == $k->id ? 'selected' : '' }}>
+                        {{ $k->nama_kategori }}
+                    </option>
+                    @endforeach
+                </select>
+                <i class="bi bi-chevron-down select-icon"></i>
+            </div>
+
+            <button type="submit" class="btn button-biru">
+                <i class="bi bi-search"></i>
+            </button>
+
+        </form>
+
+    </div> 
+
+    <hr>
 
     <section class="row">
 
@@ -36,11 +61,9 @@
         <div class="col-md-4 col-sm-6 mb-4">
 
             <div class="card h-100 p-2 custom-card">
-                <a href="{{ route('event.show', $e->slug) }}" class="text-decoration-none">
                     <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Event">
                     <div class="card-body">
-
-                        <span class="tombolevent btn my-3">
+                        <span class="mb-3 badge rounded-pill bg-info">
                             {{ $e->kategori->nama_kategori }}
                         </span>
 
@@ -61,8 +84,8 @@
                             </span>
                         </div>
 
+                        <a href="{{ route('event.show', $e->slug) }}" class="stretched-link"></a>
                     </div>
-                </a>
             </div>
         </div>
         @empty

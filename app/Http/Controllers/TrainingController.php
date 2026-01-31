@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use App\Models\Training;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TrainingController extends Controller
@@ -13,6 +14,7 @@ class TrainingController extends Controller
      */
     public function index(Request $request)
     {
+        Carbon::setLocale('id');
         $training = Training::with('kursus')
             ->when($request->search, function ($query) use ($request) {
                 $query->whereHas('kursus', function ($q) use ($request) {
