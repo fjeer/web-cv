@@ -117,7 +117,7 @@
                     <h4 class="mb-3">Sosial Media</h4>
                     <p>Kunjungi Sosial Media Kami</p>
                     <div class="d-flex gap-3 fs-4">
-                        <a href="https://wa.me/6281234567890" target="_blank" class="text-white">
+                        <a href="https://wa.me/+6282144356926" target="_blank" class="text-white">
                             <i class="bi bi-whatsapp"></i>
                         </a>
                         <a href="https://instagram.com" target="_blank" class="text-white">

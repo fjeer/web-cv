@@ -30,7 +30,10 @@
 
     {{-- ========================= SECTION 2 ========================= --}}
     <section class="py-5 my-5 keunggulan-section text-center">
-        <h2 class="section-title">Keunggulan SigmaTech</h2>
+        <h2 class="section-title mb-3">Keunggulan SigmaTech</h2>
+        <p class="text-muted mx-auto mb-5" style="max-width: 700px;">
+            Kami menghadirkan solusi pembelajaran digital yang relevan dengan kebutuhan industri terkini
+        </p>
 
         <div class="row g-4">
             @php
@@ -43,15 +46,18 @@
             @endphp
 
             @foreach($keunggulan as $item)
-            <div class="col-md-3">
-                <div class="card h-100 text-center py-3 custom-card">
-                    <img src="{{ asset('images/'.$item[0]) }}" width="70" class="mx-auto mb-3" alt="">
-                    <h5 class="fw-bold">{{ $item[1] }}</h5>
-                    <p>{{ $item[2] }}</p>
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 text-center p-4 border-0 custom-card">
+                    <div class="img-wrapper mb-4">
+                        <img src="{{ asset('images/'.$item[0]) }}" width="70" alt="">
+                    </div>
+                    <h5 class="fw-bold mb-3">{{ $item[1] }}</h5>
+                    <p class="text-muted">{{ $item[2] }}</p>
                 </div>
             </div>
             @endforeach
         </div>
+
     </section>
 
     {{-- ========================= SECTION 3 ========================= --}}
@@ -59,23 +65,36 @@
         <hr class="border-2">
 
         <div class="row align-items-center mt-5">
-            <div class="col-md-4 text-center">
-                <img src="{{ asset('images/image.png') }}" class="img-fluid" style="max-width:300px;">
+            <div class="col-lg-4 col-md-12 mb-5 mb-lg-0 text-center">
+                <img src="{{ asset('images/image.png') }}" class="img-fluid rounded-3" alt="About SigmaTech" style="max-width: 280px;">
             </div>
 
-            <div class="col-md-8">
-                <h4 class="fw-bold text-primary">About Us</h4>
-                <p>SigmaTech bergerak di bidang teknologi informasi dan layanan digital.</p>
+            <div class="col-lg-8 col-md-12 ps-lg-5">
+                <span class="text-primary fw-bold fs-4 mb-2 d-block">About Us</span>
+                <h3 class="fw-bold mb-4">SigmaTech Digital Solution</h3>
+                <p class="text-secondary mb-4">
+                    Bergerak di bidang teknologi informasi dan layanan digital dengan komitmen membangun ekosistem pembelajaran yang inovatif.
+                </p>
 
-                <h4 class="fw-bold text-primary mt-4">Vision</h4>
-                <p>Menjadi mitra digital terpercaya di Indonesia.</p>
-
-                <h4 class="fw-bold text-primary mt-4">Mission</h4>
-                <ul>
-                    <li>Pelatihan berbasis teknologi terkini</li>
-                    <li>Solusi IT efisien dan aman</li>
-                    <li>Produk digital produktif</li>
-                </ul>
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold text-primary mb-3">Visi</h5>
+                        <p class="text-muted">
+                            Menjadi mitra digital terpercaya dalam transformasi pendidikan teknologi di Indonesia.
+                        </p>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="fw-bold text-primary mb-3">Misi</h5>
+                        <ul class="list-unstyled">
+                            @foreach(['Pelatihan berbasis teknologi terkini', 'Solusi IT efisien dan aman', 'Produk digital produktif dan inovatif'] as $mission)
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                {{ $mission }}
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -127,13 +146,21 @@
                     Kamu membangun pengalaman nyata siap kerja bersama mentor profesional.
                 </p>
 
-                <ul class="list-unstyled">
-                    <li>✔ Akses Materi Industri</li>
-                    <li>✔ Pendampingan Profesional</li>
-                    <li>✔ Kesempatan Magang</li>
-                </ul>
+                <div class="mb-4">
+                    @foreach(['Akses Materi Industri Terkini', 'Pendampingan oleh Profesional', 'Kesempatan Magang & Networking', 'Portofolio Projek Nyata'] as $benefit)
+                    <div class="d-flex align-items-start mb-3">
+                        <div class="icon-circle me-3">
+                            <i class="bi bi-check"></i>
+                        </div>
+                        <span class="fs-5">{{ $benefit }}</span>
+                    </div>
+                    @endforeach
+                </div>
 
-                <a href="#" class="btn button-biru mt-3">Belajar Sekarang →</a>
+                <a href="{{ route('training.index') }}" class="btn button-biru px-5 py-3">
+                    Lihat Jadwal Kursus <i class="bi bi-calendar-week ms-2"></i>
+                </a>
+
             </div>
 
             <div class="col-md-6 text-end">
@@ -193,12 +220,14 @@
 
     <div class="d-flex justify-content-center gap-3">
         <!-- Button Kiri -->
-        <a href="#" class="btn btn-primary custom-left-btn mt-5">
+        <a href="{{ route('industri.index') }}" class="btn btn-primary custom-left-btn mt-5">
+            <i class="bi bi-rocket-takeoff me-2"></i>
             Gabung Sekarang
         </a>
 
         <!-- Button Kanan -->
-        <a href="#" class="btn custom-right-btn mt-5">
+        <a href="https://wa.me/+6282144356926" target="_blank" class="btn custom-right-btn mt-5">
+            <i class="bi bi-chat-dots me-2"></i>
             konsultasi gratis
         </a>
     </div>
@@ -279,112 +308,36 @@
     <p class="mb-0 text-center text-secondary">
         Kami menyediakan layanan pengembangan teknologi untuk mendukung transformasi digital bisnis dan lembaga
         Anda.
-        <p class="mt-0 text-secondary text-center mb-3">Dikerjakan langsung oleh tim profesional bersama talenta
+        <p class="mt-0 text-secondary text-center mb-4">Dikerjakan langsung oleh tim profesional bersama talenta
             dari kelas industri kami.</p>
     </p>
-    <div class="row g-4 mt-4">
-
-        {{-- Card 1 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-lightning-charge-fill text-primary fs-2 me-3"></i>
-                    <h5 class="mb-0">Training Center</h5>
+    <div class="row g-4 justify-content-center">
+        @foreach ($layanan as $lyn)
+        <div class="col-xl-4 col-lg-6 col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm hover-shadow-lg transition-all">
+                <div class="d-flex align-items-start mb-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-lightning-charge-fill text-primary fs-3"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2">{{ $lyn->nama_layanan }}</h5>
+                        <p class="text-muted small">{{ Str::limit($lyn->deskripsi_layanan, 120) }}</p>
+                    </div>
                 </div>
-                <p class="text-muted mt-2 text-center">
-                    Pelatihan
-                    profesional di bidang jaringan,
-                    desain, dan pemrograman
-                    disusun oleh praktisi
-                    berpengalaman.
-                </p>
+                <a href="#" class="text-primary text-decoration-none fw-semibold mt-auto">
+                    Pelajari lebih lanjut <i class="bi bi-arrow-right ms-1"></i>
+                </a>
             </div>
         </div>
-
-        {{-- Card 2 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-shield-lock-fill text-success fs-2 me-3"></i>
-                    <h5 class="mb-0">IT Consultant</h5>
-                </div>
-                <p class="text-muted mt-2 text-center">
-                    Analisis dan
-                    strategi implementasi
-                    teknologi untuk optimalkan
-                    performa bisnis Anda.
-                </p>
-            </div>
-        </div>
-
-        {{-- Card 3 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-gear-fill text-warning fs-2 me-3"></i>
-                    <h5 class="mb-0">Jasa Instalasi Jaringan</h5>
-                </div>
-                <p class="text-muted mt-2 text-center">
-                    Solusi infrastruktur jaringan
-                    handal untuk kantor, sekolah,
-                    hingga instansi pemerintahan.
-                </p>
-            </div>
-        </div>
-
-        {{-- Card 4 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-people-fill text-danger fs-2 me-3"></i>
-                    <h5 class="mb-0">Jasa Desain</h5>
-                </div>
-                <p class="text-muted mt-2 text-center">
-                    Branding, desain grafis, UI/UX
-                    membuat citra visual
-                    perusahaan Anda lebih kuat.
-                </p>
-            </div>
-        </div>
-
-        {{-- Card 5 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-globe2 text-info fs-2 me-3"></i>
-                    <h5 class="mb-0">Software Development</h5>
-                </div>
-                <p class="text-muted mt-2 text-center">
-                    Pengembangan aplikasi
-                    berbasis web dan mobile yang
-                    disesuaikan dengan
-                    kebutuhan bisnis Anda.
-                </p>
-            </div>
-        </div>
-
-        {{-- Card 6 --}}
-        <div class="col-md-4">
-            <div class="card p-3 shadow-sm h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-award-fill text-primary fs-2 me-3"></i>
-                    <h5 class="mb-0">Event Organizer</h5>
-                </div>
-                <p class="text-muted mt-2 text-center">
-                    Manajemen event berbasis
-                    digital: seminar, workshop,
-                    launching produk, dan lainnya.
-                </p>
-            </div>
-        </div>
-
+        @endforeach
     </div>
+
 </section>
 
 {{-- ========================= SECTION 9 ========================= --}}
 <section class="min-vh-100 d-flex flex-column justify-content-center text-center">
     <div class="text-center mb-0">
-        <p class="text-secondary">Cerita & Kabar Terbaru dari SigmaTech</p>
+        <p class="text-secondary mb-2">Cerita & Kabar Terbaru dari SigmaTech</p>
         <h2 class="section-title mb-3">Berita Terbaru</h2>
 
     </div>
@@ -394,45 +347,70 @@
     </p>
 
     <div class="row mt-4">
-
-        @foreach ($berita as $brt )
-        <!-- Card 1 -->
-        <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card h-100 p-2 custom-card">
-
-                <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
-
-                <div class="card-body text-start">
-                    <!-- Paksa rata kiri -->
-
-                    <p class="text-muted mb-1">
-                        <i class="bi bi-calendar-event"></i>
+        @foreach ($berita as $brt)
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 border-0 custom-card">
+                <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="{{ $brt->title }}" style="height: 220px; object-fit: cover;">
+                <div class="card-body p-4 text-start">
+                    <div class="d-flex align-items-center text-muted small mb-3">
+                        <i class="bi bi-calendar-event me-2"></i>
                         {{ $brt->tanggal_berita->format('d M Y') }}
+                    </div>
+                    <h5 class="fw-bold mb-3">
+                        {{ Str::limit($brt->title, 60) }}
+                    </h5>
+                    <p class="text-muted mb-4" style="font-size: 15px; line-height: 1.6;">
+                        {{ Str::limit(strip_tags($brt->detail_berita), 100) }}
                     </p>
-
-                    <p class="fw-bold mb-1">
-                        {{ Str::limit($brt->title,50) }}
-
-                    </p>
-
-                    <p class="text-muted" style="font-size: 14px">
-                        {{ Str::limit($brt->detail_berita, 100) }}
-                    </p>
-                    <hr>
-                    <a href="{{ route('berita.show', $brt->slug) }}" class="mb-0 text-decoration-none text-secondary">Baca Selengkapnya</a>
-
-                    <a href="{{ route('berita.show', $brt->slug) }}" class="stretched-link"></a>
-
+                    <a href="{{ route('berita.show', $brt->slug) }}" class="text-primary text-decoration-none fw-semibold">
+                        Baca Selengkapnya <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
                 </div>
             </div>
         </div>
-
         @endforeach
+    </div>
 
+    <div class="text-center mt-5">
+        <a href="{{ route('berita.index') }}" class="btn btn-outline-primary px-5 py-3">
+            Lihat Semua Berita <i class="bi bi-newspaper ms-2"></i>
+        </a>
     </div>
 
 </section>
 
 </div>
+
+<style>
+    .hover-shadow-lg {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-shadow-lg:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+
+    .display-6 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+        .display-6 {
+            font-size: 2rem;
+        }
+
+        .display-5 {
+            font-size: 1.75rem;
+        }
+    }
+
+</style>
+
 
 @endsection
