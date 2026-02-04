@@ -36,7 +36,7 @@
         <!-- Bagian Sidebar (Harga & Fitur) -->
         <div class="col-md-4 h-100">
             <div class="card custom-card">
-                <img src="{{ asset('images/image1.png') }}" class="card-img-top" alt="Produk 1">
+                <img src="{{ asset('storage/'.$kursus->gambar_kursus) }}" class="card-img-top" alt="Produk 1">
 
                 <div class="d-flex justify-content-center align-items-center mt-5">
                     <div class="card">

@@ -35,8 +35,8 @@
                 <div class="row mt-5">
                     @foreach ($chunk as $krs)
                     <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100 p-2 custom-card">
-                            <img src="{{ asset('images/image 11.png') }}" class="card-img-top">
+                        <div class="card h-100 custom-card">
+                            <img src="{{ asset('storage/'.$krs->gambar_kursus) }}" class="card-img-top">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <a href="{{ route('kursus.show', $krs->slug) }}" class="text-decoration-none text-black fw-bold">
