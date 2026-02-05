@@ -28,7 +28,8 @@ class KursusForm
                     ->columnSpanFull(),
                 Select::make('id_kelas')
                     ->label('Kelas')
-                    ->options(Kelas::query()->pluck('nama_kelas', 'id')),
+                    ->options(Kelas::all()->pluck('nama_kelas', 'id'))
+                    ->required(),
                 TextInput::make('harga_kursus')
                     ->required()
                     ->numeric(),
@@ -37,11 +38,10 @@ class KursusForm
                     ->numeric()
                     ->default(0.0),
                 FileUpload::make('gambar_kursus')
-                    ->label('Gambar Kursus')
-                    ->image()
-                    ->disk('public')
                     ->directory('kursus-images')
+                    ->disk('public')
                     ->visibility('public')
+                    ->image()
                     ->required(),
             ]);
     }
