@@ -19,12 +19,16 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    {{-- Link AOS-JS --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 
 <body class="bg-gray-500">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" data-aos="fade-down">
         <div class="container">
 
             <!-- Brand -->
@@ -74,13 +78,8 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        @yield('hero')
-    </section>
-
     <!-- Content -->
-    <main class="container my-5">
+    <main>
         @yield('content')
     </main>
 
@@ -143,6 +142,14 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- Link AOS-JS --}}
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+          AOS.init();
+
+      </script>
+
 </body>
 
 </html>
