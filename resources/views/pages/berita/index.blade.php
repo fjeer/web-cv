@@ -63,7 +63,8 @@
 
     <!-- Load More -->
     <div class="text-center mt-4">
-        {{ $berita->links() }}
+        {{ $berita->links('pagination::bootstrap-5') }}
+
     </div>
 
 

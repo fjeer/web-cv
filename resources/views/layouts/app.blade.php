@@ -23,6 +23,9 @@
     {{-- Link AOS-JS --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    {{-- Swiper --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body class="bg-gray-500">
@@ -147,8 +150,10 @@
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
           AOS.init();
-
       </script>
+
+    {{-- Swiper JS --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 

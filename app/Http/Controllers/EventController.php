@@ -16,11 +16,7 @@ class EventController extends Controller
     {
         Carbon::setLocale('id');
         $kategori = Kategori::all();
-        $event = Event::with('kategori')
-        ->when($request->filled('kategori'), function ($query) use ($request) {
-            $query->where('id_kategori', $request->kategori);
-        })
-        ->paginate(9);
+        $event = Event::paginate(9);
         return view('pages.event.index', compact('event', 'kategori'));
     }
 

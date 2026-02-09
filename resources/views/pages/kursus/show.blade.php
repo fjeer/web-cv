@@ -3,7 +3,7 @@
 @section('title', 'course-detail')
 
 @section('content')
-<div class="container">
+<div class="container py-5">
     <div class="mb-3">
         <a href="{{ route('kursus.index') }}" class="text-secondary text-decoration-none">
             ← kembali</a>
@@ -36,7 +36,7 @@
         <!-- Bagian Sidebar (Harga & Fitur) -->
         <div class="col-md-4 h-100">
             <div class="card custom-card">
-                <img src="{{ asset('storage/'.$kursus->gambar_kursus) }}" class="card-img-top" alt="Produk 1">
+                <img src="{{ asset('storage/'.$kursus->gambar_kursus) }}" class="card-img-top" alt="Produk 1" style="height: 240px; object-fit: cover;">
 
                 <div class="d-flex justify-content-center align-items-center mt-5">
                     <div class="card">
@@ -49,7 +49,7 @@
 
                 <div class="card-body">
                     <div class="text-center">
-                        <a href="{{ route('training.index') }}" class="tombolkuning btn my-3">Beli Sekarang</a>
+                        <a href="{{ route('training.index') }}" class="tombolkuning btn my-3">Lihat jadwal kursus <i class="bi bi-arrow-right"></i></a>
                     </div>
 
                     <h5 class="fw-bold mt-4 mb-2 text-primary">Yang akan kamu dapatkan :</h5>

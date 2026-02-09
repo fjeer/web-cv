@@ -13,8 +13,9 @@ class KursusController extends Controller
      */
     public function index()
     {
-        $kelas = Kelas::with('kursus')->get();
-        return view('pages.kursus.index', compact('kelas'));
+        $kelas = Kelas::all();
+        $kursus = Kursus::paginate(12);
+        return view('pages.kursus.index', compact('kelas', 'kursus'));
     }
 
     /**

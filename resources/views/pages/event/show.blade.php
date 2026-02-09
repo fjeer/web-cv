@@ -2,26 +2,22 @@
 
 @section('title', 'event-detail')
 
-{{-- ================= HERO ================= --}}
-@section('hero')
-<section class="hero-section">
-    <img src="{{ asset('images/banner.png') }}"
-         class="w-100"
-         style="object-fit: cover; max-height: 420px;"
-         alt="Banner Event">
-</section>
-@endsection
-
 {{-- ================= CONTENT ================= --}}
 @section('content')
+
+<section class="hero-section">
+    <img src="{{ asset('storage/' . $event->gambar_event) }}" class="w-100" style="object-fit: cover; max-height: 420px;" alt="Banner Event">
+</section>
+
 <div class="container my-5">
 
     {{-- ===== HEADER EVENT ===== --}}
     <div class="row align-items-center mb-5">
         <div class="col-md-2 text-center">
-            <img src="{{ asset('images/image2.png') }}"
+            <img src="{{ asset('storage/' . $event->gambar_event) }}"
                  class="img-fluid rounded"
-                 alt="Event Image">
+                 alt="Event Image"
+                 style="max-height: 150px; object-fit: cover;">
         </div>
 
         <div class="col-md-5">

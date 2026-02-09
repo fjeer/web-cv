@@ -15,24 +15,40 @@ class TrainingController extends Controller
     public function index(Request $request)
     {
         Carbon::setLocale('id');
-        $training = Training::with('kursus')
-            ->when($request->search, function ($query) use ($request) {
-                $query->whereHas('kursus', function ($q) use ($request) {
-                    $q->where('nama_kursus', 'like', '%' . $request->search . '%');
-                });
-            })
-            ->when($request->filled('status'), function ($query) use ($request) {
-                $query->where('status', $request->status);
-            })
-            ->when($request->filled('kelas'), function ($query) use ($request) {
-                $query->whereHas('kursus', function ($q) use ($request) {
-                    $q->where('id_kelas', $request->kelas);
-                });
-            })
-            ->paginate(10)
-            ->withQueryString();
 
+        $query = Training::with('kursus');
+
+        // Filter search
+        if ($request->search) {
+            $query->whereHas('kursus', function ($q) use ($request) {
+                $q->where('nama_kursus', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        // Filter status
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        // Filter kelas
+        if ($request->filled('kelas')) {
+            $query->whereHas('kursus', function ($q) use ($request) {
+                $q->where('id_kelas', $request->kelas);
+            });
+        }
+
+        $training = $query->paginate(10)->withQueryString();
         $kelas = Kelas::all();
+
+        // Jika request AJAX, kembalikan JSON
+        if ($request->ajax()) {
+            $view = view('pages.kursus.partials.table', compact('training'))->render();
+
+            return response()->json([
+                'html' => $view,
+                'pagination' => $training->links()->toHtml()
+            ]);
+        }
 
         return view('pages.kursus.jadwal', compact('training', 'kelas'));
     }

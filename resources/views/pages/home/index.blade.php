@@ -72,8 +72,8 @@
                     <div class="img-wrapper mb-4">
                         <img src="{{ asset('images/'.$item[0]) }}" width="70" alt="">
                     </div>
-                    <h5 class="fw-bold mb-3">{{ $item[1] }}</h5>
-                    <p class="text-muted">{{ $item[2] }}</p>
+                    <h5 class="fw-bold mb-3 fs-6">{{ $item[1] }}</h5>
+                    <p class="text-secondary">{{ $item[2] }}</p>
                 </div>
             </div>
             @endforeach
@@ -129,15 +129,16 @@
 </section>
 
 {{-- ========================= SECTION 4 ========================= --}}
-<section class="kursus-section">
+<section class="kursus-section" style="background-image: url('{{ asset('images/bg-kursus-home-1.png') }}');" data-aos="fade-zoom-in">
 
     <div class="container py-5 text-center">
         
         <div class="title_kursus" data-aos="fade-up">
 
             <h2 class="section-title mb-2">Pilih Jalur Belajarmu</h2>
-            <p class="text-secondary mb-5">
-                Setiap kelas dirancang agar belajar sambil praktik.
+            <p class="text-secondary mb-0">
+                Mulai perjalanan kariermu di bidang yang kamu minati. 
+                <p class="mt-0 mb-5 text-secondary"> Setiap kelas di SigmaTech dirancang agar kamu bisa belajar sambil praktik langsung. </p>
             </p>
 
         </div>
@@ -146,17 +147,17 @@
 
             @foreach ($kursus as $krs)
             <div class="col-md-3 col-sm-6">
-                <div class="card custom-card" data-aos="flip-left" data-aos-duration="3000" data-aos-easing="ease-out-cubic">
-                    <img src="{{ asset('storage/'.$krs->gambar_kursus ) }}" class="card-img-top" alt="{{ $krs->gambar_kursus }}" style="height: 180px; object-fit: cover;">
+                <div class="card border-primary card-krs" style="border-radius: 20px" data-aos="flip-left" data-aos-duration="3000" data-aos-easing="ease-out-cubic">
+                    <img src="{{ asset('storage/'.$krs->gambar_kursus ) }}" class="card-img-top" alt="{{ $krs->gambar_kursus }}" style="height: 180px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div class="card-body text-start">
                         <div class="d-flex justify-content-between">
-                            <span>{{ $krs->nama_kursus }}</span>
+                            <span class="fw-bold">{{ $krs->nama_kursus }}</span>
                             <span class="text-warning">
                                 <i class="bi bi-star-fill"></i> {{ $krs->rating_kursus }}
                             </span>
                         </div>
                         <p class="text-muted small">
-                            {{ $krs->deskripsi_kursus }}
+                            {{ Str::limit($krs->deskripsi_kursus, 50) }}
                         </p>
                         <p class="fw-bold text-primary">Rp. {{ number_format($krs->harga_kursus, 0, ',', '.') }}</p>
 
@@ -199,7 +200,7 @@
                     @endforeach
                 </div>
 
-                <a href="{{ route('training.index') }}" class="btn button-biru px-5 py-3">
+                <a href="{{ route('training.index') }}" class="btn btn-gradient px-5 py-3 text-white fw-semibold">
                     Lihat Jadwal Kursus <i class="bi bi-calendar-week ms-2"></i>
                 </a>
 
@@ -233,7 +234,7 @@
         
         <div class="row g-4 text-center ">
             <div class="col-md-4">
-                <div class="card text-center p-3 custom-card" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-info bg-opacity-25" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
                         <h1 class="card-title fw-bold text-primary " style="font-size: 80px;">150 +</h1>
@@ -245,7 +246,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card text-center p-3 custom-card" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-primary bg-opacity-10" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
                         <h1 class="card-title fw-bold text-primary " style="font-size: 80px;">457 +</h1>
@@ -256,10 +257,10 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card text-center p-3 custom-card" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-primary bg-opacity-25" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
-                        <h1 class="card-title fw-bold text-primary " style="font-size: 80px;">25 +</h1>
+                        <h1 class="card-title fw-bold text-primary" style="font-size: 80px;">25 +</h1>
                         <h5 class="card-text">
                             Sekolah bergabung
                         </h5>
@@ -302,44 +303,14 @@
             yang nyata dan relevan dengan industri.
         </p>
 
-        {{-- Carousel --}}
-        <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
-
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-4">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                    </div>
+        <div class="swiper partnerSwiper">
+            <div class="swiper-wrapper">
+                @foreach($mitra as $mtr)
+                <div class="swiper-slide text-center">
+                    <img src="{{ asset('storage/'.$mtr->logo_mitra) }}" width="200">
                 </div>
-
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-4">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                        <img src="{{ asset('images/image1.png') }}" class="rounded placeholder-img" alt="" width="200px">
-                    </div>
-                </div>
+                @endforeach
             </div>
-
-            {{-- CUSTOM LEFT BUTTON --}}
-            {{-- <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#partnerCarousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button> --}}
-
-            {{-- CUSTOM RIGHT BUTTON --}}
-            {{-- <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#partnerCarousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button> --}}
-
         </div>
 
         <div class="border-top border-2 border-secondary mb-5 mt-4"></div>
@@ -422,7 +393,7 @@
             @foreach ($berita as $brt)
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <div class="card border-0 custom-card" data-aos="fade-up" data-aos-duration="800">
+                <div class="card h-100 bg-success bg-opacity-10" data-aos="fade-up" data-aos-duration="800">
 
                     <img src="{{ asset('storage/'.$brt->gambar_berita) }}" class="card-img-top" alt="{{ $brt->title }}" style="height: 220px; object-fit: cover;">
                     <div class="card-body text-start">
@@ -450,7 +421,7 @@
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
-            <a href="{{ route('berita.index') }}" class="btn btn-outline-primary px-5 py-3">
+            <a href="{{ route('berita.index') }}" class="btn btn-gradient text-white px-5 py-3">
                 Lihat Semua Berita <i class="bi bi-newspaper ms-2"></i>
             </a>
         </div>
@@ -492,5 +463,29 @@
 
 </style>
 
+<script>
+    var swiper = new Swiper(".partnerSwiper", {
+        slidesPerView: 5
+        , spaceBetween: 30
+        , loop: true
+        , autoplay: {
+            delay: 0
+            , disableOnInteraction: false
+        }
+        , speed: 3000
+        , breakpoints: {
+            320: {
+                slidesPerView: 2
+            }
+            , 768: {
+                slidesPerView: 3
+            }
+            , 1024: {
+                slidesPerView: 5
+            }
+        , }
+    });
+
+</script>
 
 @endsection
