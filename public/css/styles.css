@@ -1,6 +1,115 @@
 body {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: 'Poppins';
 }
+
+.poppins-thin {
+  font-family: "Poppins";
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins";
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins";
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins";
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins";
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins";
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 .bg-gray-500 {
     background-color: rgb(249 250 251) !important;
@@ -37,7 +146,7 @@ body {
     /* Grey background */
     color: black;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     text-align: center;
     margin: 0 auto 40px auto;
     /* Horizontal center + bottom margin */
@@ -64,13 +173,6 @@ body {
 
     /* Shadow lebih kuat saat hover */
     box-shadow: 0px 18px 35px rgba(120, 165, 200, 0.95);
-}
-
-.card-krs:hover {
-    transform: translateY(-10px);
-
-    /* Shadow lebih kuat saat hover */
-    box-shadow: 0px 18px 35px rgba(156, 200, 230, 0.8);
 }
 
 /* SHINE EFFECT UNTUK GAMBAR */
@@ -214,6 +316,7 @@ body {
     font-size: 24px;
     /* Border tebal */
     border-radius: 20px;
+    border: none;
     /* Lebih bulat */
     box-shadow: 0 4px 6px #264570;
 }
@@ -284,10 +387,9 @@ body {
 
 
 .cardcur {
-    height: 100%;
     /* Make cards take full height of their container */
     background-color: #10284A;
-    border-radius: 20px;
+    border-radius: 45px;
     color: white;
     /* Grey background */
 }

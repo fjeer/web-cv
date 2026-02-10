@@ -7,14 +7,14 @@
 <section class="hero-section" style="background-image: url('{{ asset('images/banner4.png') }}'); background-size: cover; background-position: center; height: 425px; display: flex; align-items: center;" data-aos="fade-zoom-in">
     <div class="container py-5">
         <div class="col-lg-6 col-md-8" data-aos="fade-right">
-            <h2 class="fw-bold mb-3">Kelas Industri SigmaTech</h2>
+            <h2 class="poppins-semibold mb-3">Kelas Industri SigmaTech</h2>
             <p class="mb-4">
                 Belajar langsung bersama mentor berpengalaman dan kuasai keterampilan yang dibutuhkan dunia kerja modern.
             </p>
             <div class="d-flex gap-3">
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-primary custom-left-btn mt-5">Daftar Sekarang</a>
+                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-primary custom-left-btn poppins-semibold mt-5">Daftar Sekarang</a>
 
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-primary custom-right-btn mt-5">Hubungi Kami</a>
+                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-primary custom-right-btn poppins-semibold mt-5">Hubungi Kami</a>
 
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="col-md-3 d-flex align-items-center gap-3">
                 <img src="{{ asset('images/school.png') }}" alt="school logo" style="width: 50px">
                 <div>
-                    <h3 class="text-white fw-bold mb-0">25 +</h3>
+                    <h3 class="text-white poppins-bold mb-0">25 +</h3>
                     <span class="text-white fw-light">Sekolah bergabung</span>
                 </div>
             </div>
@@ -36,7 +36,7 @@
             <div class="col-md-3 d-flex align-items-center gap-3">
                 <img src="{{ asset('images/graduet.png') }}" alt="graduation logo" style="width: 50px">
                 <div>
-                    <h3 class="text-white fw-bold mb-0">457 +</h3>
+                    <h3 class="text-white poppins-bold mb-0">457 +</h3>
                     <span class="text-white fw-light">Alumni Kelas Industri</span>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-md-3 d-flex align-items-center gap-3">
                 <img src="{{ asset('images/presentation.png') }}" alt="presentation logo" style="width: 50px">
                 <div>
-                    <h3 class="text-white fw-bold mb-0">13 +</h3>
+                    <h3 class="text-white poppins-bold mb-0">13 +</h3>
                     <span class="text-white fw-light">Pilihan Bidang Kelas</span>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="col-md-3 d-flex align-items-center gap-3">
                 <img src="{{ asset('images/siswa.png') }}" alt="siswa logo" style="width: 50px">
                 <div>
-                    <h3 class="text-white fw-bold mb-0">1.500 +</h3>
+                    <h3 class="text-white poppins-bold mb-0">1.500 +</h3>
                     <span class="text-white fw-light">Siswa Kelas Industri</span>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
             <!-- Keunggulan -->
             <div class="col-md-8">
-                <h4 class="fw-bold mb-4">Keunggulan Kelas Industri <span style="color: #3399CC;">SigmaTech.</span></h4>
+                <h4 class="poppins-semibold mb-4">Keunggulan Kelas Industri <span style="color: #3399CC;">SigmaTech.</span></h4>
                 <p>
                     Kelas Industri SigmaTech adalah program pembelajaran intensif berbasis praktik yang
                     mengombinasikan project based learning, pendampingan langsung, dan kurikulum yang selaras dengan kebutuhan perusahaan.
@@ -84,7 +84,7 @@
                     @php
                     $keunggulan = [
                     ['library.png','Kurikulum Berbasis Industri','Disesuaikan dengan kebutuhan perusahaan IT.'],
-                    ['kbm.png','Belajar Secara Langsung','Pendampingan langsung oleh instruktur profesional.'],
+                    ['kbm.png','Belajar Secara Langsung','Pendampingan langsung profesional.'],
                     ['kantor.png','Project & Portofolio Nyata','Setiap Peserta membangun proyek siap pakai.'],
                     ['sertif.png','Sertifikan Resmi','Menambah nilai saat melamar kerja.'],
                     ]
@@ -96,8 +96,8 @@
                             <div class="d-flex gap-2">
                                 <img src="{{ asset('images/'.$k[0]) }}" alt="Logo" style="width:28px; height:28px; margin-right:5px;">
                                 <div>
-                                    <h6 class="text-primary mb-0 fw-bold" style="font-size:14px;">{{ $k[1] }}</h6>
-                                    <p class="text-muted" style="font-size:12px; margin-bottom:0;">{{ $k[2] }}</p>
+                                    <h6 class="text-primary mb-0 poppins-medium" style="font-size:14px;">{{ $k[1] }}</h6>
+                                    <p class="text-muted poppins-light" style="font-size:12px; margin-bottom:0;">{{ $k[2] }}</p>
                                 </div>
 
                             </div>
@@ -116,7 +116,7 @@
 <!-- Section Manfaat -->
 <div class="container py-5">
 
-    <div class="fw-bold text-center">
+    <div class="poppins-semibold text-center">
         <h1>Manfaat yang Didapatkan Sekolah <br>
             Ketika Mengikuti Kelas Industri <span style="color: #3399CC;">SigmaTech.</span>
         </h1>
@@ -142,8 +142,8 @@
                             <div class="d-flex gap-3">
                                 <img src="{{ asset('images/'.$m['img']) }}" alt="Logo" class="img-industri" style="width:75px">
                                 <div>
-                                    <h6 class="text-primary mb-1">{{ $m['title'] }}</h6>
-                                    <p class="mb-0" style="font-size:13px;">{{ $m['desc'] }}</p>
+                                    <h6 class="poppins-semibold mb-1">{{ $m['title'] }}</h6>
+                                    <p class="mb-0" style="font-size:14px;">{{ $m['desc'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h2 class="fw-bold mb-3">Wujudkan Lulusan yang Siap Bersaing di Dunia Industri</h2>
+                <h2 class="poppins-semibold mb-3">Wujudkan Lulusan yang Siap Bersaing di Dunia Industri</h2>
                 <p class="mb-4">
                     Tidak perlu lagi bingung menyusun pembelajaran yang sesuai kebutuhan dunia kerja.
                     Program Kelas Industri SigmaTech hadir sebagai mitra strategis untuk membantu sekolah menghadirkan pembelajaran relevan, terarah, dan berbasis praktik nyata sehingga siswa lebih siap untuk Bekerja, Melanjutkan studi, maupun Berwirausaha.
@@ -188,7 +188,7 @@
 
     <!-- Section Join Now -->
     <div class="text-center py-5">
-        <h1>Ayo Bergabung di Kelas Industri SigmaTech!</h1>
+        <h1 class="poppins-semibold">Ayo Bergabung di Kelas Industri SigmaTech!</h1>
         <p>Bangun keterampilan, portofolio, dan masa depan kariermu mulai dari sekarang.</p>
     </div>
 

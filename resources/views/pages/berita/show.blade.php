@@ -3,7 +3,8 @@
 @section('title', 'news-detail')
 
 @section('content')
-<div class="container my-5">
+
+<div class="container my-5" data-aos="fade-up">
 
     <!-- Back Button -->
     <a href="{{ route('berita.index') }}" class="mb-4 text-secondary text-decoration-none d-inline-block">
@@ -11,21 +12,21 @@
     </a>
 
     <!-- Title -->
-    <h1 class="fw-bold mb-3">
+    <h1 class="poppins-semibold mb-3">
         {{ $berita->title }}
     </h1>
 
     <!-- Meta Info -->
     <div class="d-flex justify-content-between align-items-center text-muted mb-4">
-        <span>{{ $berita->user->name }}</span>
-        <span>
+        <span class="poppins-semibold">{{ $berita->user->name }}</span>
+        <span class="poppins-semibold">
             <i class="bi bi-calendar-event"></i> {{ $berita->tanggal_berita->format('d F Y') }}
         </span>
     </div>
 
     <!-- Thumbnail -->
     <img
-        src="{{ asset('images/image1.png') }}"
+        src="{{ asset('storage/' . $berita->gambar_berita) }}"
         alt="Cloudflare Gangguan"
         class="img-fluid rounded-4 mb-5"
     >

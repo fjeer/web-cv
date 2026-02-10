@@ -15,11 +15,11 @@
 
             <div class="banner_content" data-aos="fade-right">
 
-                <h3 class="fw-bold fs-1">
+                <h3 class="poppins-bold fs-1">
                     Selamat Datang Kembangkan potensi dan inovasi bersama di SigmaTech.id
                 </h3>
 
-                <p class="text-secondary fs-5">
+                <p class="poppins-medium text-secondary fs-5">
                     Berkarya, Berinovasi, dan Bertumbuh bersama.
                 </p>
 
@@ -48,7 +48,7 @@
 
         <div class="title-keunggulan" data-aos="fade-up">
 
-            <h2 class="section-title mb-3">Keunggulan SigmaTech</h2>
+            <h2 class="section-title poppins-reguler mb-3">Keunggulan SigmaTech</h2>
             <p class="text-muted mx-auto mb-5" style="max-width: 700px;">
                 Kami menghadirkan solusi pembelajaran digital yang relevan dengan kebutuhan industri terkini
             </p>
@@ -68,12 +68,12 @@
 
             @foreach($keunggulan as $item)
             <div class="col-lg-3 col-md-6">
-                <div class="card text-center p-4 border-0 custom-card" data-aos="flip-left" data-aos-duration="3000">
+                <div class="card text-center px-2 py-4 border-0 custom-card" data-aos="flip-left" data-aos-duration="3000">
                     <div class="img-wrapper mb-4">
                         <img src="{{ asset('images/'.$item[0]) }}" width="70" alt="">
                     </div>
-                    <h5 class="fw-bold mb-3 fs-6">{{ $item[1] }}</h5>
-                    <p class="text-secondary">{{ $item[2] }}</p>
+                    <h5 class="poppins-medium mb-3 fs-6">{{ $item[1] }}</h5>
+                    <p class="text-secondary" style="font-size: 14px;">{{ $item[2] }}</p>
                 </div>
             </div>
             @endforeach
@@ -96,21 +96,21 @@
             </div>
 
             <div class="col-lg-8 col-md-12 ps-lg-5">
-                <span class="text-primary fw-bold fs-4 mb-2 d-block">About Us</span>
-                <h3 class="fw-bold mb-4">SigmaTech Digital Solution</h3>
+                <span class="text-primary poppins-semibold fs-4 mb-2 d-block">About Us</span>
+                <h3 class="poppins-semibold mb-4">SigmaTech Digital Solution</h3>
                 <p class="text-secondary mb-4">
                     Bergerak di bidang teknologi informasi dan layanan digital dengan komitmen membangun ekosistem pembelajaran yang inovatif.
                 </p>
 
                 <div class="row mt-5">
                     <div class="col-md-4 mb-4">
-                        <h5 class="fw-bold text-primary mb-3">Visi</h5>
+                        <h5 class="poppins-semibold text-primary mb-3">Visi</h5>
                         <p class="text-muted">
                             Menjadi mitra digital terpercaya dalam transformasi pendidikan teknologi di Indonesia.
                         </p>
                     </div>
                     <div class="col-md-8">
-                        <h5 class="fw-bold text-primary mb-3">Misi</h5>
+                        <h5 class="poppins-semibold text-primary mb-3">Misi</h5>
                         <ul class="list-unstyled">
                             @foreach(['Memberikan pelatihan dan konsultasi berbasis teknologi terkini.', 'Menghadirkan solusi IT yang efisien, aman, dan scalable.', 'Mengembangkan produk digital yang meningkatkan produktivitas dan konektivitas.'] as $mission)
                             <li class="mb-2">
@@ -135,7 +135,7 @@
         
         <div class="title_kursus" data-aos="fade-up">
 
-            <h2 class="section-title mb-2">Pilih Jalur Belajarmu</h2>
+            <h2 class="section-title poppins-reguler mb-2">Pilih Jalur Belajarmu</h2>
             <p class="text-secondary mb-0">
                 Mulai perjalanan kariermu di bidang yang kamu minati. 
                 <p class="mt-0 mb-5 text-secondary"> Setiap kelas di SigmaTech dirancang agar kamu bisa belajar sambil praktik langsung. </p>
@@ -147,19 +147,24 @@
 
             @foreach ($kursus as $krs)
             <div class="col-md-3 col-sm-6">
-                <div class="card border-primary card-krs" style="border-radius: 20px" data-aos="flip-left" data-aos-duration="3000" data-aos-easing="ease-out-cubic">
-                    <img src="{{ asset('storage/'.$krs->gambar_kursus ) }}" class="card-img-top" alt="{{ $krs->gambar_kursus }}" style="height: 180px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="card border-primary" style="border-radius: 15px; box-shadow: 5px 5px 5px #1e2e49;" data-aos="flip-left" data-aos-duration="3000" data-aos-easing="ease-out-cubic">
+
+                    <img src="{{ asset('storage/'.$krs->gambar_kursus ) }}" class="card-img-top p-2 mb-0" alt="{{ $krs->gambar_kursus }}" style="height: 170px; object-fit: cover; border-radius: 15px;">
+
                     <div class="card-body text-start">
                         <div class="d-flex justify-content-between">
-                            <span class="fw-bold">{{ $krs->nama_kursus }}</span>
-                            <span class="text-warning">
-                                <i class="bi bi-star-fill"></i> {{ $krs->rating_kursus }}
-                            </span>
+                            <span class="mt-0 text-muted poppins-light text-decoration-underline" style="font-size: 13px">{{ $krs->kelas->nama_kelas }}</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning poppins-light text-decoration-underline" style="font-size: 14px;"> {{ $krs->rating_kursus }} </i>
+                            </div>
                         </div>
-                        <p class="text-muted small">
-                            {{ Str::limit($krs->deskripsi_kursus, 50) }}
-                        </p>
-                        <p class="fw-bold text-primary">Rp. {{ number_format($krs->harga_kursus, 0, ',', '.') }}</p>
+                        
+
+                        <div class="mb-3">
+                            <span class="poppins-medium text-decoration-underline">{{ $krs->nama_kursus }}</span>
+                        </div>
+
+                        <p class="poppins-medium text-decoration-underline text-primary mb-0">Rp. {{ number_format($krs->harga_kursus, 0, ',', '.') }}</p>
 
                         <a href="{{ route('kursus.show', $krs->slug) }}" class="stretched-link"></a>
                     </div>
@@ -200,7 +205,7 @@
                     @endforeach
                 </div>
 
-                <a href="{{ route('training.index') }}" class="btn btn-gradient px-5 py-3 text-white fw-semibold">
+                <a href="{{ route('training.index') }}" class="btn btn-gradient px-5 py-3 text-white poppins-bold">
                     Lihat Jadwal Kursus <i class="bi bi-calendar-week ms-2"></i>
                 </a>
 
@@ -222,9 +227,9 @@
 
         <div class="title-industri" data-aos="fade-up">
 
-            <h2 class="section-title mb-2">Jelajahi Kelas Industri</h2>
+            <h2 class="section-title mb-3">Jelajahi Kelas Industri</h2>
 
-            <h2 class="mb-2" style="font-size: 45px">Siap Gabung ke Dunia Industri Nyata?</h2>
+            <h2 class="mb-2 poppins-medium" style="font-size: 45px">Siap Gabung ke Dunia Industri Nyata?</h2>
             <p class="mb-0 text-secondary">
                 Daftar sekarang dan rasakan pengalaman belajar berbasis proyek industri bersama SigmaTech.
                 <p class="mb-5 text-secondary">Jadilah bagian dari generasi digital yang siap bersaing di dunia kerja.</p>
@@ -234,10 +239,10 @@
         
         <div class="row g-4 text-center ">
             <div class="col-md-4">
-                <div class="card text-center p-3 bg-info bg-opacity-25" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-info bg-opacity-25" style="border-radius: 15px; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
-                        <h1 class="card-title fw-bold text-primary " style="font-size: 80px;">150 +</h1>
+                        <h1 class="card-title poppins-semibold text-primary " style="font-size: 80px;">150 +</h1>
                         <h5 class="card-text">
                             Siswa Kelas Industri
                         </h5>
@@ -246,10 +251,10 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card text-center p-3 bg-primary bg-opacity-10" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-primary bg-opacity-10" style="border-radius: 15px; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
-                        <h1 class="card-title fw-bold text-primary " style="font-size: 80px;">457 +</h1>
+                        <h1 class="card-title poppins-semibold text-primary " style="font-size: 80px;">457 +</h1>
                         <h5 class="card-text">
                             Alumni Kelas Industri
                         </h5>
@@ -257,10 +262,10 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card text-center p-3 bg-primary bg-opacity-25" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="card text-center p-3 bg-primary bg-opacity-25" style="border-radius: 15px; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);" data-aos="zoom-in-up" data-aos-duration="800">
 
                     <div class="card-body">
-                        <h1 class="card-title fw-bold text-primary" style="font-size: 80px;">25 +</h1>
+                        <h1 class="card-title poppins-semibold text-primary" style="font-size: 80px;">25 +</h1>
                         <h5 class="card-text">
                             Sekolah bergabung
                         </h5>
@@ -354,12 +359,12 @@
                             <i class="bi {{ $icon }} text-{{ $color }} fs-3"></i>
                         </div>
                         <div>
-                            <h5 class="fw-bold mb-2">{{ $lyn->nama_layanan }}</h5>
+                            <h5 class="poppins-medium mb-2">{{ $lyn->nama_layanan }}</h5>
                             <p class="text-muted small">{{ Str::limit($lyn->deskripsi_layanan, 120) }}</p>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="text-primary text-decoration-none fw-semibold mt-auto">
+                        <a href="#" class="text-primary text-decoration-none mt-auto">
                             Pelajari lebih lanjut <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -393,19 +398,19 @@
             @foreach ($berita as $brt)
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <div class="card h-100 bg-success bg-opacity-10" data-aos="fade-up" data-aos-duration="800">
+                <div class="card h-100 bg-success bg-opacity-10" style="border-radius:20px ;box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);" data-aos="fade-up" data-aos-duration="800">
 
-                    <img src="{{ asset('storage/'.$brt->gambar_berita) }}" class="card-img-top" alt="{{ $brt->title }}" style="height: 220px; object-fit: cover;">
+                    <img src="{{ asset('storage/'.$brt->gambar_berita) }}" class="card-img-top p-3" alt="{{ $brt->title }}" style="height: 220px; object-fit: cover; border-radius: 30px;">
                     <div class="card-body text-start">
 
-                        <div class="d-flex align-items-center text-muted small mb-3">
+                        <div class="d-flex text-muted small mb-3">
                             <i class="bi bi-calendar-event me-2"></i>
                             {{ $brt->tanggal_berita->format('d M Y') }}
                         </div>
-                        <h5 class="fw-bold mb-3">
+                        <h5 class="poppins-reguler mb-3" style="font-size: 16px;">
                             {{ Str::limit($brt->title, 60) }}
                         </h5>
-                        <p class="text-muted mb-4" style="font-size: 15px; line-height: 1.6;">
+                        <p class="text-muted mb-4" style="font-size: 14px;">
                             {{ Str::limit(strip_tags($brt->detail_berita), 100) }}
                         </p>
                         <a href="{{ route('berita.show', $brt->slug) }}" class="text-primary text-decoration-none fw-semibold">

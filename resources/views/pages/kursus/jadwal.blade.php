@@ -26,14 +26,14 @@
                 {{-- ================= HEADER + SEARCH ================= --}}
                 <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
                     <div class="d-flex align-items-center gap-2">
-                        <h5 class="fw-bold mb-0">Jadwal Kursus</h5>
+                        <h5 class="poppins-semibold mb-0">Jadwal Kursus</h5>
                     </div>
 
                     <div id="filterForm" class="d-flex gap-3">
-                        <input type="text" id="searchInput" class="form-control" style="max-width: 220px" placeholder="Cari kursus..." value="{{ request('search') }}">
+                        <input type="text" id="searchInput" class="form-control rounded-pill" style="max-width: 220px" placeholder="Cari kursus..." value="{{ request('search') }}">
 
                         <div class="custom-select-wrapper">
-                            <select id="statusFilter" class="custom-select">
+                            <select id="statusFilter" class="custom-select rounded-pill">
                                 <option value="">Semua Status</option>
                                 <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>Tersedia</option>
                                 <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>Ditutup</option>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="custom-select-wrapper">
-                            <select id="kelasFilter" class="custom-select">
+                            <select id="kelasFilter" class="custom-select rounded-pill">
                                 <option value="">Semua kelas</option>
                                 @foreach ($kelas as $k )
                                 <option value="{{ $k->id }}" {{ request('kelas') == $k->id ? 'selected' : ''}}>{{ $k->nama_kelas }}</option>

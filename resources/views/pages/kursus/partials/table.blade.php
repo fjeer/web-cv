@@ -23,7 +23,7 @@
         <tbody>
             @foreach($training as $jadwal)
             <tr>
-                <td><a href="{{ route('kursus.show', $jadwal->kursus->slug) }}" class="text-decoration-none text-black fw-semibold">{{ $jadwal->kursus->nama_kursus }}</a></td>
+                <td><a href="{{ route('kursus.show', $jadwal->kursus->slug) }}" class="text-black poppins-medium">{{ $jadwal->kursus->nama_kursus }}</a></td>
                 <td>
                     {{ $jadwal->tanggal_mulai->translatedFormat('d F Y') }}
                     s/d

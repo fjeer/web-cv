@@ -9,12 +9,12 @@
         <div class="row">
             <div class="col-lg-6 col-md-8">
                 <div class="container" data-aos="fade-right">
-                    <h2 class="fw-bold mb-3">Tingkatkan Keahlianmu <br> Pilih Jalur Belajarmu di SigmaTech</h2>
+                    <h2 class="poppins-semibold mb-3">Tingkatkan Keahlianmu <br> Pilih Jalur Belajarmu di SigmaTech</h2>
                     <p class="mb-4">
                         Pelajari bidang IT sesuai passion-mu <br> Setiap program dirancang berbasis proyek dan dibimbing
                         langsung <br> oleh praktisi industri.
                     </p>
-                    <h4 class="fw-bold mb-3">Kursus (Program / Kelas).</h4> 
+                    <h4 class="poppins-medium mb-3 fs-5">Kursus (Program / Kelas).</h4> 
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
 
 <div data-aos="fade-up">
     <div class="container pt-5">
-        <h5 class="fw-bold">Daftar Kursus</h5>
+        <h5 class="poppins-semibold">Daftar Kursus</h5>
     </div>
 </div>
 
@@ -33,15 +33,15 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
                 <div class="input-group">
-                    <span class="input-group-text bg-white border-end-0">
-                        <i class="bi bi-search text-muted"></i>
+                    <span class="input-group-text btn-gradient" style="border-radius: 20px 0 0 20px">
+                        <i class="bi bi-search text-white"></i>
                     </span>
-                    <input type="text" id="searchCourse" class="form-control border-start-0" placeholder="Cari kursus atau keahlian...">
+                    <input type="text" id="searchCourse" class="form-control" placeholder="Cari kursus atau keahlian..." style="border-radius: 0 20px 20px 0">
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 mb-3 mb-md-0">
-                <select id="filterKelas" class="form-select">
+                <select id="filterKelas" class="form-select" style="border-radius: 20px;">
                     <option value="">Semua Kelas</option>
                     @foreach($kelas as $kls)
                         <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <button id="resetFilter" class="btn btn-warning w-100">
+                <button id="resetFilter" class="btn btn-warning w-100 rounded-pill">
                     <i class="bi bi-arrow-clockwise"></i> Reset
                 </button>
             </div>
@@ -90,22 +90,22 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h5 class="card-title fw-bold mb-2 text-truncate">{{ $krs->nama_kursus }}</h5>
+                        <h5 class="card-title poppins-semibold mb-2 text-truncate">{{ $krs->nama_kursus }}</h5>
 
-                        <p class="card-text text-muted small flex-grow-2" style="min-height: 30px;">
+                        <p class="card-text text-muted text-decoration-underline small flex-grow-2" style="min-height: 30px;">
                             {{ Str::limit(strip_tags($krs->deskripsi_kursus), 100) }}
                         </p>
 
                         <div class="d-flex align-items-center mb-1">
                             <div class="text-warning me-2">
                                 <i class="bi bi-star-fill"></i>
-                                <small class="fw-bold">{{ $krs->rating_kursus }}</small>
+                                <small class="poppins-bold">{{ $krs->rating_kursus }}</small>
                             </div>
                         </div>
 
                         <div class="mt-auto">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="text-primary fw-bold mb-0">
+                                <h5 class="text-primary text-decoration-underline poppins-medium mb-0">
                                     Rp {{ number_format($krs->harga_kursus) }}
                                 </h5>
                                 <span class="badge bg-success bg-opacity-10 text-success">
@@ -151,17 +151,17 @@
     <div class="container py-5">
         <div class="row g-4 text-center justify-content-center">
             <div class="col-md-10">
-                <div class="h-100 text-center">
-                    <div class="cardcur py-5">
-                        <h1 style="font-size: 50px;">
+                <div class="text-center">
+                    <div class="cardcur p-5">
+                        <h1 class="poppins-bold" style="font-size: 34px; -webkit-text-stroke: 1px black;">
                             Berhenti Belajar <span style="color: #FF741F;">Tanpa Tujuan.</span>
                         </h1>
-                        <h3>
+                        <h4 class="poppins-semibold" style="-webkit-text-stroke: 1px black;">
                             <span style="color: #FF741F;">SigmaTech</span> bantu kamu kuasai keahlian IT secara terarah,
                             praktik <br> langsung, dan siap kerja di era digital.
-                        </h3>
+                        </h4>
                         <div class="d-flex justify-content-center gap-3">
-                            <a href="{{ route('training.index') }}" class="kuning-round btn mt-5" style="font-size:30px;">
+                            <a href="{{ route('training.index') }}" class="kuning-round btn mt-4 poppins-semibold" style="font-size:18px;">
                                 <i class="bi bi-person-fill text-dark"></i> Daftar Sekarang
                             </a>
                         </div>
@@ -190,11 +190,6 @@
 
     .course-hover:hover .card-img-top {
         transform: scale(1.05);
-    }
-
-    .cardcur h1,
-    .cardcur h3 {
-        color: white !important;
     }
 
     .badge.bg-info {

@@ -7,7 +7,7 @@
 <section class="hero-section" style="background-image: url('{{ asset('images/banner3.png') }}'); background-size: cover; background-position: center;">
     <div class="container py-5" data-aos="fade-right">
         <div class="col-lg-6 col-md-8">
-            <h2 class="fw-bold mb-3">
+            <h2 class="poppins-semibold mb-3">
                 Belajar Langsung, Bangun Koneksi, dan Rasakan Pengalaman Nyata Industri!
             </h2>
             <p class="mb-4">
@@ -15,7 +15,7 @@
                 untuk meningkatkan skill, membangun koneksi, dan merasakan pengalaman nyata
                 di dunia industri.
             </p>
-            <h4 class="fw-bold">Event</h4>
+            <h4 class="poppins-medium">Event</h4>
         </div>
     </div>
 </section>
@@ -26,12 +26,12 @@
             {{-- Filter Section --}}
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3">
                 <div>
-                    <h5 class="fw-bold">Daftar Events</h5>
+                    <h5 class="poppins-semibold">Daftar Events</h5>
                 </div>
 
                 <div class="d-flex flex-wrap gap-3">
                     <div class="custom-select-wrapper">
-                        <select id="kategoriFilter" class="custom-select">
+                        <select id="kategoriFilter" class="custom-select rounded-pill">
                             <option value="">Semua Kategori</option>
                             @foreach ($kategori as $k)
                             <option value="{{ $k->id }}" {{ request('kategori') == $k->id ? 'selected' : '' }}>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="search-wrapper">
-                        <input type="text" id="searchEvent" class="form-control" placeholder="Cari event..." value="{{ request('search') }}">
+                        <input type="text" id="searchEvent" class="form-control rounded-pill" placeholder="Cari event..." value="{{ request('search') }}">
                         <i class="bi bi-search search-icon"></i>
                     </div>
 
@@ -92,7 +92,7 @@
 
                         <div class="card-body d-flex flex-column">
                             <a href="{{ route('event.show', $e->slug) }}" class="text-decoration-none text-dark stretched-link">
-                                <h5 class="card-title fw-bold mb-2 text-truncate-2">
+                                <h5 class="card-title poppins-semibold mb-2 text-truncate-2">
                                     {{ $e->title }}
                                 </h5>
                             </a>
