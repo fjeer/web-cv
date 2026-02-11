@@ -127,9 +127,12 @@ body {
 
 .footer {
     /* opsional, padding dan warna */
-    padding: 40px 0;
     background-color: #264570;
     color: white;
+}
+
+footer .navigasi {
+    padding-left: 100px;
 }
 
 .footer-bottom {
@@ -343,12 +346,6 @@ body {
     border-color: rgba(134, 72, 6, 0.3);
 }
 
-.tombolevent {
-    color: #3399CC;
-    border-color: #264570;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
 /* Custom Carousel Buttons */
 .custom-arrow {
     width: 45px;
@@ -382,7 +379,7 @@ body {
 
 .btn-gradient:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px #667eea66;
 }
 
 

@@ -15,7 +15,7 @@
 
             <div class="banner_content" data-aos="fade-right">
 
-                <h3 class="poppins-bold fs-1">
+                <h3 class="poppins-semibold fs-1">
                     Selamat Datang Kembangkan potensi dan inovasi bersama di SigmaTech.id
                 </h3>
 
@@ -187,7 +187,7 @@
         <div class="row align-items-center">
 
             <div class="col-md-6">
-                <h6 class="fs-5 fw-normal">Benefit yang didapat</h6>
+                <h6 class="fs-5 poppins-medium">Benefit yang didapat</h6>
                 <h1 style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
 
                 <p class="text-secondary">
@@ -413,7 +413,7 @@
                         <p class="text-muted mb-4" style="font-size: 14px;">
                             {{ Str::limit(strip_tags($brt->detail_berita), 100) }}
                         </p>
-                        <a href="{{ route('berita.show', $brt->slug) }}" class="text-primary text-decoration-none fw-semibold">
+                        <a href="{{ route('berita.show', $brt->slug) }}" class="text-primary text-decoration-none poppins-medium">
                             Baca Selengkapnya <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                         
