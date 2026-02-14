@@ -8,4 +8,11 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateKelas extends CreateRecord
 {
     protected static string $resource = KelasResource::class;
+    protected static ?string $title = 'Tambah Data Kelas';
+    protected static ?string $breadcrumb = 'Tambah Data';
+
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

@@ -29,7 +29,23 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'danger' => Color::Pink,
+                'gray' => Color::Slate,
+                'info' => Color::Sky,
+                'primary' => Color::Cyan,
+                'success' => Color::Blue,
+                'warning' => Color::Amber,
+            ])
+            ->font('Poppins')
+            ->spa()
+            ->favicon('images/favicon.ico')
+            ->sidebarFullyCollapsibleOnDesktop()
+            ->NavigationGroups([
+                'Home Page',
+                'Courses',
+                'Events',
+                'Industrial Class',
+                'News'
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')

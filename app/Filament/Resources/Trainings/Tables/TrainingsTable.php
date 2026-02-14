@@ -3,10 +3,14 @@
 namespace App\Filament\Resources\Trainings\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
@@ -18,16 +22,20 @@ class TrainingsTable
     {
         return $table
             ->columns([
-                TextColumn::make('id_kursus')
-                    ->numeric()
+                TextColumn::make('kursus.nama_kursus')
+                    ->label('Kursus')
+                    ->searchable()
                     ->sortable(),
                 TextColumn::make('tanggal_mulai')
+                    ->label('Tgl Mulai')
                     ->date()
                     ->sortable(),
                 TextColumn::make('tanggal_selesai')
+                    ->label('Tgl Selesai')
                     ->date()
                     ->sortable(),
                 TextColumn::make('waktu')
+                    ->label('Jam')
                     ->searchable(),
                 TextColumn::make('kuota')
                     ->numeric()
@@ -51,7 +59,11 @@ class TrainingsTable
                 TrashedFilter::make(),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
+                RestoreAction::make(),
+                ForceDeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

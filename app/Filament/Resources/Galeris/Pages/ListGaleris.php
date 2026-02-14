@@ -9,6 +9,8 @@ use Filament\Resources\Pages\ListRecords;
 class ListGaleris extends ListRecords
 {
     protected static string $resource = GaleriResource::class;
+    protected static ?string $title = 'Data Galeri';
+    protected static ?string $breadcrumb = 'List Data';
 
     protected function getHeaderActions(): array
     {

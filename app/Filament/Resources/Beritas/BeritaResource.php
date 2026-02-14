@@ -20,8 +20,16 @@ class BeritaResource extends Resource
 {
     protected static ?string $model = Berita::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Newspaper;
 
+    protected static ?string $recordTitleAttribute = 'slug';
+    protected static ?string $navigationLabel = 'Data Berita';
+    protected static ?string $pluralModelLabel = 'Data Berita';
+    protected static ?string $slug = 'berita-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'News';
+    }
     public static function form(Schema $schema): Schema
     {
         return BeritaForm::configure($schema);

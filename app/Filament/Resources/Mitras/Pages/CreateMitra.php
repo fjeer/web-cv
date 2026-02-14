@@ -8,4 +8,11 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateMitra extends CreateRecord
 {
     protected static string $resource = MitraResource::class;
+    protected static ?string $title = 'Tambah Data Mitra';
+    protected static ?string $breadcrumb = 'Tambah Data';
+
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

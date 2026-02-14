@@ -20,8 +20,15 @@ class KategoriResource extends Resource
 {
     protected static ?string $model = Kategori::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Tag;
+    protected static ?string $recordTitleAttribute = 'nama_kategori';
+    protected static ?string $navigationLabel = 'Data Kategori';
+    protected static ?string $pluralModelLabel = 'Data Kategori';
+    protected static ?string $slug = 'kategori-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Events';
+    }
     public static function form(Schema $schema): Schema
     {
         return KategoriForm::configure($schema);

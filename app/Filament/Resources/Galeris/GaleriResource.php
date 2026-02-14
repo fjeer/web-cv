@@ -18,7 +18,15 @@ class GaleriResource extends Resource
 {
     protected static ?string $model = Galeri::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Photo;
+    protected static ?string $recordTitleAttribute = 'nama_galeri';
+    protected static ?string $navigationLabel = 'Data Galeri';
+    protected static ?string $pluralModelLabel = 'Data Galeri';
+    protected static ?string $slug = 'galeri-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Industrial Class';
+    }
 
     public static function form(Schema $schema): Schema
     {

@@ -3,10 +3,14 @@
 namespace App\Filament\Resources\Kursuses\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
@@ -18,20 +22,19 @@ class KursusesTable
         return $table
             ->columns([
                 TextColumn::make('nama_kursus')
+                    ->label('Kursus')
                     ->searchable(),
-                TextColumn::make('slug')
+                TextColumn::make('kelas.nama_kelas')
+                    ->label('Kelas')
                     ->searchable(),
-                TextColumn::make('id_kelas')
-                    ->numeric()
-                    ->sortable(),
                 TextColumn::make('harga_kursus')
+                    ->label('Harga')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('rating_kursus')
+                    ->label('Rating')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('gambar_kursus')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -49,7 +52,11 @@ class KursusesTable
                 TrashedFilter::make(),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
+                RestoreAction::make(),
+                ForceDeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

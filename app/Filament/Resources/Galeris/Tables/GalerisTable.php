@@ -3,8 +3,14 @@
 namespace App\Filament\Resources\Galeris\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteAction;
+use Filament\Actions\RestoreAction;
+use Filament\Actions\ViewAction;
+use Filament\Schemas\Components\View;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,9 +21,13 @@ class GalerisTable
         return $table
             ->columns([
                 TextColumn::make('nama_galeri')
+                    ->label('Galeri')
                     ->searchable(),
-                TextColumn::make('foto_galeri')
-                    ->searchable(),
+                ImageColumn::make('foto_galeri')
+                    ->size(100)
+                    ->getStateUsing(fn($record) => asset('storage/' . $record->foto_galeri))
+                    ->placeholder('Foto Galeri')
+                    ->label('Foto'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -31,7 +41,11 @@ class GalerisTable
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
+                RestoreAction::make(),
+                ForceDeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -20,9 +20,16 @@ class KelasResource extends Resource
 {
     protected static ?string $model = Kelas::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Window;
 
     protected static ?string $recordTitleAttribute = 'nama_kelas';
+    protected static ?string $navigationLabel = 'Data Kelas';
+    protected static ?string $pluralModelLabel = 'Data Kelas';
+    protected static ?string $slug = 'kelas-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Courses';
+    }
 
     public static function form(Schema $schema): Schema
     {

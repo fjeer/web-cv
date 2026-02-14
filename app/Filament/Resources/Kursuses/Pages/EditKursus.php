@@ -11,6 +11,8 @@ use Filament\Resources\Pages\EditRecord;
 class EditKursus extends EditRecord
 {
     protected static string $resource = KursusResource::class;
+    protected static ?string $title = 'Edit Data Kursus';
+    protected static ?string $breadcrumb = 'Edit Data';
 
     protected function getHeaderActions(): array
     {
@@ -19,5 +21,10 @@ class EditKursus extends EditRecord
             ForceDeleteAction::make(),
             RestoreAction::make(),
         ];
+    }
+
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

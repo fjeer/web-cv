@@ -11,6 +11,8 @@ use Filament\Resources\Pages\EditRecord;
 class EditEvent extends EditRecord
 {
     protected static string $resource = EventResource::class;
+    protected static ?string $title = 'Edit Data Event';
+    protected static ?string $breadcrumb = 'Edit Data';
 
     protected function getHeaderActions(): array
     {
@@ -19,5 +21,9 @@ class EditEvent extends EditRecord
             ForceDeleteAction::make(),
             RestoreAction::make(),
         ];
+    }
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

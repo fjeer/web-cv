@@ -3,10 +3,14 @@
 namespace App\Filament\Resources\Beritas\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
@@ -19,19 +23,19 @@ class BeritasTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->searchable(),
-                TextColumn::make('slug')
+                    ->label('Berita')
+                    ->limit(35)
                     ->searchable(),
                 ImageColumn::make('gambar_berita')
-                    ->label('Gambar Berita')
-                    ->rounded()
-                    ->disk('public')
-                    ->visibility('public')                
-                    ->searchable(),
-                TextColumn::make('id_author')
-                    ->numeric()
+                    ->label('Gambar')
+                    ->size(50)
+                    ->getStateUsing(fn($record) => asset('storage/' . $record->gambar_berita))
+                    ->placeholder('Gambar Berita'),
+                TextColumn::make('user.name')
+                    ->label('Penulis')
                     ->sortable(),
                 TextColumn::make('tanggal_berita')
+                    ->label('Tanggal')
                     ->date()
                     ->sortable(),
                 TextColumn::make('created_at')
@@ -51,7 +55,11 @@ class BeritasTable
                 TrashedFilter::make(),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
+                RestoreAction::make(),
+                ForceDeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

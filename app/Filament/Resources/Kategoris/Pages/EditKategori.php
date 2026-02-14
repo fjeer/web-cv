@@ -11,7 +11,8 @@ use Filament\Resources\Pages\EditRecord;
 class EditKategori extends EditRecord
 {
     protected static string $resource = KategoriResource::class;
-
+    protected static ?string $title = 'Edit Data Kategori';
+    protected static ?string $breadcrumb = 'Edit Data';
     protected function getHeaderActions(): array
     {
         return [
@@ -19,5 +20,9 @@ class EditKategori extends EditRecord
             ForceDeleteAction::make(),
             RestoreAction::make(),
         ];
+    }
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

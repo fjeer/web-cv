@@ -20,9 +20,16 @@ class KursusResource extends Resource
 {
     protected static ?string $model = Kursus::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBookmarkSquare;
 
     protected static ?string $recordTitleAttribute = 'nama_kursus';
+    protected static ?string $navigationLabel = 'Data Kursus';
+    protected static ?string $pluralModelLabel = 'Data Kursus';
+    protected static ?string $slug = 'kursus-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Courses';
+    }
 
     public static function form(Schema $schema): Schema
     {

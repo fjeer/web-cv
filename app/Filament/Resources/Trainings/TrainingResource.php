@@ -20,7 +20,15 @@ class TrainingResource extends Resource
 {
     protected static ?string $model = Training::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ComputerDesktop;
+    
+    protected static ?string $navigationLabel = 'Jadwal Kursus';
+    protected static ?string $pluralModelLabel = 'Jadwal Kursus';
+    protected static ?string $slug = 'training-data';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Courses';
+    }
 
     public static function form(Schema $schema): Schema
     {

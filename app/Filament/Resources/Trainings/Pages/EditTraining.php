@@ -12,6 +12,8 @@ class EditTraining extends EditRecord
 {
     protected static string $resource = TrainingResource::class;
 
+    protected static ?string $title = 'Edit Jadwal Kursus';
+    protected static ?string $breadcrumb = 'Edit Jadwal';
     protected function getHeaderActions(): array
     {
         return [
@@ -19,5 +21,10 @@ class EditTraining extends EditRecord
             ForceDeleteAction::make(),
             RestoreAction::make(),
         ];
+    }
+
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

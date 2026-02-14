@@ -9,6 +9,8 @@ use Filament\Resources\Pages\ListRecords;
 class ListMitras extends ListRecords
 {
     protected static string $resource = MitraResource::class;
+    protected static ?string $title = 'Data Mitra';
+    protected static ?string $breadcrumb = 'List Data Mitra';
 
     protected function getHeaderActions(): array
     {

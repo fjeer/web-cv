@@ -17,10 +17,16 @@ use Filament\Tables\Table;
 class MitraResource extends Resource
 {
     protected static ?string $model = Mitra::class;
-
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingLibrary;
     protected static ?string $recordTitleAttribute = 'nama_mitra';
+    protected static ?string $navigationLabel = 'Data Mitra';
+    protected static ?string $pluralModelLabel = 'Data Mitra';
+    protected static ?string $slug = 'mitra-data';
+    protected static ?int $navigationSort = 1;
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Home Page';
+    }
 
     public static function form(Schema $schema): Schema
     {

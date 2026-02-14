@@ -9,7 +9,8 @@ use Filament\Resources\Pages\ListRecords;
 class ListTrainings extends ListRecords
 {
     protected static string $resource = TrainingResource::class;
-
+    protected static ?string $title = 'Jadwal Kursus';
+    protected static ?string $breadcrumb = 'List Jadwal';
     protected function getHeaderActions(): array
     {
         return [

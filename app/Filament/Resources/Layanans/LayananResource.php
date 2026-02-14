@@ -18,9 +18,16 @@ class LayananResource extends Resource
 {
     protected static ?string $model = Layanan::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::WrenchScrewdriver;
     protected static ?string $recordTitleAttribute = 'nama_layanan';
+    protected static ?string $navigationLabel = 'Data Layanan';
+    protected static ?string $pluralModelLabel = 'Data Layanan';
+    protected static ?string $slug = 'layanan-data';
+    protected static ?int $navigationSort = 2;
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Home Page';
+    }
 
     public static function form(Schema $schema): Schema
     {
