@@ -43,7 +43,7 @@
                 </td>
                 <td>
                     @if($jadwal->status)
-                    <a href="{{ route('daftar.index', $jadwal->kursus->id) }}" class="btn btn-outline-primary btn-sm">
+                    <a href="{{ route('daftar.index', ['training_id' => $jadwal->id]) }}" class="btn btn-primary btn-sm">
                         Daftar
                     </a>
                     @else

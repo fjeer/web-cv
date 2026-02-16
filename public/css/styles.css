@@ -382,6 +382,20 @@ footer .navigasi {
     box-shadow: 0 5px 15px #667eea66;
 }
 
+.btn-secgradient {
+    background: linear-gradient(45deg,#ffa500 0%, #FF741F 100%);;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secgradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #ff7a0066;
+}
+
 
 .cardcur {
     /* Make cards take full height of their container */

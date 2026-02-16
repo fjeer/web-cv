@@ -80,7 +80,7 @@
                         </p>
 
                         <div class="text-center mb-4">
-                            <a href="" class="btn kuning-round px-5 py-3 my-3 fs-6 poppins-semibold">
+                            <a href="{{ route('daftar.index', ['event_id' => $event->id]) }}" class="btn kuning-round px-5 py-3 my-3 fs-6 poppins-semibold">
                                 Ikuti Event
                             </a>
                         </div>
