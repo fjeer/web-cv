@@ -12,7 +12,7 @@
                     <h2 class="poppins-semibold mb-3">Tingkatkan Keahlianmu <br> Pilih Jalur Belajarmu di SigmaTech</h2>
                     <p class="mb-4">
                         Pelajari bidang IT sesuai passion-mu <br> Setiap program dirancang berbasis proyek dan dibimbing
-                        langsung <br> oleh praktisi industri.
+                        langsung oleh praktisi industri.
                     </p>
                     <h4 class="poppins-medium mb-3 fs-5">Kursus (Program / Kelas).</h4> 
                 </div>
