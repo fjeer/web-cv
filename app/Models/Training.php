@@ -21,4 +21,9 @@ class Training extends Model
     public function kursus() {
         return $this->belongsTo(Kursus::class,'id_kursus','id');
     }
+
+    public function daftar()
+    {
+        return $this->hasMany(Daftar::class, 'training_id', 'id');
+    }
 }

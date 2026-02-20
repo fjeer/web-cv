@@ -74,7 +74,7 @@
 
                     <div class="mb-3">
                         <label for="address" class="form-label">Alamat Lengkap <span class="text-danger"> * </span></label>
-                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Jl. Mawar Indah, RT002, RW004, Dusun Grabakan, Desa Sekar, Kecamatan Karanganyar, Kabupaten Banyumas" required>{{ old('address') }}</textarea>
+                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Jl. Mawar Indah, RT002, RW004, Dusun Grabakan, Desa Sekar, Kecamatan Karanganyar, Kabupaten Banyumas, Jawa Tengah 53171" required>{{ old('address') }}</textarea>
                     </div>
 
             </div>
@@ -82,6 +82,15 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item text-primary poppins-medium">Formulir Pendaftaran</li>
             </ul>
+
+            <div class="card-body">
+                <div class="alert alert-primary text-black poppins-light mb-4" role="alert">
+                    <i class="bi bi-info-circle text-primary"></i>
+                    Pilih salah satu kursus atau event yang ingin Anda daftarkan.
+                    Anda dapat memilih salah satu atau keduanya jika tersedia. Pastikan untuk memeriksa jadwal dan detail kursus/event sebelum mendaftar.
+                    <br>
+                    <small class="text-muted fst-italic">Pastikan kursus yang Anda pilih tersedia.</small>
+            </div>
 
             <div class="card-body">
                 <div class="mb-3">
@@ -229,28 +238,45 @@
 
     document.getElementById('btnPreview').addEventListener('click', function() {
 
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        let phone = document.getElementById('phone').value
+        let address = document.getElementById('address').value
         let training = document.getElementById('training_id')
         let event = document.getElementById('event_id')
 
         let selectedTraining = training.options[training.selectedIndex]
         let selectedEvent = event.options[event.selectedIndex]
 
+        if (name == "" || email == "" || phone == "" || address == "") {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Data Diri Belum Lengkap',
+                text: 'Silakan lengkapi semua data diri sebelum melanjutkan.',
+            })
+            return;
+        }
+
         if (training.value == "" && event.value == "") {
-            alert("Pilih Kursus atau Event salah satu!");
+            Swal.fire({
+                icon: 'warning',
+                title: 'Pilih Kursus atau Event',
+                text: 'Silakan pilih salah satu kursus/event atau keduanya jika tersedia. Pastikan untuk memeriksa jadwal dan detail kursus/event sebelum mendaftar.',
+            });
             return;
         }
 
         document.getElementById('preview_name').innerHTML =
-            document.getElementById('name').value ? document.getElementById('name').value : '-'
+            name ? name : '-'
 
         document.getElementById('preview_email').innerHTML =
-            document.getElementById('email').value ? document.getElementById('email').value : '-'
+            email ? email : '-'
 
         document.getElementById('preview_phone').innerHTML =
-            document.getElementById('phone').value ? document.getElementById('phone').value : '-'
+            phone ? phone : '-'
 
         document.getElementById('preview_address').innerHTML =
-            document.getElementById('address').value ? document.getElementById('address').value : '-'
+            address ? address : '-'
 
 
         // TRAINING

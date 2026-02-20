@@ -20,4 +20,9 @@ class Event extends Model
     {
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
     }
+
+    public function daftar()
+    {
+        return $this->hasMany(Daftar::class, 'event_id', 'id');
+    }
 }

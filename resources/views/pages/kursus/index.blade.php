@@ -161,7 +161,7 @@
                             praktik <br> langsung, dan siap kerja di era digital.
                         </h4>
                         <div class="d-flex justify-content-center gap-3">
-                            <a href="{{ route('training.index') }}" class="kuning-round btn mt-4 poppins-semibold" style="font-size:18px;">
+                            <a href="{{ route('daftar.index') }}" target="_blank" class="kuning-round btn mt-4 poppins-semibold" style="font-size:18px;">
                                 <i class="bi bi-person-fill text-dark"></i> Daftar Sekarang
                             </a>
                         </div>
