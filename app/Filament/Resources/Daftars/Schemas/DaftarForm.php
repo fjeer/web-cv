@@ -33,12 +33,10 @@ class DaftarForm
                     ->columnSpanFull(),
                 Select::make('training_id')
                     ->label('Kursus')
-                    ->options(Training::with('kursus')->where('status', 1)->get()->pluck('kursus.nama_kursus', 'id'))
-                    ->required(),
+                    ->options(Training::with('kursus')->where('status', 1)->get()->pluck('kursus.nama_kursus', 'id')),
                 Select::make('event_id')
                     ->label('Event')
-                    ->options(Event::where('status_event', 1)->pluck('title', 'id'))
-                    ->required(),
+                    ->options(Event::where('status_event', 1)->pluck('title', 'id')),
             ]);
     }
 }
