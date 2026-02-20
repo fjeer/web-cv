@@ -204,7 +204,15 @@
                         <tr>
                             <td>Total Pembayaran</td>
                             <td>:</td>
+                            @if($daftar->training_id)
+
                             <td class="poppins-medium">Rp. {{ number_format($daftar->training->kursus->harga_kursus ?? $daftar->event->harga_event ?? $daftar->training->kursus->harga_kursus + $daftar->event->harga_event ?? 0, 0, ',', '.') }}</td>
+
+                            @else
+                            <td class="poppins-medium">
+                                Rp. -
+                            </td>
+                            @endif
                         </tr>
                     </tbody>
                 </table>
