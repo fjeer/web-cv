@@ -80,19 +80,39 @@ class DaftarController extends Controller
             ])
             ->sendToDatabase($admins);
 
+        // 1. Logika untuk menentukan Jenis dan Detail (Menangani jika daftar keduanya)
+        $jenis = [];
+        $detail = [];
+
+        if ($pendaftaran->training_id) {
+            $jenis[] = 'Kursus';
+            $detail[] = $pendaftaran->training->kursus->nama_kursus;
+        }
+
+        if ($pendaftaran->event_id) {
+            $jenis[] = 'Event';
+            $detail[] = $pendaftaran->event->title;
+        }
+
+        $jenisDaftar = implode(' & ', $jenis);
+        $detailDaftar = implode(', ', $detail);
+
+        // 2. Eksekusi Kirim Pesan via Fonnte
         Http::withHeaders([
-            'Authorization' => 'cxLaQWPAGTRtqZVreuTz' //token ini diambil dari device no.wa yg connect ke fonnte
-        ])->asForm()->post('https://api.fonnte.com/send',[
-            'target' => '6282144356926', //nomor wa admin buat nerima pesan notif
-            'message' => 'Pendaftaran baru dengan nomor daftar *' 
-                        . $noDaftar . '* detail pendaftar :
-nama : *' . $pendaftaran->name . '*
-email : *' . $pendaftaran->email . '*
-no. WA : *' . $pendaftaran->phone . '*
-Jenis Daftar : *' . ($pendaftaran->training_id ? 'Training' : 'Event') . '*
-Detail : *' . ($pendaftaran->training_id ? $pendaftaran->training->kursus->nama_kursus : $pendaftaran->event->title) . '*
-telah dilakukan. Silahkan cek di dashboard admin.'
-            ]);
+            'Authorization' => 'cxLaQWPAGTRtqZVreuTz'
+        ])->asForm()->post('https://api.fonnte.com/send', [
+                    'target' => '6285138777851',
+                    'message' => "🔔 *NOTIFIKASI PENDAFTARAN BARU*\n\n" .
+                        "Halo Admin, ada pendaftar baru dengan detail sebagai berikut:\n\n" .
+                        "🆔 *No. Daftar:* " . $noDaftar . "\n" .
+                        "👤 *Nama:* " . $pendaftaran->name . "\n" .
+                        "📧 *Email:* " . $pendaftaran->email . "\n" .
+                        "📱 *No. WA:* " . $pendaftaran->phone . "\n" .
+                        "📝 *Jenis:* " . $jenisDaftar . "\n" .
+                        "📚 *Detail:* " . $detailDaftar . "\n\n" .
+                        "Silakan segera lakukan pengecekan dan validasi pembayaran di *Dashboard Admin*.\n\n" .
+                        "Link: http://127.0.0.1:8000/admin"
+                ]);
 
         return redirect()->route('daftar.show', $noDaftar)->with('success', 'Pendaftaran berhasil! Tunggu konfirmasi melalui whatsapp. Admin akan menghubungi Anda untuk melakukan pembayaran dan langkah selanjutnya. Pastikan nomor whatsapp yang Anda masukkan aktif dan dapat dihubungi.');
     }
