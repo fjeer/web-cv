@@ -41,3 +41,12 @@ Route::resource('berita', BeritaController::class);
 Route::resource('industri', IndustriController::class);
 Route::resource('training',TrainingController::class);
 Route::resource('daftar',DaftarController::class);
+
+
+// Testing
+Route::get('/test-email', function () {
+    $pendaftaran = App\Models\Daftar::where('no_daftar','260Y1')->first(); // Ambil satu contoh data
+    $user = App\Models\User::where('role_id',1)->first(); // Ambil satu contoh user
+    return (new App\Notifications\PendaftarBaru($pendaftaran))
+        ->toMail($user);
+});
