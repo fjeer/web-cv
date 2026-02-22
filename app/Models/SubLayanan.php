@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubLayanan extends Model
 {
-    protected $table = 'tb_sub_layanan';
-    protected $fillable = ['layanan_id', 'nama_sub_layanan', 'deskripsi_sub_layanan'];
+    protected $table = 'tb_sublayanan';
+    protected $fillable = ['layanan_id', 'nama_sublayanan', 'deskripsi_sublayanan','gambar_sublayanan','overview'];
     public $timestamps = true;
 
     public function layanan()

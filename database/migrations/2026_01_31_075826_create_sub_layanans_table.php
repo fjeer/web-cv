@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('layanan_id');
             $table->string('nama_sublayanan');
-            $table->text('deskripsi_sublayanan');
+            $table->string('deskripsi_sublayanan');
+            $table->text('overview')->nullable();
             $table->string('gambar_sublayanan')->nullable();
             $table->timestamps();
 

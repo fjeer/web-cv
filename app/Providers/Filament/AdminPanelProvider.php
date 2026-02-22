@@ -41,7 +41,9 @@ class AdminPanelProvider extends PanelProvider
             ->favicon('images/favicon.ico')
             ->sidebarFullyCollapsibleOnDesktop()
             ->NavigationGroups([
+                'User Management',
                 'Home Page',
+                'Portofolio Management',
                 'Courses',
                 'Events',
                 'Industrial Class',
