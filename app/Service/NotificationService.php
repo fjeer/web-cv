@@ -10,8 +10,12 @@ class NotificationService
 {
     public function sendEmail($data)
     {
-        Notification::route('mail','ilfanhs88bp@gmail.com')
-                    ->notify(new PendaftarBaru($data));
+        // Get all admin users (superadmin dan admin)
+        $admins = \App\Models\User::role(['Admin', 'Superadmin'])->get();
+        
+        if ($admins->isNotEmpty()) {
+            \Illuminate\Support\Facades\Notification::send($admins, new PendaftarBaru($data));
+        }
     }
 
     public function sendWhatsapp($data)

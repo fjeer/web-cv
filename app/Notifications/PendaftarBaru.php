@@ -27,7 +27,7 @@ class PendaftarBaru extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['database', 'mail'];
     }
 
     /**
@@ -57,6 +57,34 @@ class PendaftarBaru extends Notification
                 'jenisDaftar' => $jenisDaftar,
                 'detailDaftar' => $detailDaftar
             ]);
+    }
+
+    /**
+     * Get the database representation of the notification.
+     */
+    public function toDatabase(object $notifiable): array
+    {
+        $jenis = [];
+        $detail = [];
+        if ($this->data->training_id) {
+            $jenis[] = 'Kursus';
+            $detail[] = $this->data->training->kursus->nama_kursus;
+        }
+        if ($this->data->event_id) {
+            $jenis[] = 'Event';
+            $detail[] = $this->data->event->title;
+        }
+
+        return [
+            'title' => 'Pendaftaran Baru',
+            'message' => $this->data->name . ' telah melakukan pendaftaran',
+            'no_daftar' => $this->data->no_daftar,
+            'nama' => $this->data->name,
+            'email' => $this->data->email,
+            'phone' => $this->data->phone,
+            'jenis_daftar' => implode(' & ', $jenis),
+            'type' => 'registration',
+        ];
     }
 
     /**

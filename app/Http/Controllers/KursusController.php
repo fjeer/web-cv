@@ -14,7 +14,7 @@ class KursusController extends Controller
     public function index()
     {
         $kelas = Kelas::all();
-        $kursus = Kursus::paginate(12);
+        $kursus = Kursus::with('kelas')->paginate(12);
         return view('pages.kursus.index', compact('kelas', 'kursus'));
     }
 

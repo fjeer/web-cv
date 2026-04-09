@@ -6,6 +6,7 @@ use App\Models\User;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -17,25 +18,48 @@ class BeritaForm
     {
         return $schema
             ->components([
-                TextInput::make('title')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
-                RichEditor::make('detail_berita')
-                    ->required()
-                    ->columnSpanFull(),
-                FileUpload::make('gambar_berita')
-                    ->disk('public')
-                    ->visibility('public')
-                    ->directory('berita-images')
-                    ->required(),
-                Select::make('id_author')
-                    ->label('Author')
-                    ->options(User::all()->pluck('name', 'id'))
-                    ->searchable()
-                    ->required(),
-                DatePicker::make('tanggal_berita')
-                    ->required(),
+                Section::make('Informasi Berita')
+                    ->description('Detail berita dan konten')
+                    ->schema([
+                        TextInput::make('title')
+                            ->label('Judul Berita')
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('slug')
+                            ->label('Slug')
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true),
+                        RichEditor::make('detail_berita')
+                            ->label('Konten Berita')
+                            ->required()
+                            ->columnSpanFull(),
+                    ]),
+                Section::make('Media dan Metadata')
+                    ->description('Gambar dan informasi tambahan')
+                    ->schema([
+                        FileUpload::make('gambar_berita')
+                            ->label('Gambar Berita')
+                            ->disk('public')
+                            ->visibility('public')
+                            ->directory('berita-images')
+                            ->image()
+                            ->maxSize(5120)
+                            ->required(),
+                        DatePicker::make('tanggal_berita')
+                            ->label('Tanggal Publikasi')
+                            ->required(),
+                    ]),
+                Section::make('Author')
+                    ->description('Penulis berita')
+                    ->schema([
+                        Select::make('id_author')
+                            ->label('Author')
+                            ->relationship('author', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required(),
+                    ]),
             ]);
     }
 }
