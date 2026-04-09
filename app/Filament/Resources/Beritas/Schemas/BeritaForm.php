@@ -2,14 +2,12 @@
 
 namespace App\Filament\Resources\Beritas\Schemas;
 
-use App\Models\User;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class BeritaForm
@@ -19,7 +17,7 @@ class BeritaForm
         return $schema
             ->components([
                 Section::make('Informasi Berita')
-                    ->description('Detail berita dan konten')
+                    ->description('Detail utama berita')
                     ->schema([
                         TextInput::make('title')
                             ->label('Judul Berita')
@@ -35,8 +33,8 @@ class BeritaForm
                             ->required()
                             ->columnSpanFull(),
                     ]),
-                Section::make('Media dan Metadata')
-                    ->description('Gambar dan informasi tambahan')
+                Section::make('Media dan Publikasi')
+                    ->description('Pengaturan gambar dan tanggal')
                     ->schema([
                         FileUpload::make('gambar_berita')
                             ->label('Gambar Berita')
@@ -50,12 +48,12 @@ class BeritaForm
                             ->label('Tanggal Publikasi')
                             ->required(),
                     ]),
-                Section::make('Author')
-                    ->description('Penulis berita')
+                Section::make('Penulis')
+                    ->description('Author berita')
                     ->schema([
                         Select::make('id_author')
                             ->label('Author')
-                            ->relationship('author', 'name')
+                            ->relationship('user', 'name')
                             ->searchable()
                             ->preload()
                             ->required(),

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\SubLayanans\Schemas;
 use App\Models\Layanan;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -16,25 +17,33 @@ class SubLayananForm
     {
         return $schema
             ->components([
-                Select::make('layanan_id')
-                    ->label('Layanan')
-                    ->options(Layanan::all()->pluck('nama_layanan','id'))
-                    ->searchable()
-                    ->required(),
-                TextInput::make('nama_sublayanan')
-                    ->label('Sub Layanan')
-                    ->required(),
-                Textarea::make('deskripsi_sublayanan')
-                    ->label('Deskripsi')
-                    ->required(),
-                FileUpload::make('gambar_sublayanan')
-                    ->label('Gambar')
-                    ->disk('public')
-                    ->visibility('public')
-                    ->directory('sublayanan-images'),
-                RichEditor::make('overview')
-                    ->label('Overview')
-                    ->columnSpanFull(),
+                Section::make('Informasi Sub Layanan')
+                    ->description('Detail sub layanan')
+                    ->schema([
+                        Select::make('layanan_id')
+                            ->label('Layanan')
+                            ->options(Layanan::all()->pluck('nama_layanan', 'id'))
+                            ->searchable()
+                            ->required(),
+                        TextInput::make('nama_sublayanan')
+                            ->label('Nama Sub Layanan')
+                            ->required()
+                            ->maxLength(255),
+                        Textarea::make('deskripsi_sublayanan')
+                            ->label('Deskripsi Sub Layanan')
+                            ->required()
+                            ->columnSpanFull(),
+                        FileUpload::make('gambar_sublayanan')
+                            ->label('Gambar Sub Layanan')
+                            ->disk('public')
+                            ->visibility('public')
+                            ->directory('sublayanan-images')
+                            ->image()
+                            ->maxSize(5120),
+                        RichEditor::make('overview')
+                            ->label('Overview')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 }

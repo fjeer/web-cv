@@ -3,8 +3,7 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Fieldset;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -16,39 +15,39 @@ class UserForm
         return $schema
             ->components([
                 Section::make('Informasi Akun')
-                    ->description('Detail akun user')
+                    ->description('Data dasar user dan login')
                     ->schema([
                         TextInput::make('name')
                             ->label('Nama Lengkap')
                             ->required()
                             ->maxLength(255),
                         TextInput::make('email')
-                            ->label('Email Address')
+                            ->label('Email')
                             ->email()
                             ->required()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
                     ]),
-                Section::make('Keamanan dan Akses')
-                    ->description('Password dan permissions')
+                Section::make('Akses dan Keamanan')
+                    ->description('Role dan password user')
                     ->schema([
-                        TextInput::make('password')
-                            ->label('Password')
-                            ->password()
-                            ->required(fn (string $operation): bool => $operation === 'create')
-                            ->maxLength(255),
                         Select::make('roles')
                             ->label('Role')
                             ->relationship('roles', 'name')
                             ->required()
                             ->preload()
                             ->searchable(),
+                        TextInput::make('password')
+                            ->label('Password')
+                            ->password()
+                            ->required(fn (string $operation): bool => $operation === 'create')
+                            ->maxLength(255),
                     ]),
                 Section::make('Verifikasi Email')
-                    ->description('Status verifikasi email')
+                    ->description('Tanggal verifikasi email user')
                     ->schema([
                         DateTimePicker::make('email_verified_at')
-                            ->label('Email Verified At')
+                            ->label('Tanggal Verifikasi Email')
                             ->nullable(),
                     ]),
             ]);

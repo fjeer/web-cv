@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Galeris\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -13,16 +14,30 @@ class GaleriForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_galeri')
-                    ->required(),
-                Textarea::make('deskripsi_galeri')
-                    ->required()
-                    ->columnSpanFull(),
-                FileUpload::make('foto_galeri')
-                    ->disk('public')
-                    ->visibility('public')
-                    ->directory('galeri-images')
-                    ->required(),
+                Section::make('Informasi Galeri')
+                    ->description('Detail galeri')
+                    ->schema([
+                        TextInput::make('nama_galeri')
+                            ->label('Nama Galeri')
+                            ->required()
+                            ->maxLength(255),
+                        Textarea::make('deskripsi_galeri')
+                            ->label('Deskripsi Galeri')
+                            ->required()
+                            ->columnSpanFull(),
+                    ]),
+                Section::make('Media')
+                    ->description('Foto galeri')
+                    ->schema([
+                        FileUpload::make('foto_galeri')
+                            ->label('Foto Galeri')
+                            ->disk('public')
+                            ->visibility('public')
+                            ->directory('galeri-images')
+                            ->image()
+                            ->maxSize(5120)
+                            ->required(),
+                    ]),
             ]);
     }
 }

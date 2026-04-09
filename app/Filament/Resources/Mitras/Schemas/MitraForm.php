@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Mitras\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,19 +13,32 @@ class MitraForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_mitra')
-                    ->required(),
-                FileUpload::make('logo_mitra')
-                    ->disk('public')
-                    ->visibility('public')
-                    ->directory('mitra-images')
-                    ->required(),
-                TextInput::make('email_mitra')
-                    ->email()
-                    ->required(),
-                TextInput::make('no_telp_mitra')
-                    ->tel()
-                    ->required(),
+                Section::make('Informasi Mitra')
+                    ->description('Detail mitra dan kontak')
+                    ->schema([
+                        TextInput::make('nama_mitra')
+                            ->label('Nama Mitra')
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('email_mitra')
+                            ->label('Email Mitra')
+                            ->email()
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('no_telp_mitra')
+                            ->label('Nomor Telepon Mitra')
+                            ->tel()
+                            ->required()
+                            ->maxLength(20),
+                        FileUpload::make('logo_mitra')
+                            ->label('Logo Mitra')
+                            ->disk('public')
+                            ->visibility('public')
+                            ->directory('mitra-images')
+                            ->image()
+                            ->maxSize(5120)
+                            ->required(),
+                    ]),
             ]);
     }
 }
