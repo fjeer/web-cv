@@ -113,18 +113,25 @@ Akses melalui browser →
 
 ---
 
-## 🔥 Ringkas Langkah Instalasi
+## � Role-Based Access Control (RBAC)
 
-```bash
-git clone repo
-cd folder-project
-composer install
-cp .env.example .env
-php artisan key:generate
-edit .env & set database
-php artisan migrate
-npm install && npm run build
-composer run dev
-```
+Proyek ini menggunakan sistem RBAC dengan Spatie Laravel Permission untuk mengelola akses pengguna.
 
----
+### Roles yang Tersedia:
+- **Superadmin**: Akses penuh ke semua fitur aplikasi.
+- **Admin**: Akses ke sebagian besar fitur, kecuali penghapusan pengguna dan pengaturan sensitif.
+- **Redaksi**: Akses terbatas untuk mengelola konten (Berita, Event, Galeri).
+
+### Permissions:
+Setiap role memiliki permissions spesifik untuk model seperti Berita, Event, Galeri, Kursus, dll. dengan actions: view, create, edit, delete.
+
+### User Test:
+Setelah seeding, login dengan akun berikut untuk testing:
+- Superadmin: superadmin@example.com
+- Admin: admin@example.com
+- Redaksi: redaksi@example.com
+
+### Implementasi:
+- Menggunakan Spatie Laravel Permission.
+- Policies dibuat untuk setiap model.
+- Filament Resources secara otomatis menggunakan policies untuk kontrol akses.
