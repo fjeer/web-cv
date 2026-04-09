@@ -54,17 +54,21 @@ class KursusSeeder extends Seeder
         ];
 
         foreach ($kursus as $item) {
-            DB::table('tb_kursus')->insert([
-                'nama_kursus' => $item['nama_kursus'],
-                'slug' => Str::slug($item['nama_kursus']),
-                'deskripsi_kursus' => $item['deskripsi_kursus'],
-                'detail_kursus' => $item['detail_kursus'],
-                'id_kelas' => $item['id_kelas'],
-                'harga_kursus' => $item['harga_kursus'],
-                'rating_kursus' => $item['rating_kursus'],
-                'gambar_kursus' => $item['gambar_kursus'],
-                'created_at' => now()
-            ]);
+            DB::table('tb_kursus')->updateOrInsert(
+                ['slug' => Str::slug($item['nama_kursus'])],
+                [
+                    'nama_kursus' => $item['nama_kursus'],
+                    'slug' => Str::slug($item['nama_kursus']),
+                    'deskripsi_kursus' => $item['deskripsi_kursus'],
+                    'detail_kursus' => $item['detail_kursus'],
+                    'id_kelas' => $item['id_kelas'],
+                    'harga_kursus' => $item['harga_kursus'],
+                    'rating_kursus' => $item['rating_kursus'],
+                    'gambar_kursus' => $item['gambar_kursus'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
         }
     }
 }

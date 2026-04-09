@@ -60,19 +60,22 @@ class EventSeeder extends Seeder
             ],
         ];
         foreach ($event as $item) {
-            DB::table('tb_event')->insert([
-                'title' => $item['title'],
-                'slug' => $item['slug'],
-                'detail_event' => $item['detail_event'],
-                'id_kategori' => $item['id_kategori'],
-                'gambar_event' => $item['gambar_event'],
-                'lokasi' => $item['lokasi'],
-                'kuota' => $item['kuota'],
-                'tanggal_event' => $item['tanggal_event'],
-                'status_event' => $item['status_event'],
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            DB::table('tb_event')->updateOrInsert(
+                ['slug' => $item['slug']],
+                [
+                    'title' => $item['title'],
+                    'slug' => $item['slug'],
+                    'detail_event' => $item['detail_event'],
+                    'id_kategori' => $item['id_kategori'],
+                    'gambar_event' => $item['gambar_event'],
+                    'lokasi' => $item['lokasi'],
+                    'kuota' => $item['kuota'],
+                    'tanggal_event' => $item['tanggal_event'],
+                    'status_event' => $item['status_event'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
         }
     }
 }

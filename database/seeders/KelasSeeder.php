@@ -25,11 +25,15 @@ class KelasSeeder extends Seeder
         ];
 
         foreach ($kelas as $item) {
-            DB::table('tb_kelas')->insert([
-                'nama_kelas' => $item['nama_kelas'],
-                'slug' => $item['slug'],
-                'created_at' => now()
-            ]);
+            DB::table('tb_kelas')->updateOrInsert(
+                ['slug' => $item['slug']],
+                [
+                    'nama_kelas' => $item['nama_kelas'],
+                    'slug' => $item['slug'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
         }
     }
 }

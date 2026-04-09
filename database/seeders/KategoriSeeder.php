@@ -27,12 +27,15 @@ class KategoriSeeder extends Seeder
         ];
 
         foreach ($kategori as $item) {
-            DB::table('tb_kategori')->insert([
-                'nama_kategori' => $item['nama_kategori'],
-                'slug' => Str::slug($item['nama_kategori']),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            DB::table('tb_kategori')->updateOrInsert(
+                ['slug' => Str::slug($item['nama_kategori'])],
+                [
+                    'nama_kategori' => $item['nama_kategori'],
+                    'slug' => Str::slug($item['nama_kategori']),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
         }
     }
 }

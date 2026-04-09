@@ -15,27 +15,39 @@ class UserSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        $superadmin = User::factory()->create([
-            'name' => 'Superadmin User',
-            'email' => 'superadmin@example.com',
-        ]);
+        $superadmin = User::firstOrCreate(
+            ['email' => 'superadmin@example.com'],
+            [
+                'name' => 'Superadmin User',
+                'password' => bcrypt('password'),
+            ]
+        );
         $superadmin->assignRole('Superadmin');
 
-        $admin = User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-        ]);
+        $admin = User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Admin User',
+                'password' => bcrypt('password'),
+            ]
+        );
         $admin->assignRole('Admin');
 
-        $redaksi = User::factory()->create([
-            'name' => 'Redaksi User',
-            'email' => 'redaksi@example.com',
-        ]);
+        $redaksi = User::firstOrCreate(
+            ['email' => 'redaksi@example.com'],
+            [
+                'name' => 'Redaksi User',
+                'password' => bcrypt('password'),
+            ]
+        );
         $redaksi->assignRole('Redaksi');
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'test@example.com'],
+            [
+                'name' => 'Test User',
+                'password' => bcrypt('password'),
+            ]
+        );
     }
 }

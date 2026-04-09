@@ -73,7 +73,7 @@ class DaftarController extends Controller
         ]);
 
         // kirim notifikasi
-        $admins = User::where('role_id', '1')->get();
+        $admins = User::role('Admin')->get();
         
         Notification::make()
             ->title('Pendaftaran Baru')

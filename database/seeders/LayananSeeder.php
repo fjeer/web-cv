@@ -41,12 +41,14 @@ class LayananSeeder extends Seeder
         ];
 
         foreach ($layanan as $item) {
-            DB::table('tb_layanan')->insert([
-                'nama_layanan' => $item['nama_layanan'],
-                'deskripsi_layanan' => $item['deskripsi_layanan'],
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            DB::table('tb_layanan')->updateOrInsert(
+                ['nama_layanan' => $item['nama_layanan']],
+                [
+                    'deskripsi_layanan' => $item['deskripsi_layanan'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
         }
     }
 }

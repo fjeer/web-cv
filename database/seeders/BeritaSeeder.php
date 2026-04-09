@@ -44,15 +44,18 @@ class BeritaSeeder extends Seeder
         ];
 
         foreach ($berita as $item) {
-            DB::table('tb_berita')->insert([
-                'title' => $item['title'],
-                'slug' => $item['slug'],
-                'detail_berita' => $item['detail_berita'],
-                'id_author' => $item['id_author'],
-                'tanggal_berita' => $item['tanggal_berita'],
-                'created_at' => $item['created_at'],
-                'updated_at' => $item['updated_at'],
-            ]);
+            DB::table('tb_berita')->updateOrInsert(
+                ['slug' => $item['slug']],
+                [
+                    'title' => $item['title'],
+                    'slug' => $item['slug'],
+                    'detail_berita' => $item['detail_berita'],
+                    'id_author' => $item['id_author'],
+                    'tanggal_berita' => $item['tanggal_berita'],
+                    'created_at' => $item['created_at'],
+                    'updated_at' => $item['updated_at'],
+                ]
+            );
         }
 
     }
