@@ -42,7 +42,7 @@
             </a>
 
             <!-- Toggle -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
 
                 <!-- Left Menu -->
-                <ul class="navbar-nav ms-auto me-5">
+                <ul class="navbar-nav ms-auto me-lg-5">
                     <li class="nav-item mx-2">
                         <a class="nav-link {{ request()->routeIs('home.index') ? 'active poppins-semibold text-primary' : 'text-secondary' }}"
                             href="{{ route('home.index') }}">Home</a>
@@ -81,7 +81,7 @@
 
     @include('sweetalert2::index')
     <!-- Content -->
-    <main class="mt-5">
+    <main class="site-main">
         @yield('content')
     </main>
 
@@ -137,7 +137,7 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom py-3">
-            <div class="container d-flex justify-content-between">
+            <div class="container d-flex justify-content-between align-items-center">
                 <span class="poppins-light">&copy; 2025 SigmaTech</span>
                 <span class="poppins-light">Berjaya, Berinovasi, dan Bertumbuh bersama.</span>
             </div>

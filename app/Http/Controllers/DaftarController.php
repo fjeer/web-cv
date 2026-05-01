@@ -54,13 +54,13 @@ class DaftarController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'gender' => 'required',
             'address' => 'required',
 
-            'training_id' => 'nullable|required_without:event_id',
-            'event_id' => 'nullable|required_without:training_id',
+            'training_id' => 'nullable|required_without:event_id|exists:tb_training,id',
+            'event_id' => 'nullable|required_without:training_id|exists:tb_event,id',
         ]);
         $request['no_daftar'] = $this->generateNoDaftar($request->training_id ?? $request->event_id);
     
@@ -73,20 +73,18 @@ class DaftarController extends Controller
         ]);
 
         // kirim notifikasi
-        $admins = User::role('Admin')->get();
+        $admins = User::role(['Admin', 'Superadmin'])->get();
         
         Notification::make()
             ->title('Pendaftaran Baru')
             ->body($pendaftaran->name . ' telah melakukan pendaftaran.')
             ->actions([
                 Action::make('Lihat Pendaftaran')
-                    ->url(DaftarResource::getUrl('index')),
+                    ->url(DaftarResource::getUrl('edit', ['record' => $pendaftaran])),
             ])
             ->sendToDatabase($admins);
         
         $this->notificationService->sendEmail($pendaftaran);
-        $this->notificationService->sendWhatsapp($pendaftaran);
-
         return redirect()->route('daftar.show', $noDaftar)->with('success', 'Pendaftaran berhasil! Tunggu konfirmasi melalui whatsapp. Admin akan menghubungi Anda untuk melakukan pembayaran dan langkah selanjutnya. Pastikan nomor whatsapp yang Anda masukkan aktif dan dapat dihubungi.');
     }
 
@@ -95,7 +93,7 @@ class DaftarController extends Controller
      */
     public function show(string $no_daftar)
     {
-        $daftar = Daftar::where('no_daftar', $no_daftar)->first();
+        $daftar = Daftar::where('no_daftar', $no_daftar)->firstOrFail();
 
         return view('pages.daftar.show', compact('daftar'));
     }

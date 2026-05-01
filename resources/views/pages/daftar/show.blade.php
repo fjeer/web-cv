@@ -4,6 +4,11 @@
 
 {{-- ================= CONTENT ================= --}}
 @section('content')
+@php
+    $trainingHarga = (int) ($daftar->training?->kursus?->harga_kursus ?? 0);
+    $eventHarga = (int) ($daftar->event?->harga_event ?? 0);
+    $totalHarga = $trainingHarga + $eventHarga;
+@endphp
 <section class="">
     <div class="container py-5">
         <h2>Detail Pendaftaran</h2>
@@ -204,15 +209,9 @@
                         <tr>
                             <td>Total Pembayaran</td>
                             <td>:</td>
-                            @if($daftar->training_id)
-
-                            <td class="poppins-medium">Rp. {{ number_format($daftar->training->kursus->harga_kursus ?? $daftar->event->harga_event ?? $daftar->training->kursus->harga_kursus + $daftar->event->harga_event ?? 0, 0, ',', '.') }}</td>
-
-                            @else
                             <td class="poppins-medium">
-                                Rp. -
+                                {{ $totalHarga > 0 ? 'Rp. ' . number_format($totalHarga, 0, ',', '.') : 'Rp. -' }}
                             </td>
-                            @endif
                         </tr>
                     </tbody>
                 </table>

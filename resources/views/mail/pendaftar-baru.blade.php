@@ -1,19 +1,6 @@
-{{-- <x-mail::message>
-# Introduction
-
-The body of your message.
-
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
-
-Thanks,<br>
-{{ config('app.name') }}
-</x-mail::message> --}}
-
 @component('mail::message')
 
-# 📩 Pendaftaran Baru Masuk
+# Pendaftaran Baru Masuk
 
 Sistem menerima **pendaftaran baru** dengan rincian berikut:
 
@@ -31,16 +18,16 @@ Sistem menerima **pendaftaran baru** dengan rincian berikut:
 ### Rincian Pendaftaran
 | Keterangan | Detail |
 |:-----------|:-------|
-| Kategori | {{ $jenisDaftar }} |
-| Item | {{ $detailDaftar }} |
-| Jadwal | {{ $data->training?->tanggal_mulai?->translatedFormat('d F Y') . ' - ' . $data->training?->tanggal_selesai?->translatedFormat('d F Y') }} |
-| Event | {{ $data->event?->tanggal_event?->translatedFormat('d F Y') ?? '-' }} |
-| Total Harga | {{ 'Rp. ' . number_format($data->training?->kursus?->harga_kursus ?? 0) }} |
+| Kategori | {{ $jenisDaftar ?: '-' }} |
+| Item | {{ $detailDaftar ?: '-' }} |
+| Jadwal Kursus | {{ $data->training ? $data->training->tanggal_mulai?->translatedFormat('d F Y') . ' - ' . $data->training->tanggal_selesai?->translatedFormat('d F Y') : '-' }} |
+| Tanggal Event | {{ $data->event?->tanggal_event?->translatedFormat('d F Y') ?? '-' }} |
+| Total Harga | {{ 'Rp. ' . number_format($totalHarga, 0, ',', '.') }} |
 | Waktu | {{ now()->translatedFormat('d F Y, H:i') }} WIB |
 @endcomponent
 
-@component('mail::button', ['url' => url('/admin/daftar-data/'.$data->id.'/edit')])
-Verifikasi di Dashboard
+@component('mail::button', ['url' => $detailUrl])
+Lihat Detail Pendaftaran
 @endcomponent
 
 Terima kasih,<br>

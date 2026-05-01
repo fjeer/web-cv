@@ -94,8 +94,8 @@
 
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="training_id" class="form-label">Pilih Kursus <span class="text-danger"> * </span></label>
-                    <select class="form-select" id="training_id" name="training_id" required>
+                    <label for="training_id" class="form-label">Pilih Kursus</label>
+                    <select class="form-select" id="training_id" name="training_id">
                         <option value="">Pilih Kursus</option>
                         @foreach ($training as $t)
                         <option value="{{ $t->id }}" data-jadwal="{{ $t->tanggal_mulai->translatedFormat('d F Y') }} s/d {{ $t->tanggal_selesai->translatedFormat('d F Y') }}" data-harga="{{number_format($t->kursus->harga_kursus, 0, ',', '.') }}" {{ $training_id == $t->id ? 'selected' : '' }}>{{ $t->kursus->kelas->nama_kelas }} - {{ $t->kursus->nama_kursus }}</option>
@@ -115,8 +115,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="event_id" class="form-label">Pilih Event <span class="text-danger"> * </span></label>
-                    <select class="form-select" id="event_id" name="event_id" required>
+                    <label for="event_id" class="form-label">Pilih Event</label>
+                    <select class="form-select" id="event_id" name="event_id">
                         <option value="">Pilih Event</option>
                         @foreach ($events as $event)
                         <option value="{{ $event->id }}" data-tanggal="{{ $event->tanggal_event->translatedFormat('d F Y') }}" {{ $event_id == $event->id ? 'selected' : '' }}>{{ $event->title }}</option>

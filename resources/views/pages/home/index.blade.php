@@ -29,9 +29,9 @@
 
         <div class="col-md-6">
 
-            <div class="banner_images" data-aos="fade-left">
+            <div class="banner_images text-center" data-aos="fade-left">
 
-                <img src="{{ asset('images/illustrasi_hero_home.png') }}" alt="Hero">
+                <img src="{{ asset('images/illustrasi_hero_home.png') }}" alt="Hero" class="img-fluid">
 
             </div>
             
@@ -136,9 +136,9 @@
         <div class="title_kursus" data-aos="fade-up">
 
             <h2 class="section-title poppins-reguler mb-2">Pilih Jalur Belajarmu</h2>
-            <p class="text-secondary mb-0">
-                Mulai perjalanan kariermu di bidang yang kamu minati. 
-                <p class="mt-0 mb-5 text-secondary"> Setiap kelas di SigmaTech dirancang agar kamu bisa belajar sambil praktik langsung. </p>
+            <p class="text-secondary mb-5">
+                Mulai perjalanan kariermu di bidang yang kamu minati.
+                Setiap kelas di SigmaTech dirancang agar kamu bisa belajar sambil praktik langsung.
             </p>
 
         </div>
@@ -188,7 +188,7 @@
 
             <div class="col-md-6">
                 <h6 class="fs-5 poppins-medium">Benefit yang didapat</h6>
-                <h1 style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
+                <h1 class="display-6" style="font-size:40px;">Belajar di SigmaTech, Dapat Lebih dari Sekadar Ilmu</h1>
 
                 <p class="text-secondary">
                     Kamu membangun pengalaman nyata siap kerja bersama mentor profesional.
@@ -212,7 +212,7 @@
             </div>
 
             <div class="col-md-6 text-end">
-                <img src="{{ asset('images/benefit_img.jpg') }}" class="rounded-circle" style="width:400px;height:400px;object-fit:cover;">
+                <img src="{{ asset('images/benefit_img.jpg') }}" class="responsive-media-frame is-circle" style="width:400px;height:400px;object-fit:cover;">
             </div>
 
         </div>
@@ -221,7 +221,7 @@
 
 </section>
 {{-- ========================= SECTION 6 ========================= --}}
-<section class="industri-section" style="background-color: white">
+<section class="industri-section">
 
     <div class="container text-center py-5">
 
@@ -274,7 +274,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center gap-3">
+        <div class="responsive-cta-group justify-content-center">
             <!-- Button Kiri -->
             <a href="{{ route('industri.index') }}" class="btn btn-primary custom-left-btn mt-5" data-aos="zoom-in" data-aos-delay="300">
                 <i class="bi bi-rocket-takeoff me-2"></i>
@@ -333,11 +333,9 @@
 
             <h2 class="section-title mb-3">Layanan SigmaTech Digital Solution</h2>
             <h1 class="text-center" style="font-size: 36px; ">Solusi Digital dari Universal SigmaTeknologi</h1>
-            <p class="mb-0 text-center text-secondary">
+            <p class="mb-4 text-center text-secondary">
                 Kami menyediakan layanan pengembangan teknologi untuk mendukung transformasi digital bisnis dan lembaga
-                Anda.
-                <p class="mt-0 text-secondary text-center mb-4">Dikerjakan langsung oleh tim profesional bersama talenta
-                    dari kelas industri kami.</p>
+                Anda. Dikerjakan langsung oleh tim profesional bersama talenta dari kelas industri kami.
             </p>
 
         </div>
@@ -387,9 +385,8 @@
 
             <p class="text-secondary mb-2">Cerita & Kabar Terbaru dari SigmaTech</p>
             <h2 class="section-title mb-3">Berita Terbaru</h2>
-            <p class="mb-0 text-secondary">
-                Simak update kegiatan, pelatihan, dan event terbaru dari kami.
-                <p class="mt-0 text-secondary">Lihat bagaimana SigmaTech terus berkembang bersama komunitas digital Indonesia.</p>
+            <p class="mb-4 text-secondary">
+                Simak update kegiatan, pelatihan, dan event terbaru dari kami. Lihat bagaimana SigmaTech terus berkembang bersama komunitas digital Indonesia.
             </p>
 
         </div>

@@ -1,5 +1,52 @@
 body {
     font-family: 'Poppins';
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.site-main {
+    padding-top: 92px;
+}
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.responsive-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.responsive-cta-group .btn {
+    white-space: normal;
+}
+
+.responsive-media-frame {
+    width: 100%;
+    max-width: 450px;
+    margin-inline: auto;
+}
+
+.responsive-media-frame.is-circle {
+    aspect-ratio: 1 / 1;
+    border-radius: 999px;
+    object-fit: cover;
+}
+
+.responsive-media-frame.is-rounded {
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.responsive-card-stack {
+    row-gap: 1.5rem;
 }
 
 .poppins-thin {
@@ -121,12 +168,32 @@ body {
     line-height: 1.2;
 }
 
+.navbar-brand {
+    max-width: calc(100% - 72px);
+}
+
+.navbar-brand h5 {
+    font-size: 1.1rem;
+}
+
 .navbar-brand p {
     color: rgb(107 114 128);
 }
 
+.navbar-toggler {
+    border-color: rgba(38, 69, 112, 0.2);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(51, 153, 204, 0.2);
+}
+
+.navbar-collapse {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
 .footer {
-    /* opsional, padding dan warna */
     background-color: #264570;
     color: white;
 }
@@ -300,7 +367,6 @@ footer .navigasi {
     font-size: 24px;
     /* Border tebal */
     border-radius: 20px;
-    /* Lebih bulat */
     box-shadow: 0 4px 6px #264570;
 }
 
@@ -312,15 +378,12 @@ footer .navigasi {
 }
 
 .custom-right-btn {
-    /* background-color: #ffffff; */
     color: #FF741F;
     font-weight: 700;
     padding: 8px 10px;
     font-size: 24px;
-    /* Border tebal */
     border-radius: 20px;
     border: none;
-    /* Lebih bulat */
     box-shadow: 0 4px 6px #264570;
 }
 
@@ -445,9 +508,7 @@ footer .navigasi {
     font-weight: 700;
     padding: 8px 10px;
     font-size: 24px;
-    /* Border tebal */
     border-radius: 20px;
-    /* Lebih bulat */
     box-shadow: 0 4px 6px #264570;
 }
 
@@ -496,55 +557,54 @@ footer .navigasi {
 }   
 
 @media (max-width: 991.98px) {
-
-    /* Brand logo & text */
-    .navbar-brand h1 {
-        font-size: 16px;
-        margin-bottom: 0;
+    .site-main {
+        padding-top: 84px;
     }
 
-    .navbar-brand p {
-        font-size: 13px;
-        margin-bottom: 0;
+    .navbar {
+        padding-block: 0.65rem;
     }
 
-    /* Navbar menu center */
     .navbar-collapse {
-        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem 0 0.5rem;
+        border-top: 1px solid rgba(38, 69, 112, 0.12);
     }
 
-    /* Menu kiri & kanan jadi vertikal */
     .navbar-nav {
-        align-items: center;
+        gap: 0.25rem;
     }
 
-    /* Dropdown & search full width */
-    .navbar-nav .dropdown,
-    .navbar-nav form {
-        width: 100%;
+    .navbar-nav .nav-link {
+        padding: 0.85rem 0.25rem;
     }
 
-    /* Search input */
-    .navbar-nav .input-group {
-        width: 100%;
+    footer .navigasi {
+        padding-left: 0;
     }
 
-    /* Login button */
-    .tombolkuning {
-        width: 100%;
-        margin-top: 10px;
+    .responsive-cta-group {
+        justify-content: center;
     }
 
-    /* SECTION 1 */
-    section.d-flex.align-items-center .row {
+    .responsive-media-frame {
+        max-width: 360px;
+    }
+
+    .hero-section .row,
+    .about-section .row,
+    .benefit-section .row,
+    .call-to-action .row {
         text-align: center;
     }
 
-    section.d-flex.align-items-center img {
-        margin-top: 20px;
+    .hero-section .banner_images,
+    .benefit-section .text-end,
+    .call-to-action .text-end {
+        margin-top: 2rem;
+        text-align: center !important;
     }
 
-    /* Heading utama */
     h1 {
         font-size: 32px !important;
     }
@@ -553,68 +613,67 @@ footer .navigasi {
         font-size: 28px !important;
     }
 
-    /* SECTION 4 & 6 CARD */
     .custom-card img {
         max-width: 100%;
         height: auto;
     }
 
-    /* Button center */
     .custom-left-btn,
-    .custom-right-btn {
+    .custom-right-btn,
+    .kuning-round {
         width: 100%;
+        font-size: 1rem;
+        padding: 0.9rem 1rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 575.98px) {
-
-    /* Navbar spacing */
-    .navbar {
-        padding: 10px 0;
+    .site-main {
+        padding-top: 78px;
     }
 
-    /* Logo image */
     .navbar-brand img {
         width: 36px;
     }
 
-    /* Container spacing */
     .container {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    /* Main content */
-    .container.mt-5 {
-        margin-top: 30px !important;
+    .navbar-brand h5 {
+        font-size: 0.95rem;
     }
 
-    /* Container navbar collapse */
-    .navbar-collapse {
-        text-align: left !important;
+    .navbar-brand p {
+        font-size: 0.72rem !important;
     }
 
-    /* Semua nav-item */
     .navbar-collapse .nav-item {
         width: 100%;
         text-align: left !important;
     }
 
-    /* Link di dalam nav-item */
     .navbar-collapse .nav-item .nav-link {
         text-align: left !important;
         justify-content: flex-start !important;
         padding-left: 0.75rem;
     }
 
-    /* Dropdown toggle */
-    .navbar-collapse .dropdown-toggle {
-        justify-content: flex-start !important;
+    .hero-section {
+        min-height: auto !important;
     }
 
-    .navbar-collapse .nav-item.dropdown {
-        padding-left: 10px;
-        margin-bottom: 12px;
+    .hero-section .container,
+    .about-section .container,
+    .benefit-section .container,
+    .mitra-section .container,
+    .layanan-section .container,
+    .berita-section .container,
+    .call-to-action .container {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
     }
 
     footer .row {
@@ -637,12 +696,10 @@ footer .navigasi {
         padding-left: 0 !important;
     }
 
-    /* Sosial media center */
     footer .d-flex {
         justify-content: center;
     }
 
-    /* Footer bottom */
     .footer-bottom .d-flex {
         flex-direction: column;
         gap: 10px;
@@ -650,109 +707,47 @@ footer .navigasi {
         width: 100%;
     }
 
-    /* SECTION 1 */
     h1 {
         font-size: 26px !important;
+    }
+
+    h2 {
+        font-size: 22px !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
     }
 
     p {
         font-size: 15px;
     }
 
-    /* SECTION 3 */
-    section .row {
-        text-align: center;
+    .section-title {
+        font-size: 16px;
+        padding: 8px 14px;
+        margin-bottom: 24px;
     }
 
-    section img {
-        margin-bottom: 20px;
-    }
-
-    /* SECTION 5 IMAGE */
-    section img[style*="width:450px"] {
-        width: 280px !important;
-        height: 280px !important;
-        margin: 0 auto;
-    }
-
-    /* SECTION 6 STATISTIC */
     .card-title[style*="80px"] {
         font-size: 48px !important;
     }
 
-    /* Spacing */
-    .min-vh-100 {
-        min-height: auto !important;
-        padding: 40px 0;
+    .responsive-cta-group {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .custom-left-btn,
-    .custom-right-btn {
-        padding: 8px 16px !important;
+    .custom-right-btn,
+    .kuning-round {
+        padding: 0.85rem 1rem !important;
         font-size: 14px;
-        min-width: auto;
     }
 
-    /* Jarak antar tombol*/
-    .custom-left-btn+.custom-right-btn {
-        margin-left: 8px;
-    }
-
-    section.min-vh-100 .benefit-list {
-        text-align: left;
-        padding-left: 0;
-    }
-
-    section.min-vh-100 .benefit-list li {
-        align-items: flex-start;
-    }
-
-    section.min-vh-100 .benefit-list .icon-circle {
-        flex-shrink: 0;
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    section.min-vh-100 .benefit-list span.px-2 {
-        padding-left: 10px !important;
-        padding-right: 0 !important;
-        line-height: 1.4;
-    }
-
-    section.d-flex.align-items-center {
-        align-items: flex-start !important;
-    }
-
-    section.d-flex.align-items-center .col-md-6 {
-        text-align: left !important;
-    }
-
-    section.d-flex.align-items-center h1,
-    section.d-flex.align-items-center p {
-        text-align: left !important;
-    }
-
-    section.d-flex.align-items-center .row.align-items-start .col-md-4 img {
-        max-width: 200px !important;
-        margin: 0 auto 15px;
-        display: block;
-    }
-
-    section.d-flex.align-items-center .col-md-7 ul {
-        text-align: left;
-        padding-left: 1.2rem;
-    }
-
-    section.d-flex.align-items-center .col-md-7 ul li {
-        text-align: left;
-    }
-
-    /* kursus */
     .cardcur {
         padding: 2rem 1rem !important;
+        border-radius: 28px;
     }
 
     .cardcur h1 {
@@ -770,35 +765,17 @@ footer .navigasi {
         padding: 10px 18px;
     }
 
-    /* event */
-    h4.fw-bold.mt-5 {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    /* Kurangi jarak section ke atas */
-    section.mt-5 {
-        margin-top: 3rem !important;
-    }
-
-    section h4.fw-bold {
-        text-align: center;
-    }
-
-    /* Card jadi 1 kolom */
     .col-md-4,
     .col-sm-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    /* Gambar card */
     .card-img-top {
         height: 180px;
         object-fit: cover;
     }
 
-    /* Isi card */
     .card-body h5 {
         font-size: 16px;
         line-height: 1.4;
@@ -809,35 +786,21 @@ footer .navigasi {
         line-height: 1.5;
     }
 
-    /* Badge Seminar */
-    .tombolevent {
-        font-size: 12px;
-        padding: 6px 14px;
-    }
-
-    /* Info bawah card */
     .card-body .d-flex.justify-content-between {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
     }
 
-    /* Load more button */
     .btn.my-5 {
         font-size: 14px;
         padding: 10px 20px;
     }
 
-    .row.mt-5 {
-        margin-top: 0 !important;
-    }
-
-    /* Samakan jarak antar card */
     .col-md-4.col-sm-6 {
         margin-bottom: 1.25rem;
     }
 
-    /* industri */
     .col-md-4.text-center img {
         max-width: 200px !important;
         margin-bottom: 1.5rem;
@@ -860,12 +823,6 @@ footer .navigasi {
         margin-bottom: 1rem;
     }
 
-    .min-vh-100 {
-        min-height: auto !important;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-
     .img-industri {
         width: 36px;
         height: 36px;
@@ -874,28 +831,13 @@ footer .navigasi {
 
     .col-md-4.text-end img {
         width: 100% !important;
+        max-width: 320px;
         height: auto !important;
         margin-top: 2rem;
         border-radius: 20px !important;
     }
 
-    /* ===== CTA BAWAH ===== */
-    .text-center.my-5.py-5 {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+    .table {
+        font-size: 0.9rem;
     }
-
-    .text-center.my-5.py-5 h1 {
-        font-size: 22px;
-    }
-
-    .text-center.my-5.py-5 p {
-        font-size: 14px;
-    }
-
-    .kuning-round {
-        padding: 6px 20px;
-        font-size: 15px;
-    }
-
 }
