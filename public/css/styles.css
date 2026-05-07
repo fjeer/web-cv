@@ -8,9 +8,9 @@ img {
     height: auto;
 }
 
-.site-main {
+/* .site-main {
     padding-top: 92px;
-}
+} */
 
 .hero-section {
     background-size: cover;
@@ -558,7 +558,7 @@ footer .navigasi {
 
 @media (max-width: 991.98px) {
     .site-main {
-        padding-top: 84px;
+        padding-top: 50px;
     }
 
     .navbar {
@@ -630,7 +630,7 @@ footer .navigasi {
 
 @media (max-width: 575.98px) {
     .site-main {
-        padding-top: 78px;
+        padding-top: 50px;
     }
 
     .navbar-brand img {
@@ -769,6 +769,7 @@ footer .navigasi {
     .col-sm-6 {
         flex: 0 0 100%;
         max-width: 100%;
+        margin-bottom: 1.25rem;
     }
 
     .card-img-top {
