@@ -4,59 +4,59 @@
 
 @section('content')
 
-<section class="hero-section" style="background-image: url('{{ asset('images/banner4.png') }}'); background-size: cover; background-position: center; min-height: 425px; display: flex; align-items: center;" data-aos="fade-zoom-in">
-    <div class="container py-5">
-        <div class="col-lg-6 col-md-8" data-aos="fade-right">
-            <h2 class="poppins-semibold mb-3">Kelas Industri SigmaTech</h2>
-            <p class="mb-4">
+<section class="hero-bg w-100" style="background-image: url('{{ asset('images/banner4.webp') }}'); padding: 120px 0 80px 0;" data-aos="fade-zoom-in">
+    <div class="container py-5 position-relative z-index-2">
+        <div class="col-lg-6 col-md-8 text-white" data-aos="fade-right">
+            <h2 class="poppins-semibold mb-3 display-5">Kelas Industri <span class="text-warning">SigmaTech</span></h2>
+            <p class="mb-4 fs-5 text-white-50">
                 Belajar langsung bersama mentor berpengalaman dan kuasai keterampilan yang dibutuhkan dunia kerja modern.
             </p>
-            <div class="responsive-cta-group">
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-primary custom-left-btn poppins-semibold mt-5">Daftar Sekarang</a>
-
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-primary custom-right-btn poppins-semibold mt-5">Hubungi Kami</a>
-
+            <div class="responsive-cta-group mt-5">
+                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-gradient px-4 py-3 poppins-semibold shadow-lg">
+                    <i class="ph-bold ph-rocket-launch me-2"></i> Daftar Sekarang
+                </a>
+                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-premium bg-transparent text-white border-white px-4 py-3 poppins-semibold ms-md-3 mt-3 mt-md-0 shadow-lg hover-scale">
+                    <i class="ph-bold ph-chat-circle-dots me-2"></i> Hubungi Kami
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container-fluid py-4" style="background: #264570" data-aos="fade-up">
-
-    <div class="container p-3" data-aos="fade-up">
-        <div class="row g-4">
-            <div class="col-md-3 d-flex align-items-center gap-3">
-                <img src="{{ asset('images/school.png') }}" alt="school logo" style="width: 50px">
+<div class="container-fluid py-5" style="background-color: var(--color-primary-dark);" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center gap-3 bg-white bg-opacity-10 p-4 rounded-3 hover-up">
+                <i class="ph-fill ph-buildings text-accent display-4"></i>
                 <div>
-                    <h3 class="text-white poppins-bold mb-0">25 +</h3>
-                    <span class="text-white fw-light">Sekolah bergabung</span>
+                    <h3 class="text-white poppins-bold mb-0">25+</h3>
+                    <span class="text-white-50 poppins-medium">Sekolah Bergabung</span>
                 </div>
             </div>
 
-            <div class="col-md-3 d-flex align-items-center gap-3">
-                <img src="{{ asset('images/graduet.png') }}" alt="graduation logo" style="width: 50px">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center gap-3 bg-white bg-opacity-10 p-4 rounded-3 hover-up">
+                <i class="ph-fill ph-graduation-cap text-accent display-4"></i>
                 <div>
-                    <h3 class="text-white poppins-bold mb-0">457 +</h3>
-                    <span class="text-white fw-light">Alumni Kelas Industri</span>
+                    <h3 class="text-white poppins-bold mb-0">457+</h3>
+                    <span class="text-white-50 poppins-medium">Alumni Industri</span>
                 </div>
             </div>
 
-            <div class="col-md-3 d-flex align-items-center gap-3">
-                <img src="{{ asset('images/presentation.png') }}" alt="presentation logo" style="width: 50px">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center gap-3 bg-white bg-opacity-10 p-4 rounded-3 hover-up">
+                <i class="ph-fill ph-chalkboard-teacher text-accent display-4"></i>
                 <div>
-                    <h3 class="text-white poppins-bold mb-0">13 +</h3>
-                    <span class="text-white fw-light">Pilihan Bidang Kelas</span>
+                    <h3 class="text-white poppins-bold mb-0">13+</h3>
+                    <span class="text-white-50 poppins-medium">Pilihan Bidang</span>
                 </div>
             </div>
 
-            <div class="col-md-3 d-flex align-items-center gap-3">
-                <img src="{{ asset('images/siswa.png') }}" alt="siswa logo" style="width: 50px">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center gap-3 bg-white bg-opacity-10 p-4 rounded-3 hover-up">
+                <i class="ph-fill ph-users-three text-accent display-4"></i>
                 <div>
-                    <h3 class="text-white poppins-bold mb-0">1.500 +</h3>
-                    <span class="text-white fw-light">Siswa Kelas Industri</span>
+                    <h3 class="text-white poppins-bold mb-0">1.500+</h3>
+                    <span class="text-white-50 poppins-medium">Siswa Bergabung</span>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -67,7 +67,7 @@
         <div class="row align-items-start mt-5">
             <!-- Logo -->
             <div class="col-md-4 text-center">
-                <img src="{{ asset('images/img-industri.jpg') }}" alt="industri img" class="img-fluid rounded-circle" style="width:350px;height:350px;object-fit:cover;">
+                <img src="{{ asset('images/img-industri.webp') }}" alt="industri img" class="img-fluid rounded-circle" style="width:350px;height:350px;object-fit:cover;">
             </div>
 
             <!-- Keunggulan -->
@@ -83,28 +83,26 @@
                 <div class="row mt-4 g-3">
                     @php
                     $keunggulan = [
-                    ['library.png','Kurikulum Berbasis Industri','Disesuaikan dengan kebutuhan perusahaan IT.'],
-                    ['kbm.png','Belajar Secara Langsung','Pendampingan langsung profesional.'],
-                    ['kantor.png','Project & Portofolio Nyata','Setiap Peserta membangun proyek siap pakai.'],
-                    ['sertif.png','Sertifikan Resmi','Menambah nilai saat melamar kerja.'],
+                    ['ph-books', 'Kurikulum Berbasis Industri', 'Disesuaikan dengan kebutuhan perusahaan IT.'],
+                    ['ph-chalkboard-teacher', 'Belajar Secara Langsung', 'Pendampingan langsung profesional.'],
+                    ['ph-briefcase', 'Project & Portofolio Nyata', 'Setiap Peserta membangun proyek siap pakai.'],
+                    ['ph-certificate', 'Sertifikat Resmi', 'Menambah nilai saat melamar kerja.'],
                     ]
                     @endphp
                     @foreach ($keunggulan as $k )
-
-                    <div class="col-md-6 col-sm-6">
-                        <div class="card p-3 bg-primary bg-opacity-25" style="border-radius: 8px;">
-                            <div class="d-flex gap-2">
-                                <img src="{{ asset('images/'.$k[0]) }}" alt="Logo" style="width:28px; height:28px; margin-right:5px;">
-                                <div>
-                                    <h6 class="text-primary mb-0 poppins-medium" style="font-size:14px;">{{ $k[1] }}</h6>
-                                    <p class="text-muted poppins-light" style="font-size:12px; margin-bottom:0;">{{ $k[2] }}</p>
+                    <div class="col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
+                        <div class="card custom-card p-4 h-100 border-0 bg-white">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-primary-light p-3 rounded-circle text-primary">
+                                    <i class="ph-fill {{ $k[0] }} fs-3"></i>
                                 </div>
-
+                                <div>
+                                    <h6 class="text-dark mb-2 poppins-semibold">{{ $k[1] }}</h6>
+                                    <p class="text-muted poppins-regular small mb-0">{{ $k[2] }}</p>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-
                     @endforeach
 
                 </div>
@@ -116,35 +114,34 @@
 <!-- Section Manfaat -->
 <div class="container py-5">
 
-    <div class="poppins-semibold text-center">
-        <h1>Manfaat yang Didapatkan Sekolah <br>
-            Ketika Mengikuti Kelas Industri <span style="color: #3399CC;">SigmaTech.</span>
-        </h1>
+    <div class="poppins-semibold text-center mb-5" data-aos="fade-up">
+        <h2 class="display-6 poppins-bold">Manfaat yang Didapatkan Sekolah <br>
+            Ketika Mengikuti Kelas Industri <span class="text-primary">SigmaTech.</span>
+        </h2>
     </div>
 
-    <div class="card p-5" style="border-radius:30px">
-
+    <div class="card custom-card p-md-5 p-4 border-0" data-aos="fade-up" data-aos-delay="200">
         <div class="row align-items-center">
-            <div class="col-md-7">
-                <div class="row g-3">
+            <div class="col-lg-7">
+                <div class="row g-4">
                     @php
                     $manfaat = [
-                    ['img'=>'image 20.png','title'=>'Kemitraan Resmi Industri','desc'=>'Membantu sekolah mengembangkan Business Center berbasis layanan teknologi dan produk digital. Sekolah mendapatkan dukungan langsung dari SigmaTech sebagai partner industri di bidang IT.'],
-                    ['img'=>'image 21.png','title'=>'Instruktur Berpengalaman','desc'=>'Membantu sekolah mengembangkan Business Center berbasis layanan teknologi dan produk digital.'],
-                    ['img'=>'image 22.png','title'=>'Kontribusi Akreditasi','desc'=>'Program industri berstandar profesional ini dapat menjadi nilai tambahan dalam penilaian akreditasi sekolah.'],
-                    ['img'=>'image 23.png','title'=>'Lulusan Lebih Kompetitif','desc'=>'Meningkatkan peluang siswa terserap di dunia kerja karena keterampilan yang sesuai kebutuhan industri.'],
+                    ['icon'=>'ph-handshake','title'=>'Kemitraan Resmi Industri','desc'=>'Membantu sekolah mengembangkan Business Center berbasis layanan teknologi dan produk digital. Sekolah mendapatkan dukungan langsung dari SigmaTech.'],
+                    ['icon'=>'ph-user-focus','title'=>'Instruktur Berpengalaman','desc'=>'Tim praktisi industri siap memberikan bimbingan sesuai studi kasus di lapangan nyata.'],
+                    ['icon'=>'ph-medal','title'=>'Kontribusi Akreditasi','desc'=>'Program industri berstandar profesional ini dapat menjadi nilai tambahan dalam penilaian akreditasi sekolah.'],
+                    ['icon'=>'ph-trend-up','title'=>'Lulusan Lebih Kompetitif','desc'=>'Meningkatkan peluang siswa terserap di dunia kerja karena keterampilan yang sesuai kebutuhan industri.'],
                     ];
                     @endphp
 
                     @foreach($manfaat as $m)
-                    <div class="col-12 mb-2">
-                        <div class="card d-flex align-items-start bg-transparent border-0 shadow-none">
-                            <div class="d-flex gap-3">
-                                <img src="{{ asset('images/'.$m['img']) }}" alt="Logo" class="img-industri" style="width:75px">
-                                <div>
-                                    <h6 class="poppins-semibold mb-1">{{ $m['title'] }}</h6>
-                                    <p class="mb-0" style="font-size:14px;">{{ $m['desc'] }}</p>
-                                </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-warning bg-opacity-10 p-3 rounded-circle text-accent flex-shrink-0">
+                                <i class="ph-fill {{ $m['icon'] }} fs-2"></i>
+                            </div>
+                            <div>
+                                <h6 class="poppins-semibold text-dark mb-2">{{ $m['title'] }}</h6>
+                                <p class="text-muted small mb-0 lh-lg">{{ $m['desc'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -152,11 +149,11 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-
-                <img src="{{ asset('images/img-kelasind.jpg') }}" alt="Galeri" class="img-fluid mb-3 responsive-media-frame is-rounded" style="width:450px; height:350px; object-fit:cover; border-radius:30px;">
-
-                <div class="border-top border-2 border-secondary mt-4"></div>
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <div class="position-relative d-inline-block hover-scale">
+                    <img src="{{ asset('images/img-kelasind.webp') }}" alt="Galeri" class="img-fluid responsive-media-frame shadow-lg" style="width:100%; max-width:400px; height:450px; object-fit:cover; border-radius: var(--radius-xl);">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: radial-gradient(circle, transparent 40%, rgba(50,153,205,0.1) 100%); pointer-events:none; border-radius: var(--radius-xl);"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -165,33 +162,37 @@
 
 </div>
 
-<!-- Section Call to Action -->
-<section class="call-to-action" style="background: white">
+<section class="call-to-action pb-5">
     <div class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2 class="poppins-semibold mb-3">Wujudkan Lulusan yang Siap Bersaing di Dunia Industri</h2>
-                <p class="mb-4">
+        <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-lg-6">
+                <h2 class="poppins-semibold mb-4 display-6 text-dark">Wujudkan Lulusan yang Siap Bersaing di Dunia Industri</h2>
+                <p class="mb-4 text-muted fs-5 lh-lg">
                     Tidak perlu lagi bingung menyusun pembelajaran yang sesuai kebutuhan dunia kerja.
-                    Program Kelas Industri SigmaTech hadir sebagai mitra strategis untuk membantu sekolah menghadirkan pembelajaran relevan, terarah, dan berbasis praktik nyata sehingga siswa lebih siap untuk Bekerja, Melanjutkan studi, maupun Berwirausaha.
+                    Program Kelas Industri <span class="text-primary poppins-semibold">SigmaTech</span> hadir sebagai mitra strategis untuk membantu sekolah menghadirkan pembelajaran relevan, terarah, dan berbasis praktik nyata sehingga siswa lebih siap untuk Bekerja, Melanjutkan studi, maupun Berwirausaha.
                 </p>
-                <div class="responsive-cta-group">
-                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn mt-5 kuning-round">Daftar Sekarang</a>
-                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-primary custom-left-btn mt-5">Hubungi Kami</a>
+                <div class="responsive-cta-group mt-4">
+                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-secgradient px-4 py-3 poppins-semibold shadow-md">
+                        <i class="ph-bold ph-rocket-launch me-2"></i> Daftar Sekarang
+                    </a>
+                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-premium px-4 py-3 poppins-semibold shadow-sm ms-md-3 mt-3 mt-md-0">
+                        <i class="ph-bold ph-chat-circle-dots me-2"></i> Hubungi Kami
+                    </a>
                 </div>
             </div>
-            <div class="col-md-4 text-end">
-                <img src="{{ asset('images/img-kerja.jpg') }}" class="responsive-media-frame is-rounded d-flex align-items-center justify-content-center" style="width:450px; height:450px; border-radius: 25px;" alt="">
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <img src="{{ asset('images/img-kerja.webp') }}" class="responsive-media-frame is-circle shadow-lg hover-scale" style="width:450px; height:450px; object-fit:cover; border: 15px solid var(--color-bg);" alt="">
             </div>
         </div>
     </div>
 
     <!-- Section Join Now -->
-    <div class="text-center py-5">
-        <h1 class="poppins-semibold">Ayo Bergabung di Kelas Industri SigmaTech!</h1>
-        <p>Bangun keterampilan, portofolio, dan masa depan kariermu mulai dari sekarang.</p>
+    <div class="container mt-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="cardcur text-center p-5 mx-auto" style="max-width: 900px;">
+            <h2 class="poppins-bold mb-3 display-6">Ayo Bergabung di Kelas Industri SigmaTech!</h2>
+            <p class="fs-5 text-white-50">Bangun keterampilan, portofolio, dan masa depan kariermu mulai dari sekarang.</p>
+        </div>
     </div>
-
 </section>
 
 @endsection

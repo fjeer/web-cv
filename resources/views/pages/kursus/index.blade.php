@@ -4,17 +4,16 @@
 
 @section('content')
 
-<section class="hero-section w-100" style="background-image: url('{{ asset('images/banner2.png') }}');">
-    <div class="container py-5">
+<section class="hero-bg w-100" style="background-image: url('{{ asset('images/banner2.webp') }}'); padding: 120px 0 80px 0;">
+    <div class="container position-relative z-index-2">
         <div class="row">
             <div class="col-lg-6 col-md-8">
-                <div class="container" data-aos="fade-right">
-                    <h2 class="poppins-semibold mb-3">Tingkatkan Keahlianmu <br> Pilih Jalur Belajarmu di SigmaTech</h2>
-                    <p class="mb-4">
-                        Pelajari bidang IT sesuai passion-mu <br> Setiap program dirancang berbasis proyek dan dibimbing
-                        langsung oleh praktisi industri.
+                <div class="container text-white" data-aos="fade-right">
+                    <h2 class="poppins-semibold mb-3 display-5">Tingkatkan Keahlianmu <br> <span class="text-warning">Pilih Jalur Belajarmu di SigmaTech</span></h2>
+                    <p class="mb-4 fs-5 text-white-50">
+                        Pelajari bidang IT sesuai passion-mu. Setiap program dirancang berbasis proyek dan dibimbing langsung oleh praktisi industri.
                     </p>
-                    <h4 class="poppins-medium mb-3 fs-5">Kursus (Program / Kelas).</h4> 
+                    <span class="badge badge-premium bg-white text-primary px-4 py-2 poppins-medium fs-6">Kursus (Program / Kelas)</span>
                 </div>
             </div>
         </div>
@@ -32,16 +31,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
-                <div class="input-group">
-                    <span class="input-group-text btn-gradient" style="border-radius: 20px 0 0 20px">
-                        <i class="bi bi-search text-white"></i>
+                <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
+                    <span class="input-group-text bg-white border-end-0 ps-4" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
+                        <i class="ph-bold ph-magnifying-glass text-muted"></i>
                     </span>
-                    <input type="text" id="searchCourse" class="form-control" placeholder="Cari kursus atau keahlian..." style="border-radius: 0 20px 20px 0">
+                    <input type="text" id="searchCourse" class="form-control border-start-0 ps-0" placeholder="Cari kursus atau keahlian..." style="border-radius: 0 var(--radius-full) var(--radius-full) 0; box-shadow: none;">
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 mb-3 mb-md-0">
-                <select id="filterKelas" class="form-select" style="border-radius: 20px;">
+                <select id="filterKelas" class="form-select shadow-sm" style="border-radius: var(--radius-full);">
                     <option value="">Semua Kelas</option>
                     @foreach($kelas as $kls)
                         <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
@@ -50,8 +49,8 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <button id="resetFilter" class="btn btn-warning w-100 rounded-pill">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
+                <button id="resetFilter" class="btn btn-outline-secondary w-100 shadow-sm" style="border-radius: var(--radius-full);">
+                    <i class="ph-bold ph-arrows-clockwise me-1"></i> Reset
                 </button>
             </div>
         </div>
@@ -59,7 +58,7 @@
 </div>
 
 <!-- Course Grid Section -->
-<section class="course-section" style="background-image: url('{{ asset('images/bg-jadwal-1.png') }}')">
+<section class="course-section" style="background-image: url('{{ asset('images/bg-jadwal-1.webp') }}')">
 
     <div class="container py-5" data-aos="fade-zoom-in">
         <!-- Loading Spinner -->
@@ -74,48 +73,48 @@
         <div id="courseContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             @foreach($kursus as $krs)
             <div class="col course-card" data-kelas="{{ $krs->id_kelas }}" data-name="{{ strtolower($krs->nama_kursus) }}">
-                <div class="card border-0 shadow-sm course-hover">
-                    <div class="position-relative">
-                        <img src="{{ asset('storage/'.$krs->gambar_kursus) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $krs->nama_kursus }}">
+                <div class="card custom-card border-0 h-100">
+                    <div class="position-relative overflow-hidden" style="border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+                        <img src="{{ asset('storage/'.$krs->gambar_kursus) }}" class="card-img-top hover-scale" style="height: 200px; object-fit: cover;" alt="{{ $krs->nama_kursus }}">
 
-                        <span class="position-absolute top-0 end-0 m-3 badge {{ $krs->id_kelas == 1 ? 'bg-primary' : ($krs->id_kelas == 2 ? 'bg-warning text-dark' : 'bg-danger') }}">
+                        <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 poppins-medium shadow-sm {{ $krs->id_kelas == 1 ? 'bg-primary' : ($krs->id_kelas == 2 ? 'bg-warning text-dark' : 'bg-danger') }}">
                             {{ $krs->Kelas->nama_kelas }}
                         </span>
                         <div class="position-absolute bottom-0 start-0 m-2">
-                            <span class="badge bg-dark bg-opacity-75">
-                                <i class="bi bi-building me-1"></i>
+                            <span class="badge bg-dark bg-opacity-75 px-3 py-2 shadow-sm rounded-pill">
+                                <i class="ph-bold ph-buildings me-1"></i> Industri
                             </span>
                         </div>
                     </div>
 
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column p-4">
 
-                        <h5 class="card-title poppins-semibold mb-2 text-truncate">{{ $krs->nama_kursus }}</h5>
+                        <h5 class="card-title poppins-semibold mb-2 text-dark">{{ $krs->nama_kursus }}</h5>
 
-                        <p class="card-text text-muted text-decoration-underline small flex-grow-2" style="min-height: 30px;">
+                        <p class="card-text text-muted small flex-grow-1 mb-3">
                             {{ Str::limit(strip_tags($krs->deskripsi_kursus), 100) }}
                         </p>
 
-                        <div class="d-flex align-items-center mb-1">
-                            <div class="text-warning me-2">
-                                <i class="bi bi-star-fill"></i>
-                                <small class="poppins-bold">{{ $krs->rating_kursus }}</small>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="text-warning me-2 d-flex align-items-center">
+                                <i class="ph-fill ph-star me-1 fs-5"></i>
+                                <span class="poppins-bold text-dark">{{ $krs->rating_kursus }}</span>
                             </div>
                         </div>
 
                         <div class="mt-auto">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="text-primary text-decoration-underline poppins-medium mb-0">
-                                    Rp {{ number_format($krs->harga_kursus) }}
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="text-primary poppins-bold mb-0">
+                                    Rp {{ number_format($krs->harga_kursus, 0, ',', '.') }}
                                 </h5>
-                                <span class="badge bg-success bg-opacity-10 text-success">
-                                    <i class="bi bi-check-circle me-1"></i>Sertifikat
+                                <span class="badge bg-success bg-opacity-10 text-success px-2 py-1 poppins-medium rounded-pill">
+                                    <i class="ph-bold ph-certificate me-1"></i>Sertifikat
                                 </span>
                             </div>
 
                             <div class="d-grid gap-2">
-                                <a href="{{ route('kursus.show', $krs->slug) }}" class="btn btn-gradient text-white fw-bold">
-                                    <i class="bi bi-eye me-1"></i> Detail Kursus
+                                <a href="{{ route('kursus.show', $krs->slug) }}" class="btn btn-gradient text-white">
+                                    <i class="ph-bold ph-eye me-1"></i> Detail Kursus
                                 </a>
                             </div>
                         </div>
@@ -147,25 +146,21 @@
 </section>
 
 <!-- Section Call to Action -->
-<section class="call-to-action">
+<section class="call-to-action mb-5 mt-4">
     <div class="container py-5">
-        <div class="row g-4 text-center justify-content-center">
-            <div class="col-md-10">
-                <div class="text-center">
-                    <div class="cardcur p-5">
-                        <h1 class="poppins-bold" style="font-size: 34px; -webkit-text-stroke: 1px black;">
-                            Berhenti Belajar <span style="color: #FF741F;">Tanpa Tujuan.</span>
-                        </h1>
-                        <h4 class="poppins-semibold" style="-webkit-text-stroke: 1px black;">
-                            <span style="color: #FF741F;">SigmaTech</span> bantu kamu kuasai keahlian IT secara terarah,
-                            praktik <br> langsung, dan siap kerja di era digital.
-                        </h4>
-                        <div class="d-flex justify-content-center gap-3">
-                            <a href="{{ route('daftar.index') }}" target="_blank" class="kuning-round btn mt-4 poppins-semibold" style="font-size:18px;">
-                                <i class="bi bi-person-fill text-dark"></i> Daftar Sekarang
-                            </a>
-                        </div>
-                    </div>
+        <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-10">
+                <div class="cardcur p-5 text-center shadow-lg border-0" style="border-radius: var(--radius-xl);">
+                    <h1 class="poppins-bold mb-3 display-5">
+                        Berhenti Belajar <span class="text-warning">Tanpa Tujuan.</span>
+                    </h1>
+                    <p class="poppins-medium text-white-50 fs-5 mb-5 px-md-5">
+                        <span class="text-warning fw-bold">SigmaTech</span> bantu kamu kuasai keahlian IT secara terarah,
+                        praktik langsung, dan siap kerja di era digital.
+                    </p>
+                    <a href="{{ route('daftar.index') }}" target="_blank" class="btn btn-secgradient text-white px-5 py-3 poppins-bold shadow-lg" style="font-size: 1.1rem;">
+                        <i class="ph-bold ph-user-plus me-2"></i> Daftar Sekarang
+                    </a>
                 </div>
             </div>
         </div>
@@ -173,25 +168,6 @@
 </section>
 
 <style>
-    .course-hover {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .course-hover:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
-    }
-
-    .card-img-top {
-        transition: transform 0.5s ease;
-    }
-
-    .course-hover:hover .card-img-top {
-        transform: scale(1.05);
-    }
-
     .badge.bg-info {
         background-color: #0dcaf0 !important;
     }
@@ -204,23 +180,11 @@
         background-color: #dc3545 !important;
     }
 
-    .form-control,
-    .form-select {
-        border-radius: 8px;
-        border: 2px solid #e9ecef;
-        padding: 10px 15px;
-    }
-
     .form-control:focus,
     .form-select:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 0.25rem rgba(50, 153, 205, 0.25);
     }
-
-    .input-group-text {
-        border-radius: 8px 0 0 8px;
-    }
-
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

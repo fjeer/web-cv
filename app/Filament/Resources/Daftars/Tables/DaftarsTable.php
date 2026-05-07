@@ -27,6 +27,14 @@ class DaftarsTable
                     ->searchable(),
                 TextColumn::make('gender')
                     ->searchable(),
+                TextColumn::make('kabkota')
+                    ->label('Kab/Kota')
+                    ->searchable()
+                    ->toggleable(),
+                TextColumn::make('provinsi')
+                    ->label('Provinsi')
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('training.kursus.nama_kursus')
                     ->label('Kursus')
                     ->searchable(),                   

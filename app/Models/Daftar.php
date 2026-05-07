@@ -15,6 +15,12 @@ class Daftar extends Model
         'phone',
         'gender',
         'address',
+        'provinsi',
+        'kabkota',
+        'kecamatan',
+        'desa',
+        'kodepos',
+        'alamat_detail',
         'training_id',
         'event_id',
     ];

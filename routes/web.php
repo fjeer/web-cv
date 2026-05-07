@@ -16,7 +16,7 @@ Route::get('/', function () {
 Route::get('/kursus', function () {
     return redirect()->route('kursus.index');
 });
-Route::get('/training', function() {
+Route::get('/training', function () {
     return redirect()->route('training.index');
 });
 Route::get('/event', function () {
@@ -39,5 +39,5 @@ Route::resource('kursus', KursusController::class);
 Route::resource('event', EventController::class);
 Route::resource('berita', BeritaController::class);
 Route::resource('industri', IndustriController::class);
-Route::resource('training',TrainingController::class);
-Route::resource('daftar',DaftarController::class);
+Route::resource('training', TrainingController::class);
+Route::resource('daftar', DaftarController::class);

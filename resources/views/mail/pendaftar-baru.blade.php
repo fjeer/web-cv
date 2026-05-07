@@ -33,6 +33,6 @@ Lihat Detail Pendaftaran
 Terima kasih,<br>
 **Sistem {{ config('app.name') }}**.
 <br>
-<img src="{{ asset('images/email-footer.png') }}" alt="sigmatech logo" style="height: 50px">
+<img src="{{ asset('images/email-footer.webp') }}" alt="sigmatech logo" style="height: 50px">
 
 @endcomponent

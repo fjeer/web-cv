@@ -23,4 +23,21 @@ class EditDaftar extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    /**
+     * Susun ulang kolom 'address' dari field wilayah setiap kali disimpan.
+     */
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['address'] = implode(', ', array_filter([
+            $data['alamat_detail'] ?? null,
+            $data['desa']          ?? null,
+            $data['kecamatan']     ?? null,
+            $data['kabkota']       ?? null,
+            $data['provinsi']      ?? null,
+            $data['kodepos']       ?? null,
+        ]));
+
+        return $data;
+    }
 }

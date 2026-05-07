@@ -4,34 +4,44 @@
 
 @section('content')
 
-<section class="hero-section" style="background-image: url('{{ asset('images/banner3.png') }}'); background-size: cover; background-position: center;">
-    <div class="container py-5" data-aos="fade-right">
-        <div class="col-lg-6 col-md-8">
-            <h2 class="poppins-semibold mb-3">
-                Belajar Langsung, Bangun Koneksi, dan Rasakan Pengalaman Nyata Industri!
-            </h2>
-            <p class="mb-4">
-                Ikuti berbagai event dan training luring yang interaktif dan aplikatif
-                untuk meningkatkan skill, membangun koneksi, dan merasakan pengalaman nyata
-                di dunia industri.
-            </p>
-            <h4 class="poppins-medium">Event</h4>
+<section class="hero-bg w-100" style="background-image: url('{{ asset('images/banner3.webp') }}'); padding: 120px 0 80px 0;">
+    <div class="container position-relative z-index-2" data-aos="fade-right">
+        <div class="row">
+            <div class="col-lg-7 col-md-8 text-white">
+                <h2 class="poppins-semibold mb-3 display-5">
+                    Belajar Langsung, Bangun Koneksi, dan Rasakan Pengalaman <span class="text-warning">Nyata Industri!</span>
+                </h2>
+                <p class="mb-4 fs-5 text-white-50">
+                    Ikuti berbagai event dan training luring yang interaktif dan aplikatif
+                    untuk meningkatkan skill, membangun koneksi, dan merasakan pengalaman nyata di dunia industri.
+                </p>
+                <span class="badge badge-premium bg-white text-primary px-4 py-2 poppins-medium fs-6">Event</span>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="py-5" style="background-image: url({{ asset('images/bg-event-1.png') }});">
+<section class="py-5" style="background-color: var(--color-bg);">
     <div class="container" data-aos="fade-up">
-        <div class="card border-0 shadow-lg p-4 p-md-5">
+        <div class="mb-5 text-center">
+            <h6 class="section-title">Program Event</h6>
+            <h2 class="poppins-bold text-dark display-6">Temukan Event Menarik</h2>
+            <p class="text-muted">Ikuti berbagai kegiatan seru untuk meningkatkan skill dan networking Anda.</p>
+        </div>
+
+        <div class="card-premium p-4 p-md-5 border-0 shadow-sm mb-5">
             {{-- Filter Section --}}
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3">
-                <div>
-                    <h5 class="poppins-semibold">Daftar Events</h5>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-primary-light p-2 rounded-circle text-primary">
+                        <i class="ph-bold ph-funnel fs-4"></i>
+                    </div>
+                    <h5 class="poppins-semibold mb-0">Filter & Cari</h5>
                 </div>
 
                 <div class="d-flex flex-wrap gap-3">
                     <div class="custom-select-wrapper">
-                        <select id="kategoriFilter" class="custom-select rounded-pill">
+                        <select id="kategoriFilter" class="form-select shadow-sm ps-4" style="border-radius: var(--radius-full); cursor: pointer;">
                             <option value="">Semua Kategori</option>
                             @foreach ($kategori as $k)
                             <option value="{{ $k->id }}" {{ request('kategori') == $k->id ? 'selected' : '' }}>
@@ -39,21 +49,24 @@
                             </option>
                             @endforeach
                         </select>
-                        <i class="bi bi-chevron-down select-icon"></i>
                     </div>
 
                     <div class="search-wrapper">
-                        <input type="text" id="searchEvent" class="form-control rounded-pill" placeholder="Cari event..." value="{{ request('search') }}">
-                        <i class="bi bi-search search-icon"></i>
+                        <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
+                            <span class="input-group-text bg-white border-end-0 ps-4" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
+                                <i class="ph-bold ph-magnifying-glass text-muted"></i>
+                            </span>
+                            <input type="text" id="searchEvent" class="form-control border-start-0 ps-0" placeholder="Cari event..." value="{{ request('search') }}" style="border-radius: 0 var(--radius-full) var(--radius-full) 0; box-shadow: none;">
+                        </div>
                     </div>
 
-                    <button type="button" id="resetFilter" class="btn btn-warning" style="border-radius: 15px">
-                        <i class="bi bi-arrow-clockwise"></i>
+                    <button type="button" id="resetFilter" class="btn btn-outline-premium shadow-sm px-4">
+                        <i class="ph-bold ph-arrows-clockwise me-1"></i> Reset
                     </button>
                 </div>
             </div>
 
-            <div class="border-top border-2 border-secondary mb-5"></div>
+            <div class="border-top border-1 opacity-25 mb-5"></div>
 
             {{-- Loading Spinner --}}
             <div id="loadingSpinner" class="text-center py-5 d-none">
@@ -67,73 +80,49 @@
             <div id="eventContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 @forelse ($event as $e)
                 <div class="col event-card" data-kategori="{{ $e->kategori->id }}" data-title="{{ strtolower($e->title) }}">
-                    <div class="card h-100 border-0 shadow-sm event-hover">
-                        <div class="position-relative overflow-hidden">
-                            <img src="{{ asset('storage/' . $e->gambar_event) }}" class="card-img-top" alt="{{ $e->title }}" style="height: 220px; object-fit: cover;">
-                            <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge event-badge {{ $e->status_event = 1 ? 'bg-success' : 'bg-danger' }}">
-                                    {{ $e->status_event = 1 ? 'Tersedia' : 'Ditutup' }}
-                                </span>
-                            </div>
-                            <div class="position-absolute bottom-0 end-0 m-3">
-                                <span class="badge bg-dark bg-opacity-75">
-                                    {{ $e->kategori->nama_kategori }}
+                    <div class="card-premium">
+                        <div class="card-img-wrapper">
+                            <img src="{{ asset('storage/' . $e->gambar_event) }}" class="hover-scale" alt="{{ $e->title }}">
+                            <div class="position-absolute top-0 start-0 m-3 z-index-2">
+                                <span class="badge rounded-pill px-3 py-2 poppins-medium shadow-sm {{ $e->status_event == 1 ? 'bg-success' : 'bg-danger' }}">
+                                    {{ $e->status_event == 1 ? 'Tersedia' : 'Ditutup' }}
                                 </span>
                             </div>
                             {{-- Tanggal Overlay --}}
-                            <div class="date-overlay">
-                                <div class="date-content">
+                            <div class="date-overlay-premium shadow-md">
+                                <div class="date-content poppins-semibold">
                                     <span class="day">{{ $e->tanggal_event->format('d') }}</span>
                                     <span class="month">{{ $e->tanggal_event->translatedFormat('M') }}</span>
-                                    <span class="year">{{ $e->tanggal_event->format('Y') }}</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card-body d-flex flex-column">
-                            <a href="{{ route('event.show', $e->slug) }}" class="text-decoration-none text-dark stretched-link">
-                                <h5 class="card-title poppins-semibold mb-2 text-truncate-2">
-                                    {{ $e->title }}
-                                </h5>
-                            </a>
+                        <div class="card-body">
+                            <span class="card-category">{{ $e->kategori->nama_kategori }}</span>
+                            <h5 class="card-title text-truncate-2">
+                                {{ $e->title }}
+                            </h5>
 
-                            <p class="card-text text-muted small flex-grow-2" style="min-height: 30px;">
-                                {!! Str::limit(strip_tags($e->detail_event), 100, '...') !!}
+                            <p class="card-text small mb-4">
+                                {!! Str::limit(strip_tags($e->detail_event), 80, '...') !!}
                             </p>
 
-                            <div class="mt-3 pt-3 border-top">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <i class="bi bi-people-fill text-primary"></i>
-                                        <small class="text-muted">
-                                            <strong>{{ $e->kuota }}</strong> Kuota
-                                        </small>
-                                    </div>
-
-                                    <div class="d-flex align-items-center gap-2">
-                                        <i class="bi bi-clock text-primary"></i>
-                                        <small class="text-muted">{{ $e->waktu_event ?? '09:00 WIB' }}</small>
-                                    </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3">
+                                <div class="d-flex align-items-center gap-2 poppins-medium text-muted">
+                                    <i class="ph-fill ph-users text-primary"></i>
+                                    <small>{{ $e->kuota }} Kuota</small>
                                 </div>
 
-                                {{-- <div class="mt-3">
-                                    <div class="progress" style="height: 6px;">
-                                        @php
-                                        $progress = $e->kuota > 0 ? min(100, (($e->kuota_awal - $e->kuota) / $e->kuota_awal) * 100) : 100;
-                                        @endphp
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ $progress }}%" aria-valuenow="{{ $progress }}" aria-valuemin="0" aria-valuemax="100">
-                                        </div>
-                                    </div>
-                                    <small class="text-muted d-block mt-1">
-                                        {{ $e->kuota_awal - $e->kuota }} dari {{ $e->kuota_awal }} terisi
-                                    </small>
-                                </div> --}}
+                                <div class="d-flex align-items-center gap-2 poppins-medium text-muted">
+                                    <i class="ph-fill ph-clock text-warning"></i>
+                                    <small>{{ $e->waktu_event ?? '09:00 WIB' }}</small>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="{{ route('event.show', $e->slug) }}" class="btn btn-gradient text-white fw-semibold d-flex align-items-center justify-content-center gap-2">
-                                <i class="bi bi-ticket-perforated"></i> Detail Event
+                        <div class="card-footer border-0 pb-4 pt-0">
+                            <a href="{{ route('event.show', $e->slug) }}" class="btn btn-gradient text-white w-100 py-3">
+                                <i class="ph-bold ph-ticket me-1"></i> Lihat Detail
                             </a>
                         </div>
                     </div>
@@ -141,8 +130,8 @@
                 @empty
                 <div class="col-12 text-center py-5">
                     <div class="empty-state">
-                        <i class="bi bi-calendar-x display-1 text-muted"></i>
-                        <h4 class="mt-3 text-muted">Belum ada Event</h4>
+                        <i class="ph-bold ph-calendar-x display-1 text-muted opacity-50"></i>
+                        <h4 class="mt-3 poppins-semibold text-dark">Belum ada Event</h4>
                         <p class="text-muted">Silakan cek kembali nanti.</p>
                     </div>
                 </div>
@@ -152,11 +141,11 @@
             {{-- No Results Message --}}
             <div id="noResults" class="text-center py-5 d-none">
                 <div class="empty-state">
-                    <i class="bi bi-search display-5 text-muted"></i>
-                    <h4 class="mt-3 text-muted">Event tidak ditemukan</h4>
+                    <i class="ph-bold ph-magnifying-glass display-1 text-muted opacity-50"></i>
+                    <h4 class="mt-3 poppins-semibold text-dark">Event tidak ditemukan</h4>
                     <p class="text-muted mb-4">Coba gunakan kategori atau kata kunci yang berbeda</p>
-                    <button id="resetFilterBtn" class="btn btn-gradient" style="border-radius: 20px">
-                        <i class="bi bi-arrow-clockwise fw-bold text-white"></i>
+                    <button id="resetFilterBtn" class="btn btn-gradient text-white px-5">
+                        <i class="ph-bold ph-arrows-clockwise me-1"></i> Reset Pencarian
                     </button>
                 </div>
             </div>

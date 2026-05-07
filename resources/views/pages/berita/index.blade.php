@@ -3,76 +3,84 @@
 @section('title', 'news')
 
 @section('content')
-<section style="background-image: url('{{ asset('images/bg-berita.png') }}');" data-aos="fade-zoom-in">
+<section class="py-5 mt-5" style="background-color: var(--color-bg);">
+    <div class="container" data-aos="fade-up">
+        <div class="mb-5 text-center">
+            <h6 class="section-title">Warta SigmaTech</h6>
+            <h2 class="poppins-bold text-dark display-6">Berita & Artikel Terbaru</h2>
+            <p class="text-muted">Ikuti perkembangan terbaru seputar teknologi dan informasi dari kami.</p>
+        </div>
 
-    <div class="container py-5">
+        <div class="card-premium p-4 p-md-5 border-0 shadow-sm mb-5">
+            <!-- Header & Search -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5 gap-4">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-primary-light p-2 rounded-circle text-primary">
+                        <i class="ph-bold ph-newspaper fs-4"></i>
+                    </div>
+                    <h5 class="poppins-semibold mb-0">Semua Berita</h5>
+                </div>
 
-        <div class="card p-4" style="border-radius: 20px">
-
-            <!-- Header -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="poppins-semibold mb-0">Daftar Berita</h4>
-
-                <form class="d-flex" action="{{ route('berita.index') }}" method="GET">
-                    <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Cari berita..." value="{{ request('search') }}" style="border-radius: 20px 0 0 20px;">
-                        <button class="btn btn-gradient text-white" style="border-radius: 0 20px 20px 0;">
-                            <i class="bi bi-search"></i>
+                <form class="search-wrapper w-100 w-md-auto" action="{{ route('berita.index') }}" method="GET">
+                    <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
+                        <span class="input-group-text bg-white border-end-0 ps-4" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
+                            <i class="ph-bold ph-magnifying-glass text-muted"></i>
+                        </span>
+                        <input type="text" name="search" class="form-control border-start-0 ps-0" placeholder="Cari berita..." value="{{ request('search') }}" style="border-radius: 0; box-shadow: none;">
+                        <button class="btn btn-gradient text-white px-4" style="border-radius: 0 var(--radius-full) var(--radius-full) 0;">
+                            Cari
                         </button>
                     </div>
                 </form>
             </div>
 
-            <!-- Berita List -->
-            <section class="row mt-4">
-
+            <!-- Berita Grid -->
+            <div class="row g-4">
                 @forelse ($berita as $b)
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="modern-card">
-                        <div class="card-image-wrapper">
-                            <span class="category-badge">Berita</span>
-                            <img src="{{ asset('storage/' . $b->gambar_berita) }}" alt="{{ $b->gambar_berita }}">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
+                    <div class="card-premium">
+                        <div class="card-img-wrapper">
+                            <span class="badge rounded-pill bg-white text-primary position-absolute top-0 start-0 m-3 z-index-2 shadow-sm px-3 py-2 poppins-semibold">
+                                <i class="ph-bold ph-tag me-1"></i> Berita
+                            </span>
+                            <img src="{{ asset('storage/' . $b->gambar_berita) }}" alt="{{ $b->title }}">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title poppins-semibold">{{ $b->title }}</h5>
-                            <hr class="card-divider">
-                            <div class="card-footer-custom">
-                                <a href="{{ route('berita.show', $b->slug) }}" class="read-more">
-                                    Baca Selengkapnya
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="card-date">
-                                    <i class="bi bi-calendar-event"></i>
-                                    {{ $b->tanggal_berita->format('d M Y') }}
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="text-muted small d-flex align-items-center poppins-medium">
+                                    <i class="ph-bold ph-calendar-blank me-1 text-primary"></i>
+                                    {{ $b->tanggal_berita->translatedFormat('d M Y') }}
                                 </span>
                             </div>
-                            <a href="{{ route('berita.show', $b->slug) }}" class="stretched-link"></a>
+                            <h5 class="card-title text-truncate-2 mb-3">
+                                <a href="{{ route('berita.show', $b->slug) }}" class="text-decoration-none text-dark hover-primary">{{ $b->title }}</a>
+                            </h5>
+                            <p class="card-text small mb-0">
+                                {{ Str::limit(strip_tags($b->detail_berita ?? ''), 100) }}
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ route('berita.show', $b->slug) }}" class="read-more text-primary text-decoration-none poppins-semibold">
+                                Baca Selengkapnya <i class="ph-bold ph-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-
                 @empty
-                <div class="text-center">
-                    <i class="bi bi-newspaper fs-1 text-muted"></i>
-                    <h5 class="mt-3">Belum ada berita</h5>
-                    <p class="text-muted">Silakan cek kembali nanti.</p>
+                <div class="col-12 text-center py-5">
+                    <i class="ph-bold ph-newspaper display-1 text-muted opacity-50"></i>
+                    <h5 class="mt-3 poppins-semibold text-dark">Belum ada berita</h5>
+                    <p class="text-muted">Silakan cek kembali nanti atau coba kata kunci lain.</p>
                 </div>
                 @endforelse
-
-
-
-            </section>
-
-            <!-- Load More -->
-            <div class="text-center mt-4">
-                {{ $berita->links('pagination::bootstrap-5') }}
-
             </div>
 
+            <!-- Pagination -->
+            <div class="mt-5 d-flex justify-content-center">
+                {{ $berita->links('pagination::bootstrap-5') }}
+            </div>
         </div>
-
     </div>
-
 </section>
 
 <style>

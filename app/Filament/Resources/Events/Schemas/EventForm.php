@@ -68,6 +68,8 @@ class EventForm
                             ->directory('event-images')
                             ->image()
                             ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
+                            ->saveUploadedFileUsing(fn ($file) => \App\Support\WebpUploadHelper::saveAsWebp($file, 'event-images'))
                             ->required(),
                     ]),
             ]);

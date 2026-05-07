@@ -3,81 +3,92 @@
 @section('title', 'Jadwal Kursus')
 
 @section('content')
-<section style="background-image: url('{{ asset('images/bg-jadwal-1.png') }}');">
-    <div class="container py-3">
-        <div class="training-jadwal" data-aos="fade-zoom-in" data-aos-duration="800">
-            <div class="card border-0 rounded-3 p-3 mb-4">
-                <div class="card-body bg-warning bg-opacity-10 mb-5">
-                    <div class="position-relative ps-4">
-                        <!-- ICON POJOK -->
-                        <i class="bi bi-exclamation-octagon fs-3 text-warning position-absolute top-0 start-0"></i>
-                        <ul>
-                            <li class="text-muted">Jika <strong>tidak menemukan jadwal</strong> kursus yang Anda inginkan, silakan hubungi admin kami melalui WhatsApp di nomor <a href="https://wa.me/6282144356926" target="_blank" class="text-decoration-none">0821-4435-6926</a> untuk informasi jadwal terbaru.</li>
-                            <li class="text-muted">Pendaftaran kursus <strong>ditutup pada hari H</strong>. Namun, disarankan mendaftar lebih awal untuk memastikan ketersediaan seat.</li>
-                            <li class="text-muted">Pastikan sudah <strong>melakukan pembayaran</strong> ketika mendaftar, <strong>simpan</strong> bukti pembayaran Anda.</li>
-                            <li class="text-muted">Jika Anda sudah melakukan pendaftaran, silakan <strong>tunggu konfirmasi</strong> dari admin kami melalui WhatsApp.</li>
-                            <li class="text-muted">Jika <strong>tidak mendapat konfirmasi</strong> dalam waktu 24 jam, silakan hubungi admin kami melalui WhatsApp di nomor <a href="https://wa.me/6282144356926" target="_blank" class="text-decoration-none">0821-4435-6926</a>.</li>
-                            <li class="text-muted">Jika <strong>ingin mengubah atau menghapus</strong> pendaftaran, silakan hubungi admin kami melalui WhatsApp di nomor <a href="https://wa.me/6282144356926" target="_blank" class="text-decoration-none">0821-4435-6926</a>.</li>
-                            <li class="text-muted">Kami juga menyediakan <strong>private / inhouse</strong> kursus dengan jadwal dan lokasi sesuai permintaan perusahaan atau institusi Anda.</li>
+<section class="py-5 mt-5" style="background-color: var(--color-bg);">
+    <div class="container" data-aos="fade-up">
+        <div class="mb-5 text-center">
+            <h6 class="section-title">Program Pelatihan</h6>
+            <h2 class="poppins-bold text-dark display-6">Jadwal Kursus Terbaru</h2>
+            <p class="text-muted">Pilih jadwal yang sesuai dengan waktu Anda dan mulailah belajar bersama kami.</p>
+        </div>
+
+        <div class="card-premium p-4 p-md-5 border-0 shadow-sm mb-5">
+            <div class="card-body bg-primary-light rounded-4 p-4 border border-primary border-opacity-25">
+                <div class="d-flex align-items-start gap-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                        <i class="ph-fill ph-info fs-3"></i>
+                    </div>
+                    <div>
+                        <h5 class="poppins-semibold text-dark mb-2">Informasi Penting</h5>
+                        <ul class="mb-0 text-muted poppins-medium small" style="line-height: 1.8;">
+                            <li>Jika <strong>tidak menemukan jadwal</strong> kursus yang diinginkan, hubungi admin via <a href="https://wa.me/6282144356926" target="_blank" class="text-primary text-decoration-none fw-bold">WhatsApp (0821-4435-6926)</a>.</li>
+                            <li>Pendaftaran kursus <strong>ditutup pada hari H</strong>. Disarankan mendaftar lebih awal.</li>
+                            <li>Pastikan sudah <strong>melakukan pembayaran</strong> dan simpan bukti pembayarannya.</li>
+                            <li>Tunggu konfirmasi dari admin dalam waktu 24 jam setelah mendaftar.</li>
+                            <li>Kami melayani <strong>private / inhouse</strong> training dengan jadwal fleksibel.</li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                {{-- ================= HEADER + SEARCH ================= --}}
-                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-                    <div class="d-flex align-items-center gap-2">
-                        <h5 class="poppins-semibold mb-0">Jadwal Kursus</h5>
+            {{-- Filter Section --}}
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-5 gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-primary-light p-2 rounded-circle text-primary">
+                        <i class="ph-bold ph-calendar-check fs-4"></i>
                     </div>
-
-                    <div id="filterForm" class="d-flex gap-3">
-                        <input type="text" id="searchInput" class="form-control rounded-pill" style="max-width: 220px" placeholder="Cari kursus..." value="{{ request('search') }}">
-
-                        <div class="custom-select-wrapper">
-                            <select id="statusFilter" class="custom-select rounded-pill">
-                                <option value="">Semua Status</option>
-                                <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>Tersedia</option>
-                                <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>Ditutup</option>
-                            </select>
-                            <i class="bi bi-chevron-down select-icon"></i>
-                        </div>
-
-                        <div class="custom-select-wrapper">
-                            <select id="kelasFilter" class="custom-select rounded-pill">
-                                <option value="">Semua kelas</option>
-                                @foreach ($kelas as $k )
-                                <option value="{{ $k->id }}" {{ request('kelas') == $k->id ? 'selected' : ''}}>{{ $k->nama_kelas }}</option>
-                                @endforeach
-                            </select>
-                            <i class="bi bi-chevron-down select-icon"></i>
-                        </div>
-
-                        <button id="resetFilter" class="btn btn-warning" style="border-radius: 15px">
-                            <i class="bi bi-arrow-clockwise"></i>
-                        </button>
-
-                    </div>
+                    <h5 class="poppins-semibold mb-0 text-dark">Daftar Jadwal</h5>
                 </div>
 
-                {{-- ================= TABLE / EMPTY STATE ================= --}}
-                <div class="card bg-primary bg-opacity-10 p-3">
-                    {{-- Loading Spinner --}}
-                    <div id="loadingSpinner" class="text-center py-5 d-none">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                <div id="filterForm" class="d-flex flex-wrap gap-3">
+                    <div class="search-wrapper w-100 w-md-auto">
+                        <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
+                            <span class="input-group-text bg-white border-end-0 ps-3" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
+                                <i class="ph-bold ph-magnifying-glass text-muted"></i>
+                            </span>
+                            <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari kursus..." value="{{ request('search') }}" style="border-radius: 0 var(--radius-full) var(--radius-full) 0; box-shadow: none;">
                         </div>
-                        <p class="mt-2">Memuat data...</p>
                     </div>
 
-                    {{-- Table Container --}}
-                    <div id="tableContainer">
-                        @include('pages.kursus.partials.table')
+                    <div class="custom-select-wrapper">
+                        <select id="statusFilter" class="form-select shadow-sm ps-3" style="border-radius: var(--radius-full);">
+                            <option value="">Semua Status</option>
+                            <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>Tersedia</option>
+                            <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>Ditutup</option>
+                        </select>
                     </div>
+
+                    <div class="custom-select-wrapper">
+                        <select id="kelasFilter" class="form-select shadow-sm ps-3" style="border-radius: var(--radius-full);">
+                            <option value="">Semua Kelas</option>
+                            @foreach ($kelas as $k)
+                            <option value="{{ $k->id }}" {{ request('kelas') == $k->id ? 'selected' : ''}}>{{ $k->nama_kelas }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <button id="resetFilter" class="btn btn-outline-premium shadow-sm px-4">
+                        <i class="ph-bold ph-arrows-clockwise me-1"></i> Reset
+                    </button>
+                </div>
+            </div>
+
+            {{-- Table Container --}}
+            <div class="p-0 overflow-hidden rounded-4 border">
+                <div id="loadingSpinner" class="text-center py-5 d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Memuat data...</p>
                 </div>
 
-                {{-- ================= PAGINATION ================= --}}
-                <div id="paginationContainer" class="mt-3">
-                    {{ $training->links() }}
+                <div id="tableContainer">
+                    @include('pages.kursus.partials.table')
                 </div>
+            </div>
+
+            {{-- Pagination --}}
+            <div id="paginationContainer" class="mt-4 d-flex justify-content-center">
+                {{ $training->links() }}
             </div>
         </div>
     </div>
@@ -86,29 +97,14 @@
 <style>
     .custom-select-wrapper {
         position: relative;
-        width: 180px;
+        min-width: 160px;
     }
 
-    .custom-select {
-        width: 100%;
-        padding: 8px 35px 8px 15px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        background-color: white;
-        appearance: none;
-        cursor: pointer;
+    .form-select:focus, .form-control:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 0.25rem rgba(50, 153, 205, 0.25);
     }
-
-    .select-icon {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        pointer-events: none;
-        color: #6c757d;
-    }
-
-    .button-biru {
+        .button-biru {
         background-color: #0d6efd;
         color: white;
         border: none;
@@ -120,7 +116,6 @@
         background-color: #0b5ed7;
         color: white;
     }
-
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

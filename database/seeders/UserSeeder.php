@@ -13,10 +13,8 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
-
         $superadmin = User::firstOrCreate(
-            ['email' => 'superadmin@example.com'],
+            ['email' => 'fhm.pribadi@gmail.com'],
             [
                 'name' => 'Superadmin User',
                 'password' => bcrypt('password'),
@@ -25,7 +23,7 @@ class UserSeeder extends Seeder
         $superadmin->assignRole('Superadmin');
 
         $admin = User::firstOrCreate(
-            ['email' => 'admin@example.com'],
+            ['email' => 'fhm.fjer@gmail.com'],
             [
                 'name' => 'Admin User',
                 'password' => bcrypt('password'),
@@ -41,13 +39,5 @@ class UserSeeder extends Seeder
             ]
         );
         $redaksi->assignRole('Redaksi');
-
-        User::firstOrCreate(
-            ['email' => 'test@example.com'],
-            [
-                'name' => 'Test User',
-                'password' => bcrypt('password'),
-            ]
-        );
     }
 }
