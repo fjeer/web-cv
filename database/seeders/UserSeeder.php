@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         $superadmin = User::firstOrCreate(
             ['email' => 'fhm.pribadi@gmail.com'],
             [
-                'name' => 'Superadmin User',
+                'name' => 'Superadmin',
                 'password' => bcrypt('password'),
             ]
         );
@@ -25,19 +25,19 @@ class UserSeeder extends Seeder
         $admin = User::firstOrCreate(
             ['email' => 'fhm.fjer@gmail.com'],
             [
-                'name' => 'Admin User',
+                'name' => 'Admin',
                 'password' => bcrypt('password'),
             ]
         );
         $admin->assignRole('Admin');
 
-        $redaksi = User::firstOrCreate(
-            ['email' => 'redaksi@example.com'],
-            [
-                'name' => 'Redaksi User',
-                'password' => bcrypt('password'),
-            ]
-        );
-        $redaksi->assignRole('Redaksi');
+        // $redaksi = User::firstOrCreate(
+        //     ['email' => 'redaksi@example.com'],
+        //     [
+        //         'name' => 'Redaksi',
+        //         'password' => bcrypt('password'),
+        //     ]
+        // );
+        // $redaksi->assignRole('Redaksi');
     }
 }
