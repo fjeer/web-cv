@@ -127,13 +127,10 @@
         <!-- No Results Message -->
         <div id="noResults" class="text-center py-5 d-none">
             <div class="mb-4">
-                <i class="bi bi-search display-5 text-muted"></i>
+                <i class="bi bi-laptop display-5 text-muted"></i>
             </div>
-            <h4 class="text-muted mb-3">Kursus tidak ditemukan</h4>
-            <p class="text-muted mb-4">Coba gunakan kata kunci atau filter yang berbeda</p>
-            <button id="resetFilterBtn" class="btn btn-danger">
-                <i class="bi bi-arrow-clockwise"></i>
-            </button>
+            <h4 class="text-muted mb-3">Kursus Belum Tersedia <br> <span class="text-primary">Coba Cari Lainnya</span></h4>
+            <p class="text-muted mb-4">Silakan cek kembali nanti atau coba kata kunci lain.</p>
         </div>
 
         <!-- Load More -->
@@ -237,13 +234,6 @@
 
         // Filter change
         $('#filterKelas').on('change', filterCourses);
-
-        // Reset filter
-        $('#resetFilter, #resetFilterBtn').on('click', function() {
-            $('#searchCourse').val('');
-            $('#filterKelas').val('');
-            filterCourses();
-        });
 
         // Initial filter state
         filterCourses();

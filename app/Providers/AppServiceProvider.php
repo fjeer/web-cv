@@ -22,17 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $host = (string) Request::getHost();
-
-        if (str_contains($host, 'ngrok-free.app') || str_contains($host, 'ngrok-free.dev') || str_contains($host, 'ngrok.app')) {
+        if (app()->environment('production') || env('FORCE_HTTPS', false)) {
             URL::forceScheme('https');
         }
-
-        Gate::policy(\App\Models\Berita::class, \App\Policies\BeritaPolicy::class);
-        Gate::policy(\App\Models\Event::class, \App\Policies\EventPolicy::class);
-        Gate::policy(\App\Models\Galeri::class, \App\Policies\GaleriPolicy::class);
-        Gate::policy(\App\Models\Kursus::class, \App\Policies\KursusPolicy::class);
-        Gate::policy(\App\Models\Kelas::class, \App\Policies\KelasPolicy::class);
-        Gate::policy(\App\Models\User::class, \App\Policies\UserPolicy::class);
     }
 }
