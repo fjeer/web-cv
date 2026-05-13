@@ -12,10 +12,10 @@
                 Belajar langsung bersama mentor berpengalaman dan kuasai keterampilan yang dibutuhkan dunia kerja modern.
             </p>
             <div class="responsive-cta-group mt-5">
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-gradient px-4 py-3 poppins-semibold shadow-lg">
+                <a href="https://wa.me/62895639055084" target="_blank" class="btn btn-gradient px-4 py-3 poppins-semibold shadow-lg">
                     <i class="ph-bold ph-rocket-launch me-2"></i> Daftar Sekarang
                 </a>
-                <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-premium bg-transparent text-white border-white px-4 py-3 poppins-semibold ms-md-3 mt-3 mt-md-0 shadow-lg hover-scale">
+                <a href="https://wa.me/62895639055084" target="_blank" class="btn btn-outline-premium bg-transparent text-white border-white px-4 py-3 poppins-semibold ms-md-3 mt-3 mt-md-0 shadow-lg hover-scale">
                     <i class="ph-bold ph-chat-circle-dots me-2"></i> Hubungi Kami
                 </a>
             </div>
@@ -172,10 +172,10 @@
                     Program Kelas Industri <span class="text-primary poppins-semibold">SigmaTech</span> hadir sebagai mitra strategis untuk membantu sekolah menghadirkan pembelajaran relevan, terarah, dan berbasis praktik nyata sehingga siswa lebih siap untuk Bekerja, Melanjutkan studi, maupun Berwirausaha.
                 </p>
                 <div class="responsive-cta-group mt-4">
-                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-secgradient px-4 py-3 poppins-semibold shadow-md">
+                    <a href="https://wa.me/62895639055084" target="_blank" class="btn btn-secgradient px-4 py-3 poppins-semibold shadow-md">
                         <i class="ph-bold ph-rocket-launch me-2"></i> Daftar Sekarang
                     </a>
-                    <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-outline-premium px-4 py-3 poppins-semibold shadow-sm ms-md-3 mt-3 mt-md-0">
+                    <a href="https://wa.me/62895639055084" target="_blank" class="btn btn-outline-premium px-4 py-3 poppins-semibold shadow-sm ms-md-3 mt-3 mt-md-0">
                         <i class="ph-bold ph-chat-circle-dots me-2"></i> Hubungi Kami
                     </a>
                 </div>

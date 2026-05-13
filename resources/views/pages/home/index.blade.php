@@ -15,11 +15,11 @@
             <div class="banner_content" data-aos="fade-right">
 
                 <h3 class="poppins-semibold fs-1">
-                    <span class="text-warning">Selamat Datang</span> Kembangkan potensi dan inovasi bersama di SigmaTech.id
+                    <span class="text-warning">Selamat Datang</span> Kembangkan potensi dan inovasi bersama di SigmaTech
                 </h3>
 
                 <p class="poppins-medium text-white-50 fs-5">
-                    Berkarya, Berinovasi, dan Bertumbuh bersama.
+                    Build Your Skill, Build Your Career.
                 </p>
 
             </div>
@@ -276,7 +276,7 @@
             </a>
 
             <!-- Button Kanan -->
-            <a href="https://wa.me/+6282144356926" target="_blank" class="btn btn-secgradient px-4 py-3" data-aos="fade-up" data-aos-delay="500">
+            <a href="https://wa.me/62895639055084" target="_blank" class="btn btn-secgradient px-4 py-3" data-aos="fade-up" data-aos-delay="500">
                 <i class="ph-bold ph-chat-circle-dots me-2"></i>
                 Konsultasi Gratis
             </a>

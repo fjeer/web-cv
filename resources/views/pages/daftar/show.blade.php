@@ -25,8 +25,8 @@
                     </div>
                     <div>
                         <p class="mb-0 text-dark poppins-medium small">Jika ada kesalahan data atau ingin memperbarui informasi, silakan hubungi admin via WhatsApp untuk bantuan cepat.</p>
-                        <a href="https://wa.me/6282144356926" target="_blank" class="text-decoration-none text-success poppins-semibold d-inline-flex align-items-center bg-white px-3 py-1 rounded-pill mt-2 shadow-sm small">
-                            <i class="ph-fill ph-whatsapp me-2"></i> 0821-4435-6926
+                        <a href="https://wa.me/62895639055084" target="_blank" class="text-decoration-none text-success poppins-semibold d-inline-flex align-items-center bg-white px-3 py-1 rounded-pill mt-2 shadow-sm small">
+                            <i class="ph-fill ph-whatsapp me-2"></i> +62 895-6390-55084
                         </a>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                     <div>
                         <h6 class="poppins-bold text-dark mb-2">Instruksi Selanjutnya</h6>
                         <p class="mb-0 text-dark opacity-75 small">Admin akan menghubungi Anda via WhatsApp dalam waktu 1x24 jam untuk verifikasi. Jika belum mendapat respon, silakan klik tombol di bawah untuk konfirmasi manual.</p>
-                        <a href="https://wa.me/6282144356926?text=Halo%20Admin%2C%20saya%20sudah%20mendaftar%20dengan%20nomor%20{{ $daftar->no_daftar }}" target="_blank" class="btn btn-gradient text-white mt-3 px-4 py-2 poppins-bold">
+                        <a href="https://wa.me/62895639055084?text=Halo%20Admin%2C%20saya%20sudah%20mendaftar%20dengan%20nomor%20{{ $daftar->no_daftar }}" target="_blank" class="btn btn-gradient text-white mt-3 px-4 py-2 poppins-bold">
                             <i class="ph-bold ph-paper-plane-tilt me-2"></i> Konfirmasi Pembayaran
                         </a>
                     </div>

@@ -128,8 +128,8 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-12 text-center py-5">
-                    <div class="empty-state">
+                <div class="col-12 d-flex justify-content-center align-items-center py-5 event-empty-col">
+                    <div class="empty-state text-center">
                         <i class="ph-bold ph-calendar-x display-1 text-muted opacity-50"></i>
                         <h4 class="mt-3 poppins-semibold text-dark">Belum ada Event</h4>
                         <p class="text-muted">Silakan cek kembali nanti.</p>
@@ -264,6 +264,10 @@
 
     .empty-state {
         padding: 40px 20px;
+    }
+
+    .event-empty-col {
+        min-height: 320px;
     }
 
     .stat-item {

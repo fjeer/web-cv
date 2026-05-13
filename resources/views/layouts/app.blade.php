@@ -97,8 +97,7 @@
                     <img src="{{ asset('images/footer.webp') }}" alt="Footer Logo" class="img-fluid mb-3 hover-scale">
                     <p class="text-white-50">SigmaTech adalah perusahaan yang bergerak di bidang teknologi informasi dan pendidikan digital. Kami menyediakan layanan IT profesional serta program kelas industri untuk mencetak talenta siap kerja di era digital.</p>
                     <p class="poppins-medium text-white-50"><i class="ph ph-map-pin me-2 text-white"></i>Probolinggo - Jawa Timur</p>
-                    <p class="mb-2 poppins-medium"><a href="https://wa.me/6282144356926" target="_blank" class="text-white text-decoration-none"><i class="ph ph-whatsapp-logo me-2"></i>+62 821-4435-6926</a></p>
-                    <p class="mb-2 poppins-medium"><a href="https://wa.me/6285233335481" target="_blank" class="text-white text-decoration-none"><i class="ph ph-whatsapp-logo me-2"></i>+62 852-3333-5481</a></p>
+                    <p class="mb-2 poppins-medium"><a href="https://wa.me/62895639055084" target="_blank" class="text-white text-decoration-none"><i class="ph ph-whatsapp-logo me-2"></i>+62 895-6390-55084</a></p>
                     <p class="poppins-medium"><a href="mailto:sigmatechdigitalsolution@gmail.com" class="text-white text-decoration-none"><i class="ph ph-envelope-simple me-2"></i>sigmatechdigitalsolution@gmail.com</a>
                     </p>
                 </div>
@@ -122,7 +121,7 @@
                     <h4 class="mb-3 poppins-semibold text-white">Sosial Media</h4>
                     <p class="poppins-medium mt-4 text-white-50">Kunjungi Sosial Media Kami</p>
                     <div class="d-flex gap-3 fs-4 social-icons mt-3">
-                        <a href="https://wa.me/6282144356926" target="_blank" class="text-white">
+                        <a href="https://wa.me/62895639055084" target="_blank" class="text-white">
                             <i class="ph ph-whatsapp-logo"></i>
                         </a>
                         <a href="https://www.instagram.com/sigmatech.digital" target="_blank" class="text-white">

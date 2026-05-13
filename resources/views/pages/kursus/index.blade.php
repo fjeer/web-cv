@@ -129,7 +129,7 @@
             <div class="mb-4">
                 <i class="bi bi-laptop display-5 text-muted"></i>
             </div>
-            <h4 class="text-muted mb-3">Kursus Belum Tersedia <br> <span class="text-primary">Coba Cari Lainnya</span></h4>
+            <h4 class="text-muted mb-3">Kursus Belum Tersedia </h4>
             <p class="text-muted mb-4">Silakan cek kembali nanti atau coba kata kunci lain.</p>
         </div>
 

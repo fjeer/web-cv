@@ -113,6 +113,47 @@ Akses melalui browser →
 
 ---
 
+## Deploy aaPanel + Cloudflare
+
+Setelah upload project ke server production:
+
+```bash
+composer install --no-dev --optimize-autoloader
+php artisan key:generate --force
+php artisan migrate --force
+php artisan storage:link
+php artisan optimize:clear
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+Pastikan `.env` production minimal:
+
+```env
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://domainkamu.com
+ASSET_URL=https://domainkamu.com
+FORCE_HTTPS=true
+FILESYSTEM_DISK=public
+SESSION_SECURE_COOKIE=true
+```
+
+Pastikan permission folder writeable oleh user web server:
+- `storage/`
+- `bootstrap/cache/`
+
+Untuk upload foto besar di aaPanel (Nginx), naikkan batas upload:
+
+```nginx
+client_max_body_size 20M;
+```
+
+Lalu restart web server/PHP-FPM dari panel.
+
+---
+
 ## � Role-Based Access Control (RBAC)
 
 Proyek ini menggunakan sistem RBAC dengan Spatie Laravel Permission untuk mengelola akses pengguna.

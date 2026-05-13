@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,8 +20,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (app()->environment('production') || env('FORCE_HTTPS', false)) {
+        $forceHttps = app()->environment('production') || (bool) env('FORCE_HTTPS', false);
+
+        if ($forceHttps) {
             URL::forceScheme('https');
+        }
+
+        $appUrl = env('APP_URL');
+        $shouldForceRootUrl = app()->environment('production') || (bool) env('FORCE_APP_URL', false);
+
+        if ($shouldForceRootUrl && !empty($appUrl)) {
+            URL::forceRootUrl($appUrl);
         }
     }
 }

@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="d-none d-md-block">
-                    <a href="https://wa.me/6282144356926" target="_blank" class="text-decoration-none text-success poppins-semibold d-inline-flex align-items-center bg-success bg-opacity-10 px-4 py-2 rounded-pill">
+                    <a href="https://wa.me/62895639055084" target="_blank" class="text-decoration-none text-success poppins-semibold d-inline-flex align-items-center bg-success bg-opacity-10 px-4 py-2 rounded-pill">
                         <i class="ph-fill ph-whatsapp me-2 fs-5"></i> Hubungi Bantuan
                     </a>
                 </div>

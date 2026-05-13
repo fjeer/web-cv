@@ -20,7 +20,7 @@
                     <div>
                         <h5 class="poppins-semibold text-dark mb-2">Informasi Penting</h5>
                         <ul class="mb-0 text-muted poppins-medium small" style="line-height: 1.8;">
-                            <li>Jika <strong>tidak menemukan jadwal</strong> kursus yang diinginkan, hubungi admin via <a href="https://wa.me/6282144356926" target="_blank" class="text-primary text-decoration-none fw-bold">WhatsApp (0821-4435-6926)</a>.</li>
+                            <li>Jika <strong>tidak menemukan jadwal</strong> kursus yang diinginkan, hubungi admin via <a href="https://wa.me/62895639055084" target="_blank" class="text-primary text-decoration-none fw-bold">WhatsApp (+62 895-6390-55084)</a>.</li>
                             <li>Pendaftaran kursus <strong>ditutup pada hari H</strong>. Disarankan mendaftar lebih awal.</li>
                             <li>Pastikan sudah <strong>melakukan pembayaran</strong> dan simpan bukti pembayarannya.</li>
                             <li>Tunggu konfirmasi dari admin dalam waktu 24 jam setelah mendaftar.</li>
@@ -31,7 +31,7 @@
             </div>
 
             {{-- Filter Section --}}
-            <div class="d-flex flex-wrap justify-content-between align-items-center mb-5 gap-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-5 gap-3 mt-3">
                 <div class="d-flex align-items-center gap-2">
                     <div class="bg-primary-light p-2 rounded-circle text-primary">
                         <i class="ph-bold ph-calendar-check fs-4"></i>
@@ -39,7 +39,7 @@
                     <h5 class="poppins-semibold mb-0 text-dark">Daftar Jadwal</h5>
                 </div>
 
-                <div id="filterForm" class="d-flex flex-wrap gap-3">
+                <div id="filterForm" class="d-flex flex-wrap gap-3 mt-3">
                     <div class="search-wrapper w-100 w-md-auto">
                         <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
                             <span class="input-group-text bg-white border-end-0 ps-3" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
