@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="py-5" style="background-color: var(--color-bg);">
+<section class="py-5 mt-5" style="background-color: var(--color-bg);">
     <div class="container" data-aos="fade-up">
         <div class="mb-5 text-center">
             <h6 class="section-title">Pendaftaran</h6>

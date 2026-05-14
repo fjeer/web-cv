@@ -75,7 +75,7 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link {{ request()->routeIs('berita.index') ? 'active poppins-semibold text-primary' : 'text-secondary' }}"
-                            href="{{ route('berita.index') }}">Berita</a>
+                            href="{{ route('berita.index') }}">Artikel</a>
                     </li>
                 </ul>
             </div>

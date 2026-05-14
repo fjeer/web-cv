@@ -7,7 +7,8 @@
     <div class="container" data-aos="fade-up">
         <div class="mb-5 text-center">
             <h6 class="section-title">Warta SigmaTech</h6>
-            <h2 class="poppins-bold text-dark display-6">Berita & Artikel Terbaru</h2>
+            <h2 class="poppins-bold text-dark display-6">Artikel & Berita Terbaru</h2>
+
             <p class="text-muted">Ikuti perkembangan terbaru seputar teknologi dan informasi dari kami.</p>
         </div>
 
@@ -18,7 +19,7 @@
                     <div class="bg-primary-light p-2 rounded-circle text-primary">
                         <i class="ph-bold ph-newspaper fs-4"></i>
                     </div>
-                    <h5 class="poppins-semibold mb-0">Semua Berita</h5>
+                    <h5 class="poppins-semibold mb-0">Semua Artikel & Berita</h5>
                 </div>
 
                 <form class="search-wrapper w-100 w-md-auto" action="{{ route('berita.index') }}" method="GET">

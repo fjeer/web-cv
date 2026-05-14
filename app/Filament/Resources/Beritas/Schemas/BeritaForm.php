@@ -42,7 +42,9 @@ class BeritaForm
                             ->visibility('public')
                             ->directory('berita-images')
                             ->image()
-                            ->maxSize(5120)
+                            ->maxSize(2048)
+                            ->optimize('webp', 80)
+                            ->resize(50)
                             ->required(),
                         DatePicker::make('tanggal_berita')
                             ->label('Tanggal Publikasi')

@@ -7,7 +7,7 @@
 <section class="hero-bg w-100" style="background-image: url('{{ asset('images/banner2.webp') }}'); padding: 120px 0 80px 0;">
     <div class="container position-relative z-index-2">
         <div class="row">
-            <div class="col-lg-6 col-md-8">
+            <div class="col-lg-8 col-md-8">
                 <div class="container text-white" data-aos="fade-right">
                     <h2 class="poppins-semibold mb-3 display-5">Tingkatkan Keahlianmu <br> <span class="text-warning">Pilih Jalur Belajarmu di SigmaTech</span></h2>
                     <p class="mb-4 fs-5 text-white-50">

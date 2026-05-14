@@ -39,7 +39,9 @@ class SubLayananForm
                             ->visibility('public')
                             ->directory('sublayanan-images')
                             ->image()
-                            ->maxSize(5120),
+                            ->maxSize(2048)
+                            ->optimize('webp', 80)
+                            ->resize(50),
                         RichEditor::make('overview')
                             ->label('Overview')
                             ->columnSpanFull(),

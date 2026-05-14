@@ -14,9 +14,9 @@
 
             <div class="banner_content" data-aos="fade-right">
 
-                <h3 class="poppins-semibold fs-1">
+                <h2 class="poppins-semibold display-5">
                     <span class="text-warning">Selamat Datang</span> Kembangkan potensi dan inovasi bersama di SigmaTech
-                </h3>
+                </h2>
 
                 <p class="poppins-medium text-white-50 fs-5">
                     Build Your Skill, Build Your Career.
@@ -289,10 +289,9 @@
 
 {{-- ========================= SECTION 7 ========================= --}}
 {{-- Section Mitra Kami --}}
-<section class="mitra-section" style="background-color: white">
+{{-- <section class="mitra-section" style="background-color: white">
 
     <div class="container text-center py-5">
-        {{-- Title Badge --}}
         <div class="text-center mb-0">
             <h2 class="section-title mb-3">Mitra Kami</h2>
 
@@ -316,7 +315,7 @@
 
     </div>
 
-</section>
+</section> --}}
 
 
 {{-- ========================= SECTION 8 ========================= --}}
@@ -355,11 +354,11 @@
                         </div>
                         <p class="text-muted small flex-grow-1">{{ Str::limit($lyn->deskripsi_layanan, 120) }}</p>
                     </div>
-                    <div class="card-footer bg-transparent border-0 pt-0">
+                    {{-- <div class="card-footer bg-transparent border-0 pt-0">
                         <a href="#" class="text-{{ $color }} text-decoration-none poppins-medium d-inline-flex align-items-center">
                             Pelajari lebih lanjut <i class="ph-bold ph-arrow-right ms-2"></i>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             @endforeach
@@ -377,7 +376,7 @@
         <div class="title-berita" data-aos="fade-up">
 
             <p class="text-secondary mb-2">Cerita & Kabar Terbaru dari SigmaTech</p>
-            <h2 class="section-title mb-3">Berita Terbaru</h2>
+            <h2 class="section-title mb-3">Warta SigmaTech</h2>
             <p class="mb-4 text-secondary">
                 Simak update kegiatan, pelatihan, dan event terbaru dari kami. Lihat bagaimana SigmaTech terus berkembang bersama komunitas digital Indonesia.
             </p>

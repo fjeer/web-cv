@@ -67,9 +67,9 @@ class EventForm
                             ->visibility('public')
                             ->directory('event-images')
                             ->image()
-                            ->maxSize(5120)
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
-                            ->saveUploadedFileUsing(fn ($file) => \App\Support\WebpUploadHelper::saveAsWebp($file, 'event-images'))
+                            ->maxSize(2048)
+                            ->optimize('webp', 80)
+                            ->resize(50)
                             ->required(),
                     ]),
             ]);
