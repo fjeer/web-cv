@@ -127,7 +127,7 @@
                         <a href="https://www.instagram.com/sigmatech.digital" target="_blank" class="text-white">
                             <i class="ph ph-instagram-logo"></i>
                         </a>
-                        <a href="https://tiktok.com" target="_blank" class="text-white">
+                        <a href="https://www.tiktok.com/@sigmatech.digital" target="_blank" class="text-white">
                             <i class="ph ph-tiktok-logo"></i>
                         </a>
                     </div>
