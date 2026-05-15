@@ -111,7 +111,7 @@
                         <li class="my-3"><a href="{{ route('training.index') }}" class="text-white-50 text-decoration-none poppins-medium">Jadwal Kursus</a></li>
                         <li class="my-3"><a href="{{ route('event.index') }}" class="text-white-50 text-decoration-none poppins-medium">Event</a></li>
                         <li class="my-3"><a href="{{ route('industri.index') }}" class="text-white-50 text-decoration-none poppins-medium">Kelas Industri</a></li>
-                        <li class="my-3"><a href="{{ route('berita.index') }}" class="text-white-50 text-decoration-none poppins-medium">Berita</a></li>
+                        <li class="my-3"><a href="{{ route('berita.index') }}" class="text-white-50 text-decoration-none poppins-medium">Artikel</a></li>
                         <li class="my-3"><a href="mailto:sigmatechdigitalsolution@gmail.com" class="text-white-50 text-decoration-none poppins-medium">Hubungi Kami</a></li>
                     </ul>
                 </div>
@@ -140,7 +140,7 @@
         <div class="footer-bottom py-4 mt-4">
             <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <span class="poppins-light text-white-50">&copy; 2025 SigmaTech. All rights reserved.</span>
-                <span class="poppins-light text-white-50">Berjaya, Berinovasi, dan Bertumbuh bersama.</span>
+                <span class="poppins-light text-white-50">Build Your Skill, Build Your Career.</span>
             </div>
         </div>
     </footer>

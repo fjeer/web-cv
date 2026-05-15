@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Beritas\Schemas;
 
+use App\Support\WebpUploadHelper;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -9,6 +10,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class BeritaForm
 {
@@ -30,6 +32,19 @@ class BeritaForm
                             ->unique(ignoreRecord: true),
                         RichEditor::make('detail_berita')
                             ->label('Konten Berita')
+                            ->fileAttachmentsDisk('public')
+                            ->fileAttachmentsVisibility('public')
+                            ->fileAttachmentsDirectory('berita-attachments')
+                            ->saveUploadedFileAttachmentUsing(
+                                fn (TemporaryUploadedFile $file): string => WebpUploadHelper::saveAsWebp(
+                                    file: $file,
+                                    directory: 'berita-attachments',
+                                    quality: 85,
+                                ),
+                            )
+                            ->getFileAttachmentUrlUsing(
+                                fn (string $file): string => asset('storage/' . $file),
+                            )
                             ->required()
                             ->columnSpanFull(),
                     ]),
@@ -43,7 +58,7 @@ class BeritaForm
                             ->directory('berita-images')
                             ->image()
                             ->maxSize(2048)
-                            ->optimize('webp', 80)
+                            ->optimize('webp', 90)
                             ->resize(50)
                             ->required(),
                         DatePicker::make('tanggal_berita')

@@ -66,7 +66,7 @@ class KursusForm
                             ->visibility('public')
                             ->image()
                             ->maxSize(2048)
-                            ->optimize('webp', 80)
+                            ->optimize('webp', 90)
                             ->resize(50)
                             ->required(),
                     ]),

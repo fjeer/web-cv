@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="border-top border-1 opacity-25 mb-5"></div>
+            <div class="border-t opacity-25 mb-5"></div>
 
             {{-- Loading Spinner --}}
             <div id="loadingSpinner" class="text-center py-5 d-none">
@@ -77,8 +77,9 @@
             </div>
 
             {{-- Event Grid Container --}}
+            @if ($event->count())
             <div id="eventContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                @forelse ($event as $e)
+                @foreach ($event as $e)
                 <div class="col event-card" data-kategori="{{ $e->kategori->id }}" data-title="{{ strtolower($e->title) }}">
                     <div class="card-premium">
                         <div class="card-img-wrapper">
@@ -127,19 +128,20 @@
                         </div>
                     </div>
                 </div>
-                @empty
-                <div class="col-12 d-flex justify-content-center align-items-center py-5 event-empty-col">
-                    <div class="empty-state text-center">
-                        <i class="ph-bold ph-calendar-x display-1 text-muted opacity-50"></i>
-                        <h4 class="mt-3 poppins-semibold text-dark">Belum ada Event</h4>
-                        <p class="text-muted">Silakan cek kembali nanti.</p>
-                    </div>
-                </div>
-                @endforelse
+                @endforeach
             </div>
+            @else
+            <div class="event-state-message text-center py-5">
+                <div class="empty-state text-center">
+                    <i class="ph-bold ph-calendar-x display-1 text-muted opacity-50"></i>
+                    <h4 class="mt-3 poppins-semibold text-dark">Belum ada Event</h4>
+                    <p class="text-muted">Silakan cek kembali nanti.</p>
+                </div>
+            </div>
+            @endif
 
             {{-- No Results Message --}}
-            <div id="noResults" class="text-center py-5 d-none">
+            <div id="noResults" class="event-state-message text-center py-5 d-none">
                 <div class="empty-state">
                     <i class="ph-bold ph-magnifying-glass display-1 text-muted opacity-50"></i>
                     <h4 class="mt-3 poppins-semibold text-dark">Event tidak ditemukan</h4>
@@ -266,8 +268,15 @@
         padding: 40px 20px;
     }
 
-    .event-empty-col {
+    .event-state-message {
         min-height: 320px;
+    }
+
+    .event-state-message:not(.d-none) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .stat-item {
@@ -318,19 +327,28 @@
     $(document).ready(function() {
         // Filter dengan debounce
         let searchTimeout;
+        let filterTimeout;
+        let totalEvents = $('.event-card').length;
 
         function filterEvents() {
             let searchTerm = $('#searchEvent').val().toLowerCase();
             let kategoriFilter = $('#kategoriFilter').val();
 
-            $('#loadingSpinner').removeClass('d-none');
+            if (totalEvents === 0) {
+                $('#loadingSpinner, #noResults').addClass('d-none');
+                $('#eventContainer').removeClass('d-none');
+                return;
+            }
 
-            setTimeout(() => {
+            $('#loadingSpinner').removeClass('d-none');
+            clearTimeout(filterTimeout);
+
+            filterTimeout = setTimeout(() => {
                 let visibleCount = 0;
 
                 $('.event-card').each(function() {
-                    let eventTitle = $(this).data('title');
-                    let eventKategori = $(this).data('kategori').toString();
+                    let eventTitle = ($(this).data('title') || '').toString();
+                    let eventKategori = ($(this).data('kategori') || '').toString();
 
                     let matchSearch = searchTerm === '' || eventTitle.includes(searchTerm);
                     let matchKategori = kategoriFilter === '' || eventKategori === kategoriFilter;

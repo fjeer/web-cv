@@ -1,7 +1,7 @@
 <div class="table-responsive rounded-3 border">
     @if($training->count() == 0)
     {{-- EMPTY STATE --}}
-    <div class="text-center py-5">
+    <div class="empty-state schedule-empty-state text-center py-5">
         <i class="ph-fill ph-calendar-x display-1 text-muted opacity-50"></i>
         <h5 class="mt-4 poppins-semibold text-dark">Belum ada jadwal kursus</h5>
         <p class="text-muted poppins-regular">Silakan cek kembali atau gunakan filter lain.</p>

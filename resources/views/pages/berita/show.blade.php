@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container my-5 site-main" data-aos="fade-up">
+<div class="container my-5 site-main news-detail-page" data-aos="fade-up">
 
     <!-- Back Button -->
     <div class="mb-4 d-flex align-items-center">
@@ -15,12 +15,12 @@
     </div>
 
     <!-- Title -->
-    <h1 class="poppins-bold mb-4 display-5 text-dark" style="line-height: 1.3;">
+    <h1 class="poppins-bold mb-4 display-5 text-dark news-detail-title">
         {{ $berita->title }}
     </h1>
 
     <!-- Meta Info -->
-    <div class="d-flex align-items-center text-muted mb-4 gap-4 pb-3 border-bottom">
+    <div class="d-flex align-items-center text-muted mb-4 gap-4 pb-3 border-bottom news-detail-meta">
         <span class="poppins-medium d-flex align-items-center">
             <i class="ph-fill ph-user-circle text-primary fs-4 me-2"></i> {{ $berita->user->name }}
         </span>
@@ -30,18 +30,34 @@
     </div>
 
     <!-- Thumbnail -->
-    <div class="position-relative mb-5 shadow-lg rounded-4 overflow-hidden">
+    <div class="position-relative mb-5 shadow-lg rounded-4 overflow-hidden news-detail-thumbnail">
         <img
             src="{{ asset('storage/' . $berita->gambar_berita) }}"
             alt="{{ $berita->title }}"
             class="img-fluid w-100"
-            style="max-height: 500px; object-fit: cover;"
         >
     </div>
 
     <!-- Content -->
-    <article class="content text-dark fs-5" style="line-height: 1.8;">
-        {!! $berita->detail_berita !!}
+    @php
+        $detailBerita = $berita->detail_berita ?? '';
+        $storageUrl = asset('storage') . '/';
+
+        $detailBerita = str_replace(
+            rtrim(config('app.url'), '/') . '/storage/',
+            $storageUrl,
+            $detailBerita,
+        );
+
+        $detailBerita = preg_replace(
+            '#https?://(?:localhost|127\.0\.0\.1)(?::\d+)?/storage/#',
+            $storageUrl,
+            $detailBerita,
+        );
+    @endphp
+
+    <article class="content text-dark news-detail-content">
+        {!! $detailBerita !!}
     </article>
 
 </div>

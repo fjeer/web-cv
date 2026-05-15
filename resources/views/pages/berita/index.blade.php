@@ -22,7 +22,7 @@
                     <h5 class="poppins-semibold mb-0">Semua Artikel & Berita</h5>
                 </div>
 
-                <form class="search-wrapper w-100 w-md-auto" action="{{ route('berita.index') }}" method="GET">
+                <form class="search-wrapper news-search-form w-100 w-md-auto" action="{{ route('berita.index') }}" method="GET">
                     <div class="input-group shadow-sm" style="border-radius: var(--radius-full);">
                         <span class="input-group-text bg-white border-end-0 ps-4" style="border-radius: var(--radius-full) 0 0 var(--radius-full)">
                             <i class="ph-bold ph-magnifying-glass text-muted"></i>

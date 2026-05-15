@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Cache\RateLimiting\Limit;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +35,11 @@ class AppServiceProvider extends ServiceProvider
         if ($shouldForceRootUrl && !empty($appUrl)) {
             URL::forceRootUrl($appUrl);
         }
+
+        // Rate limiter for pendaftaran (DaftarController@store)
+        RateLimiter::for('daftar', function (Request $request) {
+            $key = $request->ip() ?? ($request->user()?->id ?? 'global');
+            return Limit::perMinute(10)->by($key);
+        });
     }
 }
